@@ -21,6 +21,9 @@ test('care discovery, filters, navigation and resources are honest and responsiv
   await expect(page.locator('.wordmark')).toHaveCSS('font-family', /DM Sans/);
   await expect(page.locator('[class*="sparkle"], .lucide-sparkles')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Open official directory' })).toHaveCount(3);
+  await expect(page.locator('#insurance-help')).toContainText(
+    'not your member ID or policy number',
+  );
   await page.getByLabel('Healthcare service').selectOption('PCOS');
   await expect(page.getByText('0 reviewed matches')).toBeVisible();
   await page.getByRole('button', { name: 'Filters', exact: true }).click();
@@ -53,8 +56,12 @@ test('personal appointments persist, edit, export, and delete without claiming a
   await dialog.getByLabel('Clinic or provider').fill('Test personal record');
   await dialog.getByLabel('Date', { exact: true }).fill('2030-01-15');
   await dialog.getByLabel('Time', { exact: true }).fill('09:30');
+  await dialog.getByRole('combobox', { name: 'Remind me', exact: true }).selectOption('15');
   await dialog.getByRole('button', { name: 'Save personal appointment' }).click();
   await expect(page.getByRole('heading', { name: 'Test personal record' })).toBeVisible();
+  await page.getByLabel('Calendar month', { exact: true }).fill('2030-01');
+  await page.getByRole('button', { name: '2030-01-15, 1 appointments', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Selected day', exact: true })).toBeVisible();
   await page.reload();
   await navigate(page, 'My Care', isMobile);
   await expect(page.getByRole('heading', { name: 'Test personal record' })).toBeVisible();
@@ -65,10 +72,15 @@ test('personal appointments persist, edit, export, and delete without claiming a
   const file = await readFile((await download.path())!, 'utf8');
   expect(file).toContain('DTSTART:20300115T143000Z');
   expect(file).toContain('Personal calendar record only');
+  expect(file).toContain('BEGIN:VALARM');
+  expect(file).toContain('TRIGGER:-PT15M');
+  await expect(page.getByText('15 minutes before', { exact: true })).toBeVisible();
+  await expect(page.locator('.calendar-tools-note')).toContainText('not connected or synced');
   await expect(
     page.getByRole('link', { name: 'Add Test personal record to Google Calendar' }),
   ).toHaveAttribute('href', /calendar.google.com/);
   await page.getByRole('button', { name: 'Edit Test personal record', exact: true }).click();
+  await expect(dialog.getByRole('combobox', { name: 'Remind me', exact: true })).toHaveValue('15');
   await dialog.getByLabel('Clinic or provider').fill('Edited personal record');
   await dialog.getByRole('button', { name: 'Save changes' }).click();
   await expect(page.getByRole('heading', { name: 'Edited personal record' })).toBeVisible();

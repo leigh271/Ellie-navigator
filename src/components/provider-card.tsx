@@ -70,7 +70,7 @@ export default function ProviderCard({
           </a>
         )}
         <button onClick={onAppointment} aria-label={`Save personal appointment for ${p.name}`}>
-          <CalendarPlus size={17} />
+          <CalendarPlus size={17} /> Save appointment
         </button>
       </div>
       <details className="source-details">

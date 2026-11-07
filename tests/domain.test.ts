@@ -160,3 +160,32 @@ test('malformed stored appointments and unsupported years cannot crash time vali
   }
   assert.equal(hasValidLocalTime({ ...base, date: '1900-01-01' }), true);
 });
+
+test('ICS exports only chosen reminder alarms with valid iCalendar durations', () => {
+  assert.doesNotMatch(createICS(base), /VALARM/);
+  assert.doesNotMatch(createICS({ ...base, reminderMinutes: null }), /VALARM/);
+  for (const minutes of [0, 5, 15, 30, 60, 1440]) {
+    const file = createICS({ ...base, reminderMinutes: minutes });
+    assert.match(file, /BEGIN:VALARM\r\n/);
+    assert.ok(file.includes(`TRIGGER:${minutes === 0 ? 'PT0M' : `-PT${minutes}M`}\r\n`));
+    assert.match(file, /ACTION:DISPLAY\r\n/);
+    assert.match(file, /END:VALARM\r\nEND:VEVENT/);
+  }
+  assert.equal(isValidAppointment({ ...base, reminderMinutes: -1 }), false);
+  assert.equal(isValidAppointment({ ...base, reminderMinutes: '15' }), false);
+  const details = new URL(googleCalendarURL({ ...base, reminderMinutes: 15 })).searchParams.get(
+    'details',
+  );
+  assert.ok(details?.includes('Set notifications in Google Calendar'));
+});
+test('browser reminder windows, deduplication and edits use Eastern appointment time', async () => {
+  const { dueReminders, reminderKey } = await import('../src/lib/reminders');
+  const a = { ...base, reminderMinutes: 30 };
+  const start = appointmentUTC(a).getTime();
+  assert.equal(dueReminders([a], start - 31 * 60000, new Set()).length, 0);
+  assert.equal(dueReminders([a], start - 30 * 60000, new Set()).length, 1);
+  assert.equal(dueReminders([a], start + 60000, new Set()).length, 0);
+  assert.equal(dueReminders([a], start, new Set([reminderKey(a)])).length, 0);
+  assert.equal(dueReminders([base], start, new Set()).length, 0);
+  assert.notEqual(reminderKey(a), reminderKey({ ...a, time: '10:00' }));
+});

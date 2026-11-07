@@ -28,6 +28,7 @@ export interface Appointment {
   date: string;
   time: string;
   duration: number;
+  reminderMinutes?: number | null;
 }
 export const services: Service[] = [
   'Pap / HPV screening',

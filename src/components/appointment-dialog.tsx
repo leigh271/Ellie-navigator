@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CalendarPlus, LockKeyhole, X } from 'lucide-react';
 import type { Appointment } from '@/lib/types';
 import { hasValidLocalTime, isValidAppointment } from '@/lib/calendar';
+import { reminderLabel, reminderOptions } from '@/lib/reminders';
 export default function AppointmentDialog({
   initial,
   onClose,
@@ -26,6 +27,7 @@ export default function AppointmentDialog({
       date: String(form.get('date')),
       time: String(form.get('time')),
       duration: Number(form.get('duration')),
+      reminderMinutes: form.get('reminder') === 'none' ? null : Number(form.get('reminder')),
     };
     if (!isValidAppointment(record)) {
       setError('Enter a provider, a valid date, and a valid time.');
@@ -104,6 +106,27 @@ export default function AppointmentDialog({
               ))}
             </select>
           </label>
+          <label>
+            Remind me
+            <select
+              name="reminder"
+              defaultValue={
+                initial.id ? (initial.reminderMinutes ?? 'none') : (initial.reminderMinutes ?? 30)
+              }
+              aria-describedby="reminder-help"
+            >
+              <option value="none">No reminder</option>
+              {reminderOptions.map((n) => (
+                <option key={n} value={n}>
+                  {reminderLabel(n)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <p id="reminder-help" className="small-muted">
+            Included in Apple / .ics exports and optional browser reminders. For Google Calendar,
+            set the notification on Google’s event page before saving.
+          </p>
           <p className="small-muted">
             All times are Eastern Time (America/New_York). Repeated fall-back times use the first
             occurrence.

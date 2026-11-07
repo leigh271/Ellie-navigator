@@ -23,6 +23,7 @@ import { services } from '@/lib/types';
 import { filterProviders, providers } from '@/lib/providers';
 import directorySources from '@/data/directory-sources.json';
 import { useLocalData } from '@/lib/use-local-data';
+import { useBrowserReminders } from '@/lib/use-browser-reminders';
 import CareMap from './care-map';
 import ProviderCard from './provider-card';
 import MyCare from './my-care';
@@ -49,6 +50,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
   const [appointment, setAppointment] = useState<Partial<Appointment> | null>(null);
   const [toast, setToast] = useState('');
   const local = useLocalData();
+  const reminders = useBrowserReminders(local.appointments, () => navigate('care'));
   const matches = useMemo(
     () =>
       filterProviders(providers, { location, service, insurance, affordability }).filter(
@@ -202,10 +204,11 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                 <label className="insurance-field">
                   <ShieldCheck size={18} />
                   <span>
-                    <span className="field-label">INSURANCE</span>
+                    <span className="field-label">INSURANCE PLAN NAME</span>
                     <input
                       aria-label="Insurance plan"
-                      placeholder="Enter your plan"
+                      placeholder="e.g. Florida Blue PPO"
+                      aria-describedby="insurance-help"
                       value={insurance}
                       onChange={(e) => setInsurance(e.target.value)}
                     />
@@ -224,6 +227,10 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                   <span>Find care</span>
                 </button>
               </div>
+              <p id="insurance-help" className="insurance-help">
+                Use your insurance company and plan name—not your member ID or policy number.
+                Confirm coverage with the clinic.
+              </p>
               <div className="filter-row">
                 <div className="service-chips">
                   <button
@@ -258,12 +265,13 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
               {moreFilters && (
                 <div className="expanded-filters">
                   <label className="mobile-insurance">
-                    Insurance plan
+                    Insurance plan name
                     <input
                       aria-label="Insurance plan on mobile"
                       value={insurance}
                       onChange={(e) => setInsurance(e.target.value)}
-                      placeholder="Enter your exact plan"
+                      placeholder="e.g. Florida Blue PPO"
+                      aria-describedby="insurance-help"
                     />
                   </label>
                   <label>
@@ -428,6 +436,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
         )}
         {tab === 'care' && (
           <MyCare
+            reminders={reminders}
             appointments={local.appointments}
             favorites={local.favorites}
             onEdit={setAppointment}
@@ -439,6 +448,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
             onFind={() => navigate('find')}
             onClear={() => {
               local.clearAll();
+              reminders.clear();
               notify('Local Ellie records cleared.');
             }}
           />

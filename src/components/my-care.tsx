@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   CalendarDays,
   ChevronLeft,
@@ -16,6 +16,9 @@ import type { Appointment } from '@/lib/types';
 import { createICS, googleCalendarURL, appointmentUTC } from '@/lib/calendar';
 import { providers } from '@/lib/providers';
 import ProviderCard from './provider-card';
+import BrowserReminderPanel from './browser-reminder-panel';
+import type { BrowserReminders } from '@/lib/use-browser-reminders';
+import { reminderLabel } from '@/lib/reminders';
 function downloadICS(a: Appointment) {
   const url = URL.createObjectURL(
     new Blob([createICS(a)], { type: 'text/calendar;charset=utf-8' }),
@@ -28,6 +31,7 @@ function downloadICS(a: Appointment) {
 }
 export default function MyCare({
   appointments,
+  reminders,
   favorites,
   onEdit,
   onDelete,
@@ -36,6 +40,7 @@ export default function MyCare({
   onClear,
 }: {
   appointments: Appointment[];
+  reminders: BrowserReminders;
   favorites: string[];
   onEdit: (a: Partial<Appointment>) => void;
   onDelete: (id: string) => void;
@@ -69,7 +74,16 @@ export default function MyCare({
   const sorted = [...appointments].sort((a, b) =>
     `${a.date}${a.time}`.localeCompare(`${b.date}${b.time}`),
   );
-  const [now] = useState(() => Date.now());
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const refresh = () => setNow(Date.now());
+    const timer = window.setInterval(refresh, 60000);
+    window.addEventListener('focus', refresh);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener('focus', refresh);
+    };
+  }, []);
   const shown = sorted.filter((a) =>
     selected ? a.date === selected : appointmentUTC(a).getTime() + a.duration * 60000 >= now,
   );
@@ -88,7 +102,26 @@ export default function MyCare({
           </button>
         </div>
         <div className="calendar-toolbar">
-          <h3>{title}</h3>
+          <div className="calendar-month-heading">
+            <h3>{title}</h3>
+            <label className="sr-only" htmlFor="calendar-month">
+              Calendar month
+            </label>
+            <input
+              id="calendar-month"
+              type="month"
+              min="1900-01"
+              max="9999-12"
+              value={`${view.year}-${String(view.month + 1).padStart(2, '0')}`}
+              onChange={(e) => {
+                const match = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(e.target.value);
+                if (match && Number(match[1]) >= 1900) {
+                  setView({ year: Number(match[1]), month: Number(match[2]) - 1 });
+                  setSelected(null);
+                }
+              }}
+            />
+          </div>
           <div>
             <button
               className="text-button"
@@ -142,6 +175,13 @@ export default function MyCare({
           <span className="live-dot" />
           Personal appointments · Eastern Time
         </p>
+        <div className="calendar-tools-note">
+          <strong>Add to your own calendar</strong>
+          <p>
+            Google opens a prefilled event for you to save. Apple / .ics downloads a file for you to
+            import. Your calendar accounts are not connected or synced with Ellie.
+          </p>
+        </div>
       </section>
       <aside className="appointments-panel surface">
         <div className="section-heading">
@@ -162,7 +202,7 @@ export default function MyCare({
             <p>
               {selected
                 ? 'No personal appointments saved for this day.'
-                : 'Your upcoming appointments will feel right at home here.'}
+                : 'Already arranged a clinic visit? Save its date here, then add it to your own calendar.'}
             </p>
             <button
               className="secondary-button"
@@ -191,6 +231,9 @@ export default function MyCare({
                     {a.time} ET · {a.duration} min
                   </p>
                   <span className="personal-badge">Personal record · not a booking</span>
+                  <span className="appointment-reminder-label">
+                    {reminderLabel(a.reminderMinutes)}
+                  </span>
                   <div className="appointment-actions">
                     <a
                       href={googleCalendarURL(a)}
@@ -198,7 +241,7 @@ export default function MyCare({
                       rel="noreferrer"
                       aria-label={`Add ${a.provider} to Google Calendar`}
                     >
-                      Google <ArrowUpRight size={12} />
+                      Add to Google <ArrowUpRight size={12} />
                     </a>
                     <button
                       onClick={() => downloadICS(a)}
@@ -239,11 +282,12 @@ export default function MyCare({
         <div className="care-note">
           <ShieldCheck size={17} />
           <p>
-            Contact your clinic to book or change an appointment. Calendar exports don’t send
-            booking requests or reminders.
+            Contact your clinic to book or change an appointment. Calendar exports don’t book visits
+            or sync later changes. Check notification settings in your calendar.
           </p>
         </div>
       </aside>
+      <BrowserReminderPanel reminders={reminders} />
       <section className="favorites-section surface">
         <div className="section-heading">
           <div>

@@ -16,7 +16,8 @@ export function isValidAppointment(value: unknown): value is Appointment {
     a.date > '9999-12-31' ||
     typeof a.time !== 'string' ||
     !/^([01]\d|2[0-3]):[0-5]\d$/.test(a.time) ||
-    ![15, 30, 45, 60, 90, 120].includes(a.duration)
+    ![15, 30, 45, 60, 90, 120].includes(a.duration) ||
+    (a.reminderMinutes != null && ![0, 5, 15, 30, 60, 1440].includes(a.reminderMinutes))
   )
     return false;
   const date = new Date(`${a.date}T12:00:00Z`);
@@ -109,6 +110,15 @@ export function createICS(a: Appointment) {
       `DTEND:${utcStamp(new Date(start.getTime() + a.duration * 60000))}`,
       `SUMMARY:${escapeICS(`Appointment: ${a.provider}`)}`,
       'DESCRIPTION:Personal calendar record only. Confirm booking directly with your clinic.',
+      ...(a.reminderMinutes == null
+        ? []
+        : [
+            'BEGIN:VALARM',
+            `TRIGGER:${a.reminderMinutes === 0 ? 'PT0M' : `-PT${a.reminderMinutes}M`}`,
+            'ACTION:DISPLAY',
+            'DESCRIPTION:Your saved appointment is coming up.',
+            'END:VALARM',
+          ]),
       'END:VEVENT',
       'END:VCALENDAR',
     ]
@@ -125,7 +135,8 @@ export function googleCalendarURL(a: Appointment) {
       text: `Appointment: ${a.provider}`,
       dates: `${utcStamp(start)}/${utcStamp(new Date(start.getTime() + a.duration * 60000))}`,
       ctz: APPOINTMENT_ZONE,
-      details: 'Personal calendar record only. Confirm booking directly with your clinic.',
+      details:
+        'Personal calendar record only. Confirm booking directly with your clinic. Set notifications in Google Calendar before saving; Ellie cannot transfer reminder settings through this link.',
     })
   );
 }
