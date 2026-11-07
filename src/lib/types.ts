@@ -1,7 +1,14 @@
 export type ProviderKind = 'community' | 'private' | 'hospital' | 'preventive';
 export type Service =
-  | 'Pap / HPV screening'
+  | 'Cervical cancer screening'
+  | 'Pap test'
+  | 'HPV testing'
   | 'HPV vaccination'
+  | 'Annual gynecology / wellness'
+  | 'Birth control / family planning'
+  | 'PCOS care'
+  | 'Fibroid care'
+  | 'Pap / HPV screening'
   | 'Annual gynecology'
   | 'PCOS'
   | 'Fibroids'
@@ -16,11 +23,34 @@ export interface Provider {
   coordinates: [number, number];
   services: Service[];
   phone?: string;
-  website: string;
+  website: string | null;
+  organization?: string;
+  state?: string;
+  zip?: string;
+  bookingUrl?: string;
+  insuranceDeclined?: string[];
+  hrsa?: {
+    sourceId: string;
+    sourceRecordDate: string;
+    sourceName: string;
+    sourceURL: string;
+    locationType: string;
+    setting: string;
+    status: string;
+    serviceVerification: string;
+    insuranceVerification: string;
+  };
   insurance: string[];
   affordability: 'sliding-scale' | 'unknown';
-  sources: { url: string; title: string; checkedAt: string; fields: string[] }[];
-  verification: 'reviewed';
+  sources: {
+    url: string;
+    title: string;
+    checkedAt: string;
+    fields: string[];
+    recordDate?: string;
+    origin?: string;
+  }[];
+  verification: 'reviewed' | 'location';
 }
 export interface Appointment {
   id: string;
@@ -31,16 +61,18 @@ export interface Appointment {
   reminderMinutes?: number | null;
 }
 export const services: Service[] = [
-  'Pap / HPV screening',
+  'Cervical cancer screening',
+  'Pap test',
+  'HPV testing',
   'HPV vaccination',
-  'Annual gynecology',
-  'PCOS',
-  'Fibroids',
-  'Birth control',
+  'Annual gynecology / wellness',
+  'Birth control / family planning',
+  'PCOS care',
+  'Fibroid care',
 ];
 export const kinds: Record<ProviderKind, { label: string; color: string }> = {
-  community: { label: 'Community & low-cost', color: '#ee8eaf' },
-  private: { label: 'Private gynecology', color: '#b4a1df' },
-  hospital: { label: 'Hospitals & health systems', color: '#90bfdf' },
-  preventive: { label: 'Vaccination & prevention', color: '#86c6b1' },
+  community: { label: 'Community & low-cost', color: '#E77BAA' },
+  private: { label: 'Private gynecology', color: '#AA86DB' },
+  hospital: { label: 'Hospitals & health systems', color: '#75B5E9' },
+  preventive: { label: 'Vaccination & prevention', color: '#2AAE9B' },
 };

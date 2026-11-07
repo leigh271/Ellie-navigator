@@ -1,0 +1,471 @@
+{
+  "33004": {
+    "coordinates": [
+      -80.143454,
+      26.05246
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33009": {
+    "coordinates": [
+      -80.130528,
+      25.984682
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33010": {
+    "coordinates": [
+      -80.274468,
+      25.82337085714286
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33012": {
+    "coordinates": [
+      -80.3027805,
+      25.867893166666665
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33021": {
+    "coordinates": [
+      -80.18981199999999,
+      26.003031
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33023": {
+    "coordinates": [
+      -80.203181,
+      25.984249
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33025": {
+    "coordinates": [
+      -80.253517,
+      25.99684
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33030": {
+    "coordinates": [
+      -80.487855,
+      25.469285
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33032": {
+    "coordinates": [
+      -80.415276,
+      25.522205
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33033": {
+    "coordinates": [
+      -80.409893,
+      25.477398
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33034": {
+    "coordinates": [
+      -80.49673250000001,
+      25.4323025
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33054": {
+    "coordinates": [
+      -80.251077,
+      25.902174
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33056": {
+    "coordinates": [
+      -80.23948,
+      25.9452785
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33060": {
+    "coordinates": [
+      -80.1295275,
+      26.243868
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33063": {
+    "coordinates": [
+      -80.202095,
+      26.25546
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33069": {
+    "coordinates": [
+      -80.156485,
+      26.232860000000002
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33073": {
+    "coordinates": [
+      -80.197377,
+      26.273242
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33122": {
+    "coordinates": [
+      -80.330027,
+      25.803279
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33126": {
+    "coordinates": [
+      -80.30006499999999,
+      25.78087
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33128": {
+    "coordinates": [
+      -80.200486,
+      25.77854
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33133": {
+    "coordinates": [
+      -80.255406,
+      25.727772
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33134": {
+    "coordinates": [
+      -80.25721766666668,
+      25.771809333333334
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33135": {
+    "coordinates": [
+      -80.2214685,
+      25.7719925
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33136": {
+    "coordinates": [
+      -80.2030245,
+      25.7901335
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33137": {
+    "coordinates": [
+      -80.19027675000001,
+      25.80722475
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33138": {
+    "coordinates": [
+      -80.193094,
+      25.8549155
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33139": {
+    "coordinates": [
+      -80.140039,
+      25.784453
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33141": {
+    "coordinates": [
+      -80.1322055,
+      25.854649000000002
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33142": {
+    "coordinates": [
+      -80.23679824999999,
+      25.821368749999998
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33143": {
+    "coordinates": [
+      -80.297487,
+      25.703694
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33147": {
+    "coordinates": [
+      -80.23536766666666,
+      25.840781000000003
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33150": {
+    "coordinates": [
+      -80.214747,
+      25.860235
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33157": {
+    "coordinates": [
+      -80.355998,
+      25.599975
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33161": {
+    "coordinates": [
+      -80.184525,
+      25.89122
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33165": {
+    "coordinates": [
+      -80.366448,
+      25.752888
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33174": {
+    "coordinates": [
+      -80.366611,
+      25.760819
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33177": {
+    "coordinates": [
+      -80.380602,
+      25.605682
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33181": {
+    "coordinates": [
+      -80.1655815,
+      25.88308675
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33186": {
+    "coordinates": [
+      -80.4214705,
+      25.649324999999997
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33189": {
+    "coordinates": [
+      -80.365713,
+      25.576272
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33190": {
+    "coordinates": [
+      -80.358063,
+      25.565771
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33309": {
+    "coordinates": [
+      -80.15917566666667,
+      26.187505666666667
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33311": {
+    "coordinates": [
+      -80.16902900000001,
+      26.144320833333335
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33312": {
+    "coordinates": [
+      -80.1568375,
+      26.122461
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "33313": {
+    "coordinates": [
+      -80.210391,
+      26.153667
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "coral gables": {
+    "coordinates": [
+      -80.25721766666668,
+      25.771809333333334
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "cutler bay": {
+    "coordinates": [
+      -80.361888,
+      25.5710215
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "dania": {
+    "coordinates": [
+      -80.143454,
+      26.05246
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "doral": {
+    "coordinates": [
+      -80.326667,
+      25.793274500000003
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "florida city": {
+    "coordinates": [
+      -80.489803,
+      25.446747
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "fort lauderdale": {
+    "coordinates": [
+      -80.16190911111111,
+      26.146874
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "hallandale beach": {
+    "coordinates": [
+      -80.130528,
+      25.984682
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "hialeah": {
+    "coordinates": [
+      -80.28753530769231,
+      25.843919615384614
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "hollywood": {
+    "coordinates": [
+      -80.18981199999999,
+      26.003031
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "homestead": {
+    "coordinates": [
+      -80.4541715,
+      25.4716865
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "lauderdale lakes": {
+    "coordinates": [
+      -80.20507366666668,
+      26.164070999999996
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "margate": {
+    "coordinates": [
+      -80.199736,
+      26.264350999999998
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "miami": {
+    "coordinates": [
+      -80.24760512903225,
+      25.787312967741936
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "miami beach": {
+    "coordinates": [
+      -80.13612225,
+      25.819551
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "miami gardens": {
+    "coordinates": [
+      -80.23948,
+      25.9452785
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "miami shores": {
+    "coordinates": [
+      -80.193693,
+      25.86317
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "north miami": {
+    "coordinates": [
+      -80.184525,
+      25.89122
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "opa locka": {
+    "coordinates": [
+      -80.251077,
+      25.902174
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "pembroke pines": {
+    "coordinates": [
+      -80.253517,
+      25.99684
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "pompano beach": {
+    "coordinates": [
+      -80.14300625,
+      26.238364
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "west park": {
+    "coordinates": [
+      -80.203181,
+      25.984249
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  },
+  "wilton manors": {
+    "coordinates": [
+      -80.153755,
+      26.166619
+    ],
+    "basis": "Mean of unique HRSA site coordinates in the searched city/ZIP; approximate search origin, not user location."
+  }
+}

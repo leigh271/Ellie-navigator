@@ -4,3 +4,9 @@ package-lock.json
 playwright-report
 test-results
 next-env.d.ts
+
+# Immutable uploaded source files and deterministic importer outputs
+data/hrsa/
+src/data/providers.json
+src/data/search-areas.json
+docs/HRSA_IMPORT_AUDIT.json

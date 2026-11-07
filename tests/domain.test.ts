@@ -69,7 +69,14 @@ test('filters combine documented services, location, insurance and cost without 
     insurance: ['Test insurance'],
     affordability: 'unknown',
     verification: 'reviewed',
-    sources: [],
+    sources: [
+      {
+        url: 'https://example.org',
+        title: 'Synthetic unit-test evidence',
+        checkedAt: '2026-11-07',
+        fields: ['address', 'coordinates', 'HPV vaccination', 'insurance:Test insurance'],
+      },
+    ],
   };
   assert.equal(
     filterProviders([fixture], {
@@ -92,7 +99,7 @@ test('filters combine documented services, location, insurance and cost without 
       insurance: 'unknown plan',
       affordability: '',
     }).length,
-    0,
+    1,
   );
   assert.equal(
     filterProviders([fixture], {
@@ -107,7 +114,7 @@ test('filters combine documented services, location, insurance and cost without 
 test('every shipped provider has source review and field evidence before publication', () => {
   const seen = new Set();
   for (const provider of providers) {
-    assert.equal(provider.verification, 'reviewed');
+    assert.ok(['location', 'reviewed'].includes(provider.verification));
     assert.ok(!seen.has(provider.id));
     seen.add(provider.id);
     assert.ok(provider.sources.length > 0);
@@ -126,15 +133,15 @@ test('every shipped provider has source review and field evidence before publica
     assert.ok(provider.coordinates[0] > -81 && provider.coordinates[0] < -79.8);
     assert.ok(provider.coordinates[1] > 25 && provider.coordinates[1] < 26.5);
   }
-  // Empty data is deliberately allowed; this check does not establish live data readiness.
+  assert.ok(providers.length >= 10); // Real location evidence is required; service evidence remains separate.
 });
 test('navigation guide sets emergency, diagnosis, booking, and directory boundaries', () => {
   assert.match(ruleBasedReply('I have chest pain'), /911/);
   assert.match(ruleBasedReply('Diagnose my symptoms'), /cannot diagnose/);
   assert.match(ruleBasedReply('Book an appointment'), /does not book/);
   assert.match(ruleBasedReply('Is insurance accepted?'), /does not have verified/);
-  if (!providers.length)
-    assert.match(ruleBasedReply('find a clinic in Broward'), /not populated yet/);
+  assert.match(ruleBasedReply('find a clinic in Broward'), /HRSA location-sourced/);
+  assert.match(ruleBasedReply('find PCOS care'), /not confirmed/);
 });
 
 test('directions preserve exact clinic coordinates in latitude/longitude order', async () => {

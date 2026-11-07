@@ -11,7 +11,8 @@
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "data:import": "python3 scripts/import_hrsa.py"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

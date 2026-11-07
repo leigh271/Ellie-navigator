@@ -1,0 +1,46 @@
+{
+  "inputRecords": 119,
+  "csvRecords": 119,
+  "crossFileMismatches": 0,
+  "duplicateIds": 0,
+  "duplicateNameAddressCityKeys": 0,
+  "counties": {
+    "Broward": 25,
+    "Miami-Dade": 94
+  },
+  "missingWebsites": 53,
+  "coordinateBounds": {
+    "longitude": [
+      -80.503662,
+      -80.128446
+    ],
+    "latitude": [
+      25.417858,
+      26.273242
+    ]
+  },
+  "sharedCoordinateGroups": 7,
+  "recordsAtSharedCoordinates": 34,
+  "duplicateNames": {
+    "Lauderdale Lakes Health Center": 2,
+    "Palm Center Adult Support Services": 12
+  },
+  "publishedLocations": 14,
+  "serviceVerifiedProviders": 0,
+  "verifiedBookingLinks": 0,
+  "sourceRecordDates": [
+    "11/06/2026"
+  ],
+  "extractReviewDate": "2026-11-07",
+  "sourceSHA256": {
+    "candidates.json": "532125cad7c1692db0f65ea4626c34b5f594f3ef3cab04b8c35b1b6e51ce9775",
+    "candidates.csv": "d697db95af7e2527348d7865c122ebb6094d9b11f7743c3c28c2bd48bb9d005f"
+  },
+  "limitations": [
+    "Full 235-record reference extract was not uploaded or re-downloaded.",
+    "119 candidates are not 119 verified women’s healthcare providers.",
+    "Site-specific services, plans, costs, booking links and live operating status are not independently website-verified.",
+    "Three Memorial-named candidates have NORTH BROWARD HOSPITAL DISTRICT as their supplied organization; original fields are preserved and those candidates are not selected.",
+    "Names/coordinates alone are not duplicate keys. Shared locations are retained in the source data; no shared-coordinate clusters were selected for publication."
+  ]
+}

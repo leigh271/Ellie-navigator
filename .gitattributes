@@ -1,0 +1,3 @@
+# Preserve immutable uploaded source bytes for checksum verification on every platform.
+data/hrsa/candidates.json -text
+data/hrsa/candidates.csv -text

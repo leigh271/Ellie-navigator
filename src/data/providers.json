@@ -1,1 +1,726 @@
-[]
+[
+  {
+    "id": "hrsa-site-0003",
+    "name": "BROWARD COMMUNITY AND FAMILY HEALTH CENTER - LAUDERHILL",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "kind": "community",
+    "county": "Broward",
+    "address": "1295 NW 40th Ave",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33313",
+    "coordinates": [
+      -80.202845,
+      26.143566
+    ],
+    "phone": "954-583-4710",
+    "website": "https://www.bcfhc.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0003",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0004",
+    "name": "Bernard P. Alicki Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "kind": "hospital",
+    "county": "Broward",
+    "address": "1101 W Broward Blvd",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33312-1638",
+    "coordinates": [
+      -80.156465,
+      26.122644
+    ],
+    "phone": "954-527-6042",
+    "website": "https://WWW.BROWARDHEALTH.ORG/BODY.CFM?ID=846",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0004",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0005",
+    "name": "Care Resource Community Health Center, Inc at Oakland Park",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "kind": "community",
+    "county": "Broward",
+    "address": "3160 Powerline Rd",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33309-5911",
+    "coordinates": [
+      -80.154244,
+      26.166864
+    ],
+    "phone": "954-567-7141",
+    "website": null,
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0005",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0007",
+    "name": "Clinica de las Americas",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "kind": "hospital",
+    "county": "Broward",
+    "address": "1101 NW 1st St",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33311-8905",
+    "coordinates": [
+      -80.15655,
+      26.123103
+    ],
+    "phone": "954-761-1020",
+    "website": null,
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0007",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0008",
+    "name": "Cora E. Braynon Family Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "kind": "hospital",
+    "county": "Broward",
+    "address": "200 NW 7th Ave",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33311-9026",
+    "coordinates": [
+      -80.150038,
+      26.124837
+    ],
+    "phone": "954-759-6600",
+    "website": "https://WWW.BROWARDHEALTH.ORG/BODY.CFM?ID=846",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0008",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0016",
+    "name": "BROWARD COMMUNITY & FAMILY HEALTH CENTER-HOLLYWOOD",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "kind": "community",
+    "county": "Broward",
+    "address": "5012 Hollywood Blvd",
+    "city": "Hollywood",
+    "state": "FL",
+    "zip": "33021-6549",
+    "coordinates": [
+      -80.194385,
+      26.010065
+    ],
+    "phone": "954-967-0028",
+    "website": "https://www.bcfhc.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0016",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0018",
+    "name": "Lauderdale Lakes Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "kind": "hospital",
+    "county": "Broward",
+    "address": "3716 W Oakland Park Blvd",
+    "city": "Lauderdale Lakes",
+    "state": "FL",
+    "zip": "33311-1134",
+    "coordinates": [
+      -80.198982,
+      26.163266
+    ],
+    "phone": "954-759-7557",
+    "website": null,
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0018",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0020",
+    "name": "Maternity Care Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "kind": "hospital",
+    "county": "Broward",
+    "address": "3736 W Oakland Park Blvd",
+    "city": "Lauderdale Lakes",
+    "state": "FL",
+    "zip": "33311-1157",
+    "coordinates": [
+      -80.198302,
+      26.165179
+    ],
+    "phone": "954-759-7599",
+    "website": "https://www.browardhealth.org/health-resources/broward-healthpoint",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0020",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0026",
+    "name": "BROWARD COMMUNITY & FAMILY HEALTH CENTER-POMPANO MEDICAL",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "kind": "community",
+    "county": "Broward",
+    "address": "168 N Powerline Rd",
+    "city": "Pompano Beach",
+    "state": "FL",
+    "zip": "33069-5713",
+    "coordinates": [
+      -80.15643,
+      26.23312
+    ],
+    "phone": "954-970-8805",
+    "website": "https://www.bcfhc.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0026",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0028",
+    "name": "BROWARD COMMUNITY AND FAMILY HEALTH CENTER-WEST PARK",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "kind": "community",
+    "county": "Broward",
+    "address": "5800 W Hallandale Beach Blvd",
+    "city": "West Park",
+    "state": "FL",
+    "zip": "33023-5244",
+    "coordinates": [
+      -80.203181,
+      25.984249
+    ],
+    "phone": "954-966-3939",
+    "website": "https://www.bcfhc.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0028",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0029",
+    "name": "Care Resource Community Health Center at Ft. Lauderdale",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "kind": "community",
+    "county": "Broward",
+    "address": "871 W Oakland Park Blvd",
+    "city": "Wilton Manors",
+    "state": "FL",
+    "zip": "33311-1731",
+    "coordinates": [
+      -80.153755,
+      26.166619
+    ],
+    "phone": "954-567-7141",
+    "website": "https://www.careresource.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0029",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0039",
+    "name": "DORIS ISON HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "kind": "community",
+    "county": "Miami-Dade",
+    "address": "10300 SW 216th St",
+    "city": "Cutler Bay",
+    "state": "FL",
+    "zip": "33190-1099",
+    "coordinates": [
+      -80.358063,
+      25.565771
+    ],
+    "phone": "305-252-4824",
+    "website": "https://www.chisouthfl.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0039",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0122",
+    "name": "COCONUT GROVE HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "kind": "community",
+    "county": "Miami-Dade",
+    "address": "3831 Grand Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33133-4862",
+    "coordinates": [
+      -80.255406,
+      25.727772
+    ],
+    "phone": "305-252-4853",
+    "website": "https://www.chisouthfl.org",
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates",
+          "website"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0122",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  },
+  {
+    "id": "hrsa-site-0191",
+    "name": "SOUTH MIAMI HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "kind": "community",
+    "county": "Miami-Dade",
+    "address": "6350 Sunset Dr",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33143-4836",
+    "coordinates": [
+      -80.297487,
+      25.703694
+    ],
+    "phone": "305-252-4853",
+    "website": null,
+    "services": [],
+    "insurance": [],
+    "affordability": "unknown",
+    "verification": "location",
+    "sources": [
+      {
+        "url": "https://data.hrsa.gov/data/download",
+        "title": "HRSA site extract supplied by the user",
+        "checkedAt": "2026-11-07",
+        "recordDate": "11/06/2026",
+        "origin": "uploaded-hrsa",
+        "fields": [
+          "name",
+          "organization",
+          "address",
+          "city",
+          "county",
+          "zip",
+          "phone",
+          "coordinates"
+        ]
+      }
+    ],
+    "hrsa": {
+      "sourceId": "hrsa-site-0191",
+      "sourceRecordDate": "11/06/2026",
+      "sourceName": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "sourceURL": "https://data.hrsa.gov/data/download",
+      "locationType": "Permanent",
+      "setting": "All Other Clinic Types",
+      "status": "Active",
+      "serviceVerification": "not_verified",
+      "insuranceVerification": "not_verified"
+    }
+  }
+]

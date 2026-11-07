@@ -1,0 +1,3215 @@
+[
+  {
+    "id": "hrsa-site-0001",
+    "name": "Memorial Primary Care Dania Clinic",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "4 N Federal Hwy",
+    "city": "Dania",
+    "state": "FL",
+    "zip": "33004-2843",
+    "county": "Broward",
+    "phone": "954-276-5552",
+    "website": null,
+    "coordinates": [
+      -80.143454,
+      26.05246
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0003",
+    "name": "BROWARD COMMUNITY AND FAMILY HEALTH CENTER - LAUDERHILL",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "address": "1295 NW 40th Ave",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33313",
+    "county": "Broward",
+    "phone": "954-583-4710",
+    "website": "https://www.bcfhc.org",
+    "coordinates": [
+      -80.202845,
+      26.143566
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0004",
+    "name": "Bernard P. Alicki Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "1101 W Broward Blvd",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33312-1638",
+    "county": "Broward",
+    "phone": "954-527-6042",
+    "website": "https://WWW.BROWARDHEALTH.ORG/BODY.CFM?ID=846",
+    "coordinates": [
+      -80.156465,
+      26.122644
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0005",
+    "name": "Care Resource Community Health Center, Inc at Oakland Park",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "address": "3160 Powerline Rd",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33309-5911",
+    "county": "Broward",
+    "phone": "954-567-7141",
+    "website": null,
+    "coordinates": [
+      -80.154244,
+      26.166864
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0006",
+    "name": "ChildNet Citrus Behavioral Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "1100 W McNab Rd",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33309-1116",
+    "county": "Broward",
+    "phone": "305-825-0300",
+    "website": null,
+    "coordinates": [
+      -80.158071,
+      26.210612
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0007",
+    "name": "Clinica de las Americas",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "1101 NW 1st St",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33311-8905",
+    "county": "Broward",
+    "phone": "954-761-1020",
+    "website": null,
+    "coordinates": [
+      -80.15655,
+      26.123103
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0008",
+    "name": "Cora E. Braynon Family Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "200 NW 7th Ave",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33311-9026",
+    "county": "Broward",
+    "phone": "954-759-6600",
+    "website": "https://WWW.BROWARDHEALTH.ORG/BODY.CFM?ID=846",
+    "coordinates": [
+      -80.150038,
+      26.124837
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0010",
+    "name": "North Broward Hospital District- Community Health Services",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "1700 NW 49th St",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33309-3763",
+    "county": "Broward",
+    "phone": "954-473-7056",
+    "website": null,
+    "coordinates": [
+      -80.165212,
+      26.185041
+    ],
+    "locationType": "Permanent",
+    "setting": "Unknown",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0011",
+    "name": "SPECIALTY CARE CENTER",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "1111 W Broward Blvd",
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "zip": "33312-1697",
+    "county": "Broward",
+    "phone": "954-463-7313",
+    "website": "https://WWW.BROWARDHEALTH.ORG/BODY.CFM?ID=846",
+    "coordinates": [
+      -80.15721,
+      26.122278
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0012",
+    "name": "Comprehensive Care Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "1101 NW 1st St STE 1A",
+    "city": "Ft Lauderdale",
+    "state": "FL",
+    "zip": "33311-8905",
+    "county": "Broward",
+    "phone": "954-467-0880",
+    "website": null,
+    "coordinates": [
+      -80.156547,
+      26.122921
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0014",
+    "name": "Memorial Primary Care Hallandale Clinic",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "1750 E Hallandale Beach Blvd",
+    "city": "Hallandale Beach",
+    "state": "FL",
+    "zip": "33009-4611",
+    "county": "Broward",
+    "phone": "954-276-9553",
+    "website": "Http://www.mhs.net",
+    "coordinates": [
+      -80.130528,
+      25.984682
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0016",
+    "name": "BROWARD COMMUNITY & FAMILY HEALTH CENTER-HOLLYWOOD",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "address": "5012 Hollywood Blvd",
+    "city": "Hollywood",
+    "state": "FL",
+    "zip": "33021-6549",
+    "county": "Broward",
+    "phone": "954-967-0028",
+    "website": "https://www.bcfhc.org",
+    "coordinates": [
+      -80.194385,
+      26.010065
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0017",
+    "name": "Memorial Primary Care Hollywood Clinic",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "4105 Pembroke Rd",
+    "city": "Hollywood",
+    "state": "FL",
+    "zip": "33021-8103",
+    "county": "Broward",
+    "phone": "954-265-8431",
+    "website": "Http://www.mhs.net",
+    "coordinates": [
+      -80.185239,
+      25.995997
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0018",
+    "name": "Lauderdale Lakes Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "3716 W Oakland Park Blvd",
+    "city": "Lauderdale Lakes",
+    "state": "FL",
+    "zip": "33311-1134",
+    "county": "Broward",
+    "phone": "954-759-7557",
+    "website": null,
+    "coordinates": [
+      -80.198982,
+      26.163266
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0019",
+    "name": "Lauderdale Lakes Health Center",
+    "organization": "BANYAN COMMUNITY HEALTH CENTER INC",
+    "address": "4900 W Oakland Park Blvd",
+    "city": "Lauderdale Lakes",
+    "state": "FL",
+    "zip": "33313-7500",
+    "county": "Broward",
+    "phone": "305-774-3400",
+    "website": "http://banyanhealth.org",
+    "coordinates": [
+      -80.217937,
+      26.163768
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0020",
+    "name": "Maternity Care Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "3736 W Oakland Park Blvd",
+    "city": "Lauderdale Lakes",
+    "state": "FL",
+    "zip": "33311-1157",
+    "county": "Broward",
+    "phone": "954-759-7599",
+    "website": "https://www.browardhealth.org/health-resources/broward-healthpoint",
+    "coordinates": [
+      -80.198302,
+      26.165179
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0021",
+    "name": "Margate Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "5430 W Sample Rd",
+    "city": "Margate",
+    "state": "FL",
+    "zip": "33073-3453",
+    "county": "Broward",
+    "phone": "954-759-7477",
+    "website": null,
+    "coordinates": [
+      -80.197377,
+      26.273242
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0022",
+    "name": "Margate Women's Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "2131 N State Road 7",
+    "city": "Margate",
+    "state": "FL",
+    "zip": "33063-5713",
+    "county": "Broward",
+    "phone": "954-554-3930",
+    "website": null,
+    "coordinates": [
+      -80.202095,
+      26.25546
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0023",
+    "name": "Taylor Clinic",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "8400 S Palm Dr",
+    "city": "Pembroke Pines",
+    "state": "FL",
+    "zip": "33025-4536",
+    "county": "Broward",
+    "phone": "954-342-0355",
+    "website": null,
+    "coordinates": [
+      -80.253517,
+      25.99684
+    ],
+    "locationType": "Permanent",
+    "setting": "Hospital",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0024",
+    "name": "Annie L. Weaver Health Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "2011 NW 3rd Ave",
+    "city": "Pompano Beach",
+    "state": "FL",
+    "zip": "33060-4800",
+    "county": "Broward",
+    "phone": "954-786-5901",
+    "website": "https://WWW.BROWARDHEALTH.ORG/BODY.CFM?ID=846",
+    "coordinates": [
+      -80.128446,
+      26.255595
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0025",
+    "name": "BROWARD COMMUNITY & FAMILY HEALTH CENTER - POMPANO DENTAL",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "address": "162 N Powerline Rd",
+    "city": "Pompano Beach",
+    "state": "FL",
+    "zip": "33069-2514",
+    "county": "Broward",
+    "phone": "954-970-8826",
+    "website": null,
+    "coordinates": [
+      -80.15654,
+      26.2326
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0026",
+    "name": "BROWARD COMMUNITY & FAMILY HEALTH CENTER-POMPANO MEDICAL",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "address": "168 N Powerline Rd",
+    "city": "Pompano Beach",
+    "state": "FL",
+    "zip": "33069-5713",
+    "county": "Broward",
+    "phone": "954-970-8805",
+    "website": "https://www.bcfhc.org",
+    "coordinates": [
+      -80.15643,
+      26.23312
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0027",
+    "name": "Pompano Prenatal and Pediatric Care Center",
+    "organization": "NORTH BROWARD HOSPITAL DISTRICT",
+    "address": "601 W Atlantic Blvd",
+    "city": "Pompano Beach",
+    "state": "FL",
+    "zip": "33060-5916",
+    "county": "Broward",
+    "phone": "954-785-4273",
+    "website": null,
+    "coordinates": [
+      -80.130609,
+      26.232141
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0028",
+    "name": "BROWARD COMMUNITY AND FAMILY HEALTH CENTER-WEST PARK",
+    "organization": "BROWARD COMMUNITY AND FAMILY HEALTH CENTERS, INC.",
+    "address": "5800 W Hallandale Beach Blvd",
+    "city": "West Park",
+    "state": "FL",
+    "zip": "33023-5244",
+    "county": "Broward",
+    "phone": "954-966-3939",
+    "website": "https://www.bcfhc.org",
+    "coordinates": [
+      -80.203181,
+      25.984249
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0029",
+    "name": "Care Resource Community Health Center at Ft. Lauderdale",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "address": "871 W Oakland Park Blvd",
+    "city": "Wilton Manors",
+    "state": "FL",
+    "zip": "33311-1731",
+    "county": "Broward",
+    "phone": "954-567-7141",
+    "website": "https://www.careresource.org",
+    "coordinates": [
+      -80.153755,
+      26.166619
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0033",
+    "name": "CRF/CSU",
+    "organization": "BANYAN COMMUNITY HEALTH CENTER INC",
+    "address": "3800 W Flagler St",
+    "city": "Coral Gables",
+    "state": "FL",
+    "zip": "33134-1604",
+    "county": "Miami-Dade",
+    "phone": "305-774-3600",
+    "website": "https://www.banyanhealth.org",
+    "coordinates": [
+      -80.257464,
+      25.771574
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0034",
+    "name": "Flagler Family Health Center",
+    "organization": "BANYAN COMMUNITY HEALTH CENTER INC",
+    "address": "3733 W Flagler St",
+    "city": "Coral Gables",
+    "state": "FL",
+    "zip": "33134-1601",
+    "county": "Miami-Dade",
+    "phone": "305-774-3400",
+    "website": "https://www.banyanhealth.org",
+    "coordinates": [
+      -80.256321,
+      25.772293
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0035",
+    "name": "Little Havana Health Center",
+    "organization": "BANYAN COMMUNITY HEALTH CENTER INC",
+    "address": "3850 W Flagler St",
+    "city": "Coral Gables",
+    "state": "FL",
+    "zip": "33134-1604",
+    "county": "Miami-Dade",
+    "phone": "305-774-3300",
+    "website": "https://www.banyanhealth.org",
+    "coordinates": [
+      -80.257868,
+      25.771561
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0037",
+    "name": "Cutler Bay Health Center",
+    "organization": "BANYAN COMMUNITY HEALTH CENTER INC",
+    "address": "10720 Caribbean Blvd",
+    "city": "Cutler Bay",
+    "state": "FL",
+    "zip": "33189-1218",
+    "county": "Miami-Dade",
+    "phone": "305-774-3400",
+    "website": null,
+    "coordinates": [
+      -80.365713,
+      25.576272
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0039",
+    "name": "DORIS ISON HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "10300 SW 216th St",
+    "city": "Cutler Bay",
+    "state": "FL",
+    "zip": "33190-1099",
+    "county": "Miami-Dade",
+    "phone": "305-252-4824",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.358063,
+      25.565771
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0044",
+    "name": "Corporate Office - Admin Only",
+    "organization": "BANYAN COMMUNITY HEALTH CENTER INC",
+    "address": "1200 NW 78th Ave, Suite 100",
+    "city": "Doral",
+    "state": "FL",
+    "zip": "33126-1816",
+    "county": "Miami-Dade",
+    "phone": "305-398-6100",
+    "website": null,
+    "coordinates": [
+      -80.323307,
+      25.78327
+    ],
+    "locationType": "Permanent",
+    "setting": "Unknown",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0045",
+    "name": "Early Childhood Development",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "8200 NW 33rd St, Suite 102",
+    "city": "Doral",
+    "state": "FL",
+    "zip": "33122-1942",
+    "county": "Miami-Dade",
+    "phone": "305-424-3043",
+    "website": null,
+    "coordinates": [
+      -80.330027,
+      25.803279
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0047",
+    "name": "MARTIN L. KING, JR.- ANNEX",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "820 SW 1st St",
+    "city": "Florida City",
+    "state": "FL",
+    "zip": "33034-4602",
+    "county": "Miami-Dade",
+    "phone": "305-248-4334",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.489803,
+      25.446747
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0049",
+    "name": "CITRUS HEALTH NETWORK, INC.",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "4175 W 20th Ave",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33012-5875",
+    "county": "Miami-Dade",
+    "phone": "305-825-0300",
+    "website": "https://www.citrushealth.com",
+    "coordinates": [
+      -80.321643,
+      25.859762
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0050",
+    "name": "CITRUS MED",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "4125 W 20th Ave",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33012-5874",
+    "county": "Miami-Dade",
+    "phone": "305-424-3120",
+    "website": "https://www.citrushealth.com",
+    "coordinates": [
+      -80.321865,
+      25.859212
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0051",
+    "name": "Citrus Maternal and Child Health Center",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "551 W 51st Pl",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33012-3601",
+    "county": "Miami-Dade",
+    "phone": "305-424-3170",
+    "website": "https://www.citrushealth.com",
+    "coordinates": [
+      -80.293816,
+      25.869227
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0052",
+    "name": "Clubhouse",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "6500 W 4th Ave, Suite 29",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33012-6606",
+    "county": "Miami-Dade",
+    "phone": "305-572-7140",
+    "website": null,
+    "coordinates": [
+      -80.291865,
+      25.88145
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0055",
+    "name": "Hialeah Skills Center",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "60 E 3rd St, Apartment 101",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4917",
+    "county": "Miami-Dade",
+    "phone": "305-888-3398",
+    "website": null,
+    "coordinates": [
+      -80.28006,
+      25.824197
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0056",
+    "name": "Hialeah Skills II",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 103",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4923",
+    "county": "Miami-Dade",
+    "phone": "305-888-3398",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.824066
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0057",
+    "name": "Hialeah Skills Suite 105",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 105",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4923",
+    "county": "Miami-Dade",
+    "phone": "305-888-3398",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.824066
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0058",
+    "name": "Hialeah Skills Suite 107",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 107",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4923",
+    "county": "Miami-Dade",
+    "phone": "305-888-3398",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.824066
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0060",
+    "name": "JTCHS - Flamingo Medical Center",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "901 E 10th Ave, #39",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-3762",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.260418,
+      25.832694
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0062",
+    "name": "Kiva",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "1339 SE 9th Ave",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-5907",
+    "county": "Miami-Dade",
+    "phone": "305-884-1382",
+    "website": "https://www.citrushealth.com",
+    "coordinates": [
+      -80.26234,
+      25.811304
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0065",
+    "name": "Maternal and Child Health Center Extension",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "514 W 51st Pl",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33012-3681",
+    "county": "Miami-Dade",
+    "phone": "305-817-6550",
+    "website": null,
+    "coordinates": [
+      -80.294269,
+      25.868663
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0066",
+    "name": "Maternal and Child Health Center Parking Lot",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "545 W 51st Pl",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33012-3619",
+    "county": "Miami-Dade",
+    "phone": "305-825-0300",
+    "website": "https://www.citrushealth.org",
+    "coordinates": [
+      -80.293225,
+      25.869045
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0068",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 120",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4972",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0069",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 201",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4972",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0070",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4963",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.824066
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0071",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 124",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4972",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0072",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "150 E 1st Ave, Apartment 115",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4925",
+    "county": "Miami-Dade",
+    "phone": "305-424-3105",
+    "website": null,
+    "coordinates": [
+      -80.279674,
+      25.823206
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0073",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "150 E 1st Ave, Apartment 109",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4925",
+    "county": "Miami-Dade",
+    "phone": "305-424-3105",
+    "website": null,
+    "coordinates": [
+      -80.279674,
+      25.823206
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0074",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, #117",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4913",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279596,
+      25.824059
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0075",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, #114",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4913",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279596,
+      25.824059
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0076",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 115",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4923",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0077",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "150 E 1st Ave, Apartment 111",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4925",
+    "county": "Miami-Dade",
+    "phone": "305-424-3105",
+    "website": null,
+    "coordinates": [
+      -80.279674,
+      25.823206
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0078",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "150 E 1st Ave, Apartment 113",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4925",
+    "county": "Miami-Dade",
+    "phone": "305-424-3105",
+    "website": null,
+    "coordinates": [
+      -80.279674,
+      25.823206
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0079",
+    "name": "Palm Center Adult Support Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 118",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4972",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0080",
+    "name": "Palm Center Clinic",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "60 E 3rd St, Apartment 102",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4917",
+    "county": "Miami-Dade",
+    "phone": "305-888-3398",
+    "website": "https://unkn",
+    "coordinates": [
+      -80.28006,
+      25.824197
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0081",
+    "name": "Palm Center Clinic Services",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 116",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4923",
+    "county": "Miami-Dade",
+    "phone": "786-441-5353",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0082",
+    "name": "Palm Center Homeless Support Services Site",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "150 E 1st Ave, Apartment 103",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4925",
+    "county": "Miami-Dade",
+    "phone": "305-572-7123",
+    "website": null,
+    "coordinates": [
+      -80.279674,
+      25.823206
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0083",
+    "name": "Palm Center Outpatient",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "240 E 1st Ave, Suite 115",
+    "city": "Hialeah",
+    "state": "FL",
+    "zip": "33010-4923",
+    "county": "Miami-Dade",
+    "phone": "305-888-1982",
+    "website": null,
+    "coordinates": [
+      -80.279594,
+      25.82407
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0091",
+    "name": "EVERGLADES HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "19300 SW 376th St",
+    "city": "Homestead",
+    "state": "FL",
+    "zip": "33034-6300",
+    "county": "Miami-Dade",
+    "phone": "305-246-4607",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.503662,
+      25.417858
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0098",
+    "name": "MARTIN LUTHER KING JR. CLINICA CAMPESINA",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "810 W Mowry Dr",
+    "city": "Homestead",
+    "state": "FL",
+    "zip": "33030-5746",
+    "county": "Miami-Dade",
+    "phone": "305-248-4334",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.487855,
+      25.469285
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0099",
+    "name": "NARANJA HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "13805 SW 264th St",
+    "city": "Homestead",
+    "state": "FL",
+    "zip": "33032-7602",
+    "county": "Miami-Dade",
+    "phone": "305-258-6813",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.415276,
+      25.522205
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0101",
+    "name": "SOUTH DADE HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "13600 SW 312th St",
+    "city": "Homestead",
+    "state": "FL",
+    "zip": "33033-5500",
+    "county": "Miami-Dade",
+    "phone": "305-242-6069",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.409893,
+      25.477398
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0107",
+    "name": "BMC Carrie Meek Center",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "7801 NE 2nd Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33138-4804",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611",
+    "website": null,
+    "coordinates": [
+      -80.192495,
+      25.846661
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0108",
+    "name": "BMC Emilio Lopez Pavilion (Main Site)",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "3601 Federal Hwy",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33137-3795",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611 x608",
+    "website": null,
+    "coordinates": [
+      -80.190621,
+      25.810914
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0109",
+    "name": "BMC Flagami Center",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "5040 NW 7th St, Ste 100",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33126-3425",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611",
+    "website": null,
+    "coordinates": [
+      -80.276823,
+      25.77847
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0111",
+    "name": "BMC Sweetwater/West Dade Center",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "10528 SW 8th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33174-2602",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611",
+    "website": null,
+    "coordinates": [
+      -80.366611,
+      25.760819
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0112",
+    "name": "Borinquen Medical Centers at Wynwood",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "2691 NE 2nd Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33137-4414",
+    "county": "Miami-Dade",
+    "phone": "305-567-6611",
+    "website": "https://www.borinquenhealth.org/index.php/appointments/locations/",
+    "coordinates": [
+      -80.190752,
+      25.802666
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0113",
+    "name": "Borinquen's Behavioral Health and Medical Case Management",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "3000 Biscayne Blvd",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33137-4130",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611",
+    "website": null,
+    "coordinates": [
+      -80.18976,
+      25.805676
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0121",
+    "name": "CHS Children's Behavioral Clinic",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "17501 SW 117th Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33177-2272",
+    "county": "Miami-Dade",
+    "phone": "305-825-0300",
+    "website": null,
+    "coordinates": [
+      -80.380602,
+      25.605682
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0122",
+    "name": "COCONUT GROVE HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "3831 Grand Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33133-4862",
+    "county": "Miami-Dade",
+    "phone": "305-252-4853",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.255406,
+      25.727772
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0124",
+    "name": "Camillus Health Concern, Greer Building",
+    "organization": "CAMILLUS HEALTH CONCERN INC",
+    "address": "336 NW 5th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33128-1616",
+    "county": "Miami-Dade",
+    "phone": "305-577-4840",
+    "website": "https://www.camillushealth.org",
+    "coordinates": [
+      -80.200486,
+      25.77854
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0125",
+    "name": "Camillus House FPL Welcome Center",
+    "organization": "CAMILLUS HEALTH CONCERN INC",
+    "address": "1545 NW 7th Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33136-1403",
+    "county": "Miami-Dade",
+    "phone": "305-577-4840",
+    "website": "https://www.camillushealth.org",
+    "coordinates": [
+      -80.206839,
+      25.79048
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0126",
+    "name": "Care Resource Community Health Center at Miami",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "address": "3510 Biscayne Blvd",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33137-3859",
+    "county": "Miami-Dade",
+    "phone": "305-576-1234",
+    "website": "https://www.careresource.org",
+    "coordinates": [
+      -80.189974,
+      25.809643
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0127",
+    "name": "Care Resource Community Health Centers in Little Havana",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "address": "1800 SW 1st St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33135-1960",
+    "county": "Miami-Dade",
+    "phone": "305-576-1234",
+    "website": "https://www.careresource.org",
+    "coordinates": [
+      -80.225178,
+      25.771532
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0133",
+    "name": "EMPOWER U CHC AT NORTHSIDE SHOPPING PLAZA",
+    "organization": "EMPOWER \"U\", INC.",
+    "address": "7900 NW 27th Ave, Suite E12",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33147-4934",
+    "county": "Miami-Dade",
+    "phone": "786-318-2337",
+    "website": "http://www.euchc.org",
+    "coordinates": [
+      -80.24398,
+      25.846423
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0135",
+    "name": "Embrace clinic",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "1645 SW 107th Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33165-7344",
+    "county": "Miami-Dade",
+    "phone": "305-825-0300",
+    "website": null,
+    "coordinates": [
+      -80.366448,
+      25.752888
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0139",
+    "name": "FRC Children's Behavioral Clinic",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "1393 SW 1st St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33135-2301",
+    "county": "Miami-Dade",
+    "phone": "305-825-0300",
+    "website": null,
+    "coordinates": [
+      -80.217759,
+      25.772453
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0140",
+    "name": "Hammocks Health Center",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "14591 SW 120th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33186-8638",
+    "county": "Miami-Dade",
+    "phone": "305-252-4853",
+    "website": null,
+    "coordinates": [
+      -80.429544,
+      25.656855
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0141",
+    "name": "Health Resource Center at Salvation Army",
+    "organization": "CAMILLUS HEALTH CONCERN INC",
+    "address": "1907 NW 38th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33142-5446",
+    "county": "Miami-Dade",
+    "phone": "305-577-4840",
+    "website": "https://camillushealth.org",
+    "coordinates": [
+      -80.229979,
+      25.811465
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0145",
+    "name": "JTCHS - Corporate Office Complex",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "5607 NW 27th Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33142-2826",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.240472,
+      25.8263
+    ],
+    "locationType": "Permanent",
+    "setting": "Unknown",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0146",
+    "name": "JTCHS - Dental Health Center",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "5607 NW 27th Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33142-2826",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.240472,
+      25.8263
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0147",
+    "name": "JTCHS - Fatima Zafar MD Health & Wellness Center",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "5361 NW 22nd Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33142-8035",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.232278,
+      25.82359
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0148",
+    "name": "JTCHS - Frederica Wilson/Juanita Mann Health Center",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "2520 NW 75th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33147-6025",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.240061,
+      25.842556
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0149",
+    "name": "JTCHS - Jefferson Reaves House Women's Residential SA Treatment Center (24 Hour)",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "2985 NW 54th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33142-2827",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.244464,
+      25.82412
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0150",
+    "name": "JTCHS - Liberty Square",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "1415 NW 63rd St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33147-8062",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": null,
+    "coordinates": [
+      -80.222062,
+      25.833364
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0151",
+    "name": "JTCHS Health Center at North Shore",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "1190 NW 95th St, Suite 100",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33150-2064",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.214747,
+      25.860235
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0156",
+    "name": "Lotus House Shelter",
+    "organization": "CITRUS HEALTH NETWORK INC",
+    "address": "217 NW 15th St",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33136-1832",
+    "county": "Miami-Dade",
+    "phone": "305-825-0300",
+    "website": null,
+    "coordinates": [
+      -80.19921,
+      25.789787
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0157",
+    "name": "MBCHC North 3 Suite 401, 403, & 405",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 405",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3139",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165703,
+      25.883135
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0158",
+    "name": "MBCHC North 4, Suite 302 & 304",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 302",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": null,
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0159",
+    "name": "MBCHC North Suite 100",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3155",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://MBCHC.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0160",
+    "name": "MBCHC North Suite 102",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 102",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "Unknown",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0161",
+    "name": "MBCHC North Suite 103 & 104",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3155",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0162",
+    "name": "MBCHC North Suite 201",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 201",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "308-538-8835",
+    "website": null,
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0163",
+    "name": "MBCHC North Suite 207",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Ste 207",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://MiamiBeachHealth.org",
+    "coordinates": [
+      -80.1657,
+      25.883148
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0164",
+    "name": "MBCHC North Suite 208",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 208",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0165",
+    "name": "MBCHC North Suite 210",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 210",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0166",
+    "name": "MBCHC North Suite 301, 305, & 307",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 301",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3138",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0167",
+    "name": "MBCHC North Suite 308",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 308",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3139",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://www.miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0168",
+    "name": "MBCHC North Suite 309",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 309",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3139",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": null,
+    "coordinates": [
+      -80.165702,
+      25.883145
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0169",
+    "name": "MBCHC North Suite 400",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 400",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3139",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "Unknown",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0170",
+    "name": "MBCHC North Suite 404",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 404",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3139",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0177",
+    "name": "Miami Beach Community Health Center North STE 408",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "11645 Biscayne Blvd, Suite 408",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33181-3148",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": null,
+    "coordinates": [
+      -80.165221,
+      25.882919
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0191",
+    "name": "SOUTH MIAMI HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "6350 Sunset Dr",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33143-4836",
+    "county": "Miami-Dade",
+    "phone": "305-252-4853",
+    "website": null,
+    "coordinates": [
+      -80.297487,
+      25.703694
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0195",
+    "name": "WEST PERRINE HEALTH CENTER",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "18225 Homestead Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33157-5564",
+    "county": "Miami-Dade",
+    "phone": "305-234-7676",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.355998,
+      25.599975
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0196",
+    "name": "West Kendall Health Center",
+    "organization": "COMMUNITY HEALTH OF SOUTH FLORIDA, INC.",
+    "address": "13540 SW 135th Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33186-6184",
+    "county": "Miami-Dade",
+    "phone": "305-252-4853",
+    "website": "https://www.chisouthfl.org",
+    "coordinates": [
+      -80.413397,
+      25.641795
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0197",
+    "name": "Beverly Press 1245",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "1245 71st St",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33141-3647",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://www.miamibeachhealth.org",
+    "coordinates": [
+      -80.132395,
+      25.854612
+    ],
+    "locationType": "Permanent",
+    "setting": "Unknown",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0198",
+    "name": "Beverly Press Health Center",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "1221 71st St",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33141-3647",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.132016,
+      25.854686
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0200",
+    "name": "Care Resource Community Health Center at 1680 Michigan Avenue, #912, Miami Beach, FL 33139",
+    "organization": "CARE RESOURCE COMMUNITY HEALTH CENTERS INC",
+    "address": "1680 Michigan Ave, Ste 912",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33139-2550",
+    "county": "Miami-Dade",
+    "phone": "305-534-0503",
+    "website": null,
+    "coordinates": [
+      -80.138861,
+      25.791682
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0201",
+    "name": "MIAMI BEACH COMMUNITY HEALTH CENTER, INC.",
+    "organization": "MIAMI BEACH COMMUNITY HEALTH CENTER INC",
+    "address": "710 Alton Rd",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33139-5564",
+    "county": "Miami-Dade",
+    "phone": "305-538-8835",
+    "website": "https://miamibeachhealth.org",
+    "coordinates": [
+      -80.141217,
+      25.777224
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0209",
+    "name": "Center for Family and Child Enrichment",
+    "organization": "CENTER FOR FAMILY & CHILD ENRICHMENT INC",
+    "address": "1825 NW 167th St",
+    "city": "Miami Gardens",
+    "state": "FL",
+    "zip": "33056-4838",
+    "county": "Miami-Dade",
+    "phone": "305-474-1803",
+    "website": "https://www.cfceinc.org",
+    "coordinates": [
+      -80.231088,
+      25.927643
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0213",
+    "name": "JTCHS Barbara J. Jordan Community Health and Wellness Center",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "20612 NW 27th Ave",
+    "city": "Miami Gardens",
+    "state": "FL",
+    "zip": "33056-1469",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.247872,
+      25.962914
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0224",
+    "name": "JTCHS - Miami Shores Medical Practice",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "9536 NE 2nd Ave",
+    "city": "Miami Shores",
+    "state": "FL",
+    "zip": "33138-2751",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.193693,
+      25.86317
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0227",
+    "name": "Borinquen North Miami Geriatric Center",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "12603 NE 7th Ave",
+    "city": "North Miami",
+    "state": "FL",
+    "zip": "33161-4813",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611",
+    "website": "https://www.borinquenhealth.org",
+    "coordinates": [
+      -80.184426,
+      25.891362
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0228",
+    "name": "Borinquen North Miami Specialty Care Center",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "681 NE 125th St",
+    "city": "North Miami",
+    "state": "FL",
+    "zip": "33161-5503",
+    "county": "Miami-Dade",
+    "phone": "305-576-6611",
+    "website": "https://www.borinquenhealth.org",
+    "coordinates": [
+      -80.184817,
+      25.890637
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0229",
+    "name": "North Miami Dental Clinic",
+    "organization": "BORINQUEN HEALTH CARE CENTER INC",
+    "address": "12601 NE 7th Ave",
+    "city": "North Miami",
+    "state": "FL",
+    "zip": "33161-4882",
+    "county": "Miami-Dade",
+    "phone": "305-567-6611 x7200",
+    "website": "https://www.borinquenhealth.org/index.php/appointments/locations/",
+    "coordinates": [
+      -80.184332,
+      25.891661
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  },
+  {
+    "id": "hrsa-site-0233",
+    "name": "JTCHS - Opa Locka Youth and Children's Wellness Center",
+    "organization": "JESSIE TRICE COMMUNITY HEALTH SYSTEM INC",
+    "address": "490 Opa Locka Blvd, Ste 100",
+    "city": "Opa Locka",
+    "state": "FL",
+    "zip": "33054-3563",
+    "county": "Miami-Dade",
+    "phone": "305-637-6400",
+    "website": "https://www.jtchs.org",
+    "coordinates": [
+      -80.251077,
+      25.902174
+    ],
+    "locationType": "Permanent",
+    "setting": "All Other Clinic Types",
+    "services": [],
+    "insurance": [],
+    "serviceVerification": "not_verified",
+    "insuranceVerification": "not_verified",
+    "source": {
+      "name": "HRSA Health Center Service Delivery and Look-Alike Sites",
+      "url": "https://data.hrsa.gov/data/download",
+      "recordDate": "11/06/2026"
+    }
+  }
+]
