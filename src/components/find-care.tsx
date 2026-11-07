@@ -16,11 +16,21 @@ import {
   X,
 } from 'lucide-react';
 import type { Provider, Service } from '@/lib/types';
+import { insuranceCarriers, verifiedPlans, verifiedParticipation } from '@/lib/provider-evidence';
 import { services } from '@/lib/types';
-import { providers, searchCareProviders, type Filters } from '@/lib/providers';
+import { providers, searchCareProviders, insuranceQueryFor, type Filters } from '@/lib/providers';
 import directorySources from '@/data/directory-sources.json';
 import CareMap from './care-map';
 import ProviderCard from './provider-card';
+const carrierOptions = [
+  ...new Set([
+    ...insuranceCarriers,
+    ...providers.flatMap((p) => [
+      ...verifiedPlans(p),
+      ...verifiedParticipation(p).map((entry) => entry.carrier),
+    ]),
+  ]),
+];
 const empty: Filters = { location: '', service: '', insurance: '', affordability: '' };
 export default function FindCare({
   selected,
@@ -42,6 +52,7 @@ export default function FindCare({
   const [draft, setDraft] = useState<Filters>(empty);
   const [applied, setApplied] = useState<Filters>(empty);
   const [more, setMore] = useState(false);
+  const [view, setView] = useState<'combined' | 'map' | 'list'>('combined');
   const [mobileMap, setMobileMap] = useState(false);
   const [savedOnly, setSavedOnly] = useState(false);
   const [appliedSaved, setAppliedSaved] = useState(false);
@@ -62,7 +73,11 @@ export default function FindCare({
     savedOnly !== appliedSaved ||
     radius !== appliedRadius;
   function change(key: keyof Filters, value: string) {
-    setDraft((d) => ({ ...d, [key]: value }));
+    setDraft((d) => ({
+      ...d,
+      [key]: value,
+      ...(key === 'insurance' && value ? { payment: '' } : {}),
+    }));
   }
   function apply(overrides: Partial<Filters> = {}) {
     const next = { ...draft, ...overrides };
@@ -95,7 +110,11 @@ export default function FindCare({
     applied.service ||
     applied.insurance ||
     applied.affordability ||
-    appliedSaved,
+    appliedSaved ||
+    applied.carrier ||
+    applied.county ||
+    applied.category ||
+    applied.payment,
   );
   const firstUnknown = items.findIndex((hit) => hit.insurance === 'unknown');
   return (
@@ -134,7 +153,9 @@ export default function FindCare({
                 <option value="">All care / general directory</option>
                 <optgroup label="Cervical cancer screening">
                   {services.slice(0, 3).map((s) => (
-                    <option key={s}>{s}</option>
+                    <option key={s} value={s}>
+                      {s === 'Pap test' ? 'Pap smear / Pap test' : s}
+                    </option>
                   ))}
                 </optgroup>
                 <optgroup label="Preventive and gynecology care">
@@ -165,6 +186,55 @@ export default function FindCare({
             <span>Find Care</span>
           </button>
         </form>
+        <div className="manual-filter-bar">
+          <label>
+            County
+            <select
+              aria-label="County"
+              value={draft.county || ''}
+              onChange={(e) => change('county', e.target.value)}
+            >
+              <option value="">All South Florida</option>
+              <option>Broward</option>
+              <option>Miami-Dade</option>
+            </select>
+          </label>
+          <label>
+            Insurance carrier
+            <select
+              aria-label="Insurance carrier"
+              value={draft.payment ? 'self-pay' : draft.carrier || ''}
+              onChange={(e) =>
+                setDraft((d) => ({
+                  ...d,
+                  carrier: e.target.value === 'self-pay' ? '' : e.target.value,
+                  insurance: '',
+                  payment: e.target.value === 'self-pay' ? 'self-pay' : '',
+                }))
+              }
+            >
+              <option value="">Any / enter exact plan</option>
+              {carrierOptions.map((carrier) => (
+                <option key={carrier}>{carrier}</option>
+              ))}
+              <option value="self-pay">Uninsured / Self-Pay</option>
+            </select>
+          </label>
+          <label>
+            Search radius
+            <select
+              aria-label="Search radius"
+              value={radius}
+              onChange={(e) => setRadius(Number(e.target.value))}
+            >
+              {[10, 25, 50].map((n) => (
+                <option key={n} value={n}>
+                  Up to {n} miles
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
         <p id="insurance-help" className="insurance-help">
           Insurance is optional. Enter a company and plan name, not your member ID or policy number.
           Unknown acceptance stays labeled unknown; confirm exact coverage with the clinic.
@@ -226,6 +296,30 @@ export default function FindCare({
               />
             </label>
             <label>
+              Clinic category
+              <select
+                aria-label="Clinic category"
+                value={draft.category || ''}
+                onChange={(e) => change('category', e.target.value)}
+              >
+                <option value="">All supported categories</option>
+                {[
+                  'Cervical Cancer Screening / Pap Smears',
+                  'HPV Testing',
+                  'Gynecology / OB-GYN',
+                  'Family Planning / Reproductive Health',
+                  'STI / Sexual Health Testing',
+                  'Breast Health / Mammography',
+                  'Primary Care / Women’s Preventive Health',
+                  'Community Health Centers',
+                  'Low-Cost / Sliding-Scale Clinics',
+                  'Women’s Health Specialty Care',
+                ].map((category) => (
+                  <option key={category}>{category}</option>
+                ))}
+              </select>
+            </label>
+            <label>
               Affordability
               <select
                 aria-label="Affordability"
@@ -265,17 +359,31 @@ export default function FindCare({
           </div>
         )}
       </section>
+      <div className="discovery-view-controls" role="group" aria-label="Directory view">
+        {(['combined', 'map', 'list'] as const).map((mode) => (
+          <button
+            key={mode}
+            className="filter-chip"
+            aria-pressed={view === mode}
+            onClick={() => setView(mode)}
+          >
+            {mode === 'combined' ? 'Map + list' : mode === 'map' ? 'Map view' : 'List view'}
+          </button>
+        ))}
+      </div>
       <div className="mobile-discovery-toolbar">
         <span>{matches.length} clinics shown</span>
-        <button className="mobile-view-toggle" onClick={() => setMobileMap((v) => !v)}>
-          {mobileMap ? <List size={16} /> : <Map size={16} />}Show {mobileMap ? 'list' : 'map'}
-        </button>
+        {view === 'combined' && (
+          <button className="mobile-view-toggle" onClick={() => setMobileMap((v) => !v)}>
+            {mobileMap ? <List size={16} /> : <Map size={16} />}Show {mobileMap ? 'list' : 'map'}
+          </button>
+        )}
       </div>
-      <div className="discovery-layout">
+      <div className={`discovery-layout view-${view}`}>
         <section
           ref={resultRef}
           id="care-results"
-          className={`results-panel ${mobileMap ? 'mobile-hidden' : ''}`}
+          className={`results-panel ${mobileMap && view === 'combined' ? 'mobile-hidden' : ''} ${view === 'map' ? 'view-hidden' : ''}`}
           aria-label="Care results"
         >
           <div className="results-heading">
@@ -316,9 +424,15 @@ export default function FindCare({
                 plan are excluded.
               </p>
             )}
+            {applied.payment && items.length > 0 && (
+              <p className="search-explanation">
+                Self-pay preference: documented options are prioritized after proximity. Unknown
+                payment and sliding-scale eligibility must be checked with the clinic.
+              </p>
+            )}
             {items.map((hit, index) => (
               <div key={hit.provider.id}>
-                {applied.insurance && index === firstUnknown && (
+                {insuranceQueryFor(applied) && index === firstUnknown && (
                   <h3 className="insurance-section-heading">
                     Insurance acceptance unknown · contact clinic
                   </h3>
@@ -334,7 +448,7 @@ export default function FindCare({
                     onSelect(hit.provider.id);
                     onDetails(hit.provider.id);
                   }}
-                  insuranceQuery={applied.insurance}
+                  insuranceQuery={insuranceQueryFor(applied)}
                   nearby={hit.nearby}
                   distanceMiles={hit.distanceMiles}
                 />
@@ -346,7 +460,11 @@ export default function FindCare({
                 <h3>
                   {applied.service
                     ? 'No service-verified matches yet.'
-                    : 'No clinics match these filters.'}
+                    : /^\d/.test(applied.location) &&
+                        !search.locationMatchCount &&
+                        !search.anchorFound
+                      ? 'ZIP code not found in this directory.'
+                      : 'No clinics match these filters.'}
                 </h3>
                 <p>
                   {applied.service
@@ -361,12 +479,18 @@ export default function FindCare({
                   </button>
                 )}
                 {applied.location && (
-                  <button className="text-button" onClick={() => apply({ location: '' })}>
+                  <button
+                    className="text-button"
+                    onClick={() => apply({ location: '', county: '' })}
+                  >
                     Expand to Broward & Miami-Dade
                   </button>
                 )}
-                {applied.insurance && (
-                  <button className="text-button" onClick={() => apply({ insurance: '' })}>
+                {insuranceQueryFor(applied) && (
+                  <button
+                    className="text-button"
+                    onClick={() => apply({ insurance: '', carrier: '' })}
+                  >
                     Remove insurance preference
                   </button>
                 )}
@@ -400,7 +524,10 @@ export default function FindCare({
             </p>
           </div>
         </section>
-        <section className={`map-panel ${!mobileMap ? 'mobile-hidden' : ''}`} aria-label="Care map">
+        <section
+          className={`map-panel ${!mobileMap && view === 'combined' ? 'mobile-hidden' : ''} ${view === 'list' ? 'view-hidden' : ''}`}
+          aria-label="Care map"
+        >
           <CareMap
             providers={matches}
             selected={selected}

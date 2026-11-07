@@ -47,6 +47,25 @@ export function isPublishedProvider(value: unknown): value is Provider {
     )
   )
     return false;
+  if (p.selfPay !== undefined && typeof p.selfPay !== 'boolean') return false;
+  if (p.schedulingPhone !== undefined && typeof p.schedulingPhone !== 'string') return false;
+  if (p.insuranceParticipation !== undefined) {
+    if (
+      !Array.isArray(p.insuranceParticipation) ||
+      !p.insuranceParticipation.every(
+        (e: Record<string, unknown>) =>
+          e &&
+          typeof e.carrier === 'string' &&
+          !!e.carrier.trim() &&
+          (e.plan === undefined || typeof e.plan === 'string') &&
+          ['organization', 'location', 'provider-network'].includes(String(e.scope)) &&
+          typeof e.sourceUrl === 'string' &&
+          typeof e.checkedAt === 'string' &&
+          /^\d{4}-\d{2}-\d{2}$/.test(e.checkedAt),
+      )
+    )
+      return false;
+  }
   if (p.insuranceDeclined !== undefined && !strings(p.insuranceDeclined)) return false;
   if (p.website !== null) {
     if (typeof p.website !== 'string') return false;
@@ -73,6 +92,18 @@ export function isPublishedProvider(value: unknown): value is Provider {
     } catch {
       return false;
     }
+    if (
+      source.origin === 'google-places' &&
+      source.fields.some(
+        (field: string) =>
+          allowedServices.has(field) ||
+          ['insurance', 'affordability', 'selfPay', 'bookingUrl', 'schedulingPhone'].includes(
+            field,
+          ) ||
+          /^(insurance:|insuranceDeclined:|participation:)/.test(field),
+      )
+    )
+      return false;
     source.fields.forEach((f: string) => fields.add(f));
   }
   if (
@@ -83,7 +114,29 @@ export function isPublishedProvider(value: unknown): value is Provider {
   )
     return false;
   if (p.affordability === 'sliding-scale' && !fields.has('affordability')) return false;
-  if (p.bookingUrl && !fields.has('bookingUrl')) return false;
+  if (p.selfPay !== undefined && !fields.has('selfPay')) return false;
+  if (p.schedulingPhone !== undefined && !fields.has('schedulingPhone')) return false;
+  if (
+    p.insuranceParticipation !== undefined &&
+    !(p.insuranceParticipation as Provider['insuranceParticipation'])!.every((entry) =>
+      (p.sources as Provider['sources']).some(
+        (source) =>
+          source.url === entry.sourceUrl &&
+          source.fields.includes(
+            `participation:${entry.carrier}${entry.plan ? ':' + entry.plan : ''}`,
+          ),
+      ),
+    )
+  )
+    return false;
+  if (p.bookingUrl) {
+    if (typeof p.bookingUrl !== 'string' || !fields.has('bookingUrl')) return false;
+    try {
+      if (new URL(p.bookingUrl).protocol !== 'https:') return false;
+    } catch {
+      return false;
+    }
+  }
   return true;
 }
 export function parseProviderDataset(value: unknown): Provider[] {
@@ -91,6 +144,10 @@ export function parseProviderDataset(value: unknown): Provider[] {
     throw new Error(
       'Provider dataset failed its publication contract. Review source evidence and coordinates.',
     );
+  const locationKeys = value.map((p) =>
+    [p.name, p.address, p.city].map((s) => s.toLowerCase().replace(/[^a-z0-9]/g, '')).join('|'),
+  );
+  if (new Set(locationKeys).size !== value.length) throw new Error('Duplicate clinic locations');
   if (new Set(value.map((p) => p.id)).size !== value.length)
     throw new Error('Duplicate provider IDs');
   return value;

@@ -211,7 +211,9 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
         <p>
           An initiative of <strong>Flowers for Women</strong>
         </p>
-        <span className="footer-region">Broward & Miami-Dade, Florida</span>
+        <span className="footer-region">
+          Broward & Miami-Dade, Florida · <a href="/partners">Clinic partner preview</a>
+        </span>
       </footer>
       <nav className="mobile-nav" aria-label="Mobile navigation">
         {tabs.map((t) => (

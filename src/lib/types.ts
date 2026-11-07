@@ -8,6 +8,11 @@ export type Service =
   | 'Birth control / family planning'
   | 'PCOS care'
   | 'Fibroid care'
+  | 'Gynecology / OB-GYN'
+  | 'STI / sexual health testing'
+  | 'Breast health / mammography'
+  | 'Primary care / women’s preventive health'
+  | 'Women’s health specialty care'
   | 'Pap / HPV screening'
   | 'Annual gynecology'
   | 'PCOS'
@@ -29,6 +34,15 @@ export interface Provider {
   zip?: string;
   bookingUrl?: string;
   insuranceDeclined?: string[];
+  insuranceParticipation?: {
+    carrier: string;
+    plan?: string;
+    scope: 'organization' | 'location' | 'provider-network';
+    sourceUrl: string;
+    checkedAt: string;
+  }[];
+  selfPay?: boolean;
+  schedulingPhone?: string;
   hrsa?: {
     sourceId: string;
     sourceRecordDate: string;
@@ -69,9 +83,14 @@ export const services: Service[] = [
   'Birth control / family planning',
   'PCOS care',
   'Fibroid care',
+  'Gynecology / OB-GYN',
+  'STI / sexual health testing',
+  'Breast health / mammography',
+  'Primary care / women’s preventive health',
+  'Women’s health specialty care',
 ];
 export const kinds: Record<ProviderKind, { label: string; color: string }> = {
-  community: { label: 'Community & low-cost', color: '#E77BAA' },
+  community: { label: 'Community health centers', color: '#E77BAA' },
   private: { label: 'Private gynecology', color: '#AA86DB' },
   hospital: { label: 'Hospitals & health systems', color: '#75B5E9' },
   preventive: { label: 'Vaccination & prevention', color: '#2AAE9B' },

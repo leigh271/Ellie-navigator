@@ -167,3 +167,85 @@ test('publication rejects invented services, malformed coordinates and unsafe we
   assert.equal(verifiedBookingURL({ ...p, bookingUrl: 'https://example.org/book' }), null);
   assert.equal(phoneURL('305-576-6611 x608'), 'tel:+13055766611;ext=608');
 });
+
+test('county, categories and self-pay preferences never invent service or affordability matches', () => {
+  const county = searchCareProviders(providers, { ...filters, county: 'Miami-Dade' });
+  assert.equal(county.items.length, 3);
+  assert.ok(county.items.every((hit) => hit.provider.county === 'Miami-Dade'));
+  assert.equal(
+    searchCareProviders(providers, { ...filters, category: 'Low-Cost / Sliding-Scale Clinics' })
+      .items.length,
+    0,
+  );
+  assert.equal(
+    searchCareProviders(providers, { ...filters, category: 'Community Health Centers' }).items
+      .length,
+    9,
+  );
+  assert.equal(
+    searchCareProviders(providers, { ...filters, payment: 'self-pay' }).items.length,
+    14,
+  );
+  assert.equal(
+    searchCareProviders(providers, {
+      ...filters,
+      county: 'Broward',
+      service: 'Pap test',
+      payment: 'self-pay',
+    }).items.length,
+    0,
+  );
+  assert.equal(searchCareProviders(providers, { ...filters, location: '00000' }).items.length, 0);
+});
+
+test('exact networks and organization-level participation are never promoted to guaranteed plan matches', () => {
+  const p = fixture('networks', [-80.14, 26.12]);
+  p.insurance = ['Florida Blue PPO'];
+  p.sources[0].fields.push('insurance:Florida Blue PPO');
+  assert.equal(insuranceStatus(p, 'Florida Blue'), 'unknown');
+  assert.equal(insuranceStatus(p, 'Blue Cross Blue Shield'), 'unknown');
+  assert.equal(insuranceStatus(p, 'Florida Blue PPO'), 'confirmed');
+  p.insuranceParticipation = [
+    {
+      carrier: 'Florida Blue',
+      scope: 'organization',
+      sourceUrl: p.sources[0].url,
+      checkedAt: '2026-11-07',
+    },
+  ];
+  p.sources[0].fields.push('participation:Florida Blue');
+  assert.equal(insuranceStatus(p, 'Florida Blue'), 'unknown');
+  p.insuranceParticipation[0].scope = 'location';
+  assert.equal(insuranceStatus(p, 'Florida Blue'), 'confirmed');
+  assert.equal(insuranceStatus(p, 'Florida Blue HMO'), 'unknown');
+  assert.throws(() => parseProviderDataset([{ ...p, selfPay: true }]));
+  assert.throws(() =>
+    parseProviderDataset([
+      {
+        ...p,
+        insuranceParticipation: [
+          { ...p.insuranceParticipation![0], sourceUrl: 'https://example.org/unsupported' },
+        ],
+      },
+    ]),
+  );
+});
+
+test('Google location evidence cannot establish medical or insurance claims; multi-category tags require clinical evidence', async () => {
+  const { providerCategories, verifiedServices } = await import('../src/lib/provider-evidence');
+  const p = fixture('google', [-80.14, 26.12]);
+  p.sources[0].origin = 'google-places';
+  assert.deepEqual(verifiedServices(p), []);
+  assert.throws(() => parseProviderDataset([p]));
+  p.sources[0].origin = 'official-provider';
+  p.services.push('STI / sexual health testing');
+  p.sources[0].fields.push('STI / sexual health testing');
+  const tags = providerCategories(p);
+  assert.ok(tags.includes('Community Health Centers'));
+  assert.ok(tags.includes('Cervical Cancer Screening / Pap Smears'));
+  assert.ok(tags.includes('STI / Sexual Health Testing'));
+  assert.ok(!tags.includes('Low-Cost / Sliding-Scale Clinics'));
+  assert.throws(() =>
+    parseProviderDataset([p, { ...p, id: 'another', name: 'Synthetic test GOOGLE!' }]),
+  );
+});

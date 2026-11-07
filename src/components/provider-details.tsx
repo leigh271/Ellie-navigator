@@ -1,11 +1,14 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { X, Heart, Phone, ArrowUpRight, MapPin, CalendarPlus } from 'lucide-react';
 import type { Provider } from '@/lib/types';
 import { kinds } from '@/lib/types';
 import { directionsURL, appleDirectionsURL } from '@/lib/map';
 import {
   hasEvidence,
+  providerCategories,
+  verifiedParticipation,
+  selfPayStatus,
   phoneURL,
   safeWebsite,
   sourceDate,
@@ -26,13 +29,17 @@ export default function ProviderDetails({
   onClose: () => void;
   onAppointment: () => void;
 }) {
+  const [demoSlot, setDemoSlot] = useState<string | null>(null);
+  const [demoRequested, setDemoRequested] = useState(false);
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     ref.current?.showModal();
   }, []);
   const offered = verifiedServices(p);
   const plans = verifiedPlans(p);
-  const phone = phoneURL(p.phone);
+  const phone = phoneURL(
+    p.schedulingPhone && hasEvidence(p, 'schedulingPhone') ? p.schedulingPhone : p.phone,
+  );
   const web = safeWebsite(p.website);
   const booking = verifiedBookingURL(p);
   function close() {
@@ -93,6 +100,18 @@ export default function ProviderDetails({
           </div>
         </div>
         <section>
+          <h3>Facility and supported categories</h3>
+          <p>
+            Primary marker: {kinds[p.kind].label}. Facility classification does not establish
+            clinical services or low-cost eligibility.
+          </p>
+          <div className="service-tags">
+            {providerCategories(p).map((category) => (
+              <span key={category}>{category}</span>
+            ))}
+          </div>
+        </section>
+        <section>
           <h3>Healthcare services</h3>
           {offered.length ? (
             <ul>
@@ -110,6 +129,34 @@ export default function ProviderDetails({
         </section>
         <section>
           <h3>Insurance and costs</h3>
+          {verifiedParticipation(p).map((entry, i) => (
+            <p key={i}>
+              {entry.carrier}
+              {entry.plan ? ` · ${entry.plan}` : ''} —{' '}
+              {entry.scope === 'organization'
+                ? 'Organization-level listing only; this clinic and network are unconfirmed'
+                : entry.scope === 'provider-network'
+                  ? 'Documented provider/network participation; confirm the treating clinician'
+                  : 'Location-level participation; confirm your exact network'}
+              . Reviewed {entry.checkedAt}.{' '}
+              <a href={entry.sourceUrl} target="_blank" rel="noreferrer">
+                Source ↗
+              </a>
+            </p>
+          ))}
+          <p>
+            Medicare / Medicaid:{' '}
+            {plans.filter((plan) => /^(medicare|medicaid)$/i.test(plan)).join(', ') ||
+              'Not verified; neither is inferred from an HRSA listing.'}
+          </p>
+          <p>
+            Self-pay:{' '}
+            {selfPayStatus(p) === 'confirmed'
+              ? 'Source documents availability; confirm fees.'
+              : selfPayStatus(p) === 'declined'
+                ? 'Source documents self-pay is unavailable.'
+                : 'Not verified; call to ask about payment options.'}
+          </p>
           <p>
             {plans.length
               ? `Source-listed plans: ${plans.join(', ')}. Confirm your exact plan and service coverage with the clinic.`
@@ -126,7 +173,10 @@ export default function ProviderDetails({
           {phone ? (
             <p>
               <a href={phone}>
-                <Phone size={14} /> {p.phone}
+                <Phone size={14} />{' '}
+                {p.schedulingPhone && hasEvidence(p, 'schedulingPhone')
+                  ? p.schedulingPhone
+                  : p.phone}
               </a>{' '}
               · number supplied by source
             </p>
@@ -147,6 +197,40 @@ export default function ProviderDetails({
             Contact the clinic for eligibility, services, opening hours and appointment
             availability. Ellie does not book or confirm a clinic visit.
           </p>
+        </section>
+        <section className="demo-panel" aria-label="Synthetic scheduling demo">
+          <h3>Try the Ellie scheduling demo</h3>
+          <p>
+            <strong>Simulation only.</strong> This clinic has no authorized Ellie scheduling
+            integration. These fictional slots do not reflect clinic availability. No information is
+            sent to a clinic and no appointment is booked.
+          </p>
+          {['Demo morning · 9:00 AM', 'Demo afternoon · 2:00 PM'].map((slot) => (
+            <button
+              key={slot}
+              className="filter-chip"
+              aria-pressed={demoSlot === slot}
+              onClick={() => {
+                setDemoSlot(slot);
+                setDemoRequested(false);
+              }}
+            >
+              {slot}
+            </button>
+          ))}
+          <button
+            className="secondary-button"
+            disabled={!demoSlot}
+            onClick={() => setDemoRequested(true)}
+          >
+            Simulate appointment request
+          </button>
+          {demoRequested && (
+            <p role="status">
+              Synthetic request recorded for this demo only: {demoSlot}. Nothing was sent or booked.
+              Use the clinic contact details for real scheduling.
+            </p>
+          )}
         </section>
         <section>
           <h3>Sources and dates</h3>
@@ -175,6 +259,12 @@ export default function ProviderDetails({
             Apple Maps directions ↗
           </a>
         </div>
+        <p className="small-muted">
+          Scheduling phone:{' '}
+          {p.schedulingPhone && hasEvidence(p, 'schedulingPhone')
+            ? p.schedulingPhone
+            : 'Dedicated scheduling line not verified. The source-listed general clinic phone can help you ask how to schedule.'}
+        </p>
         <div className="detail-actions">
           {booking ? (
             <a className="primary-button" href={booking} target="_blank" rel="noreferrer">

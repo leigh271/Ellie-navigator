@@ -126,3 +126,113 @@ test('honest cervical-screening fallback leads through real clinic details, cont
     true,
   );
 });
+
+for (const county of ['Broward', 'Miami-Dade']) {
+  test(`manual insured and self-pay journeys in ${county} preserve unverified boundaries`, async ({
+    page,
+    isMobile,
+  }) => {
+    await localBasemap(page);
+    await page.goto('/');
+    await page.getByLabel('County', { exact: true }).selectOption(county);
+    await page
+      .getByLabel('Location', { exact: true })
+      .fill(county === 'Broward' ? 'Fort Lauderdale' : 'Miami');
+    await page.getByLabel('Healthcare service').selectOption('Pap test');
+    await page.getByLabel('Insurance carrier', { exact: true }).selectOption('Florida Blue');
+    await searchButton(page).click();
+    await expect(
+      page.getByRole('heading', { name: 'No service-verified matches yet.' }),
+    ).toBeVisible();
+    await expect(page.locator('.heart-marker')).toHaveCount(0);
+    await page
+      .getByRole('button', { name: 'Browse general clinics · services unconfirmed', exact: true })
+      .click();
+    const cards = page.locator('.provider-card');
+    expect(await cards.count()).toBeGreaterThan(0);
+    await expect(page.locator('.insurance-status.confirmed')).toHaveCount(0);
+    await expect(cards.first()).toContainText('Insurance unknown');
+    const total = await cards.count();
+    await expect(page.locator('.heart-marker')).toHaveCount(total);
+    await cards
+      .first()
+      .getByRole('button', { name: /View details for/ })
+      .click();
+    const detail = page.getByRole('dialog');
+    await expect(detail).toContainText(`${county} County`);
+    await expect(detail).toContainText('No verified online booking link');
+    await expect(detail.getByRole('link', { name: 'Call Clinic', exact: true })).toHaveAttribute(
+      'href',
+      /^tel:/,
+    );
+    const demo = detail.getByRole('region', { name: 'Synthetic scheduling demo' });
+    await expect(demo).toContainText('Simulation only');
+    await demo.getByRole('button', { name: 'Demo morning · 9:00 AM' }).click();
+    await demo.getByRole('button', { name: 'Simulate appointment request' }).click();
+    await expect(demo.getByRole('status')).toContainText('Nothing was sent or booked');
+    await detail.getByRole('button', { name: 'Close provider details' }).click();
+    await page.getByLabel('Insurance carrier', { exact: true }).selectOption('self-pay');
+    await page.getByLabel('Healthcare service').selectOption('Pap test');
+    await searchButton(page).click();
+    await expect(
+      page.getByRole('heading', { name: 'No service-verified matches yet.' }),
+    ).toBeVisible();
+    await page
+      .getByRole('button', { name: 'Browse general clinics · services unconfirmed', exact: true })
+      .click();
+    await expect(cards.first()).toContainText('Self-pay: unknown');
+    await page.getByRole('button', { name: 'List view', exact: true }).click();
+    await expect(page.getByRole('region', { name: 'Care map', exact: true })).toBeHidden();
+    await page.getByRole('button', { name: 'Map view', exact: true }).click();
+    await expect(page.getByRole('region', { name: 'Care results', exact: true })).toBeHidden();
+    await expect(page.locator('.map-shell')).toBeVisible();
+    await page.getByRole('button', { name: 'Map + list', exact: true }).click();
+    if (isMobile)
+      await expect(page.getByRole('button', { name: 'Show map', exact: true })).toBeVisible();
+    await page.getByLabel('Location', { exact: true }).fill('00000');
+    await searchButton(page).click();
+    await expect(
+      page.getByRole('heading', { name: 'ZIP code not found in this directory.' }),
+    ).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+  });
+}
+
+test('clinic partner preview stages only synthetic requests and cannot publish directory updates', async ({
+  page,
+}) => {
+  await page.goto('/partners');
+  await expect(
+    page.getByRole('heading', { name: 'Clinic partner preview', exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole('note')).toContainText('no live accounts or authorization');
+  await page.getByLabel('Sample work email').fill('demo@example.org');
+  await page.getByLabel('Sample role').fill('Fictional clinic manager');
+  await page.getByLabel('I am using fictional details for this prototype.').check();
+  await page.getByRole('button', { name: 'Simulate listing claim' }).click();
+  await expect(page.getByRole('status')).toContainText('No account was created');
+  await page.getByRole('button', { name: 'Manage listing', exact: true }).click();
+  await page.getByLabel('Pap test', { exact: true }).check();
+  await page.getByRole('button', { name: 'Stage demo update' }).click();
+  await expect(page.getByRole('status')).toContainText('public listing has not changed');
+  await expect(page.getByLabel('Staged sample listing')).toContainText('Sample services: Pap test');
+  await page.getByRole('button', { name: 'Demo requests', exact: true }).click();
+  await page.getByRole('button', { name: 'Manage listing', exact: true }).click();
+  await expect(page.getByLabel('Pap test', { exact: true })).toBeChecked();
+  await page.getByRole('button', { name: 'Demo slots', exact: true }).click();
+  await page.getByLabel('Demo date').fill('2030-01-15');
+  await page.getByLabel('Demo time').fill('09:00');
+  await page.getByRole('button', { name: 'Add synthetic slot' }).click();
+  await expect(page.getByText('2030-01-15 at 09:00 · synthetic')).toBeVisible();
+  await page.getByRole('button', { name: 'Demo requests', exact: true }).click();
+  await page.getByRole('button', { name: 'Generate fictional request' }).click();
+  await expect(page.getByText(/Demo request 1 · fictional patient/)).toBeVisible();
+  await page.getByRole('button', { name: 'Demo analytics', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Preview session activity' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.goto('/');
+  await expect(page.locator('.provider-card')).toHaveCount(14);
+  await expect(page.locator('.provider-card').first()).toContainText('services not yet confirmed');
+});

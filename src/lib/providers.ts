@@ -2,13 +2,23 @@ import records from '@/data/providers.json';
 import areas from '@/data/search-areas.json';
 import type { Provider } from './types';
 import { parseProviderDataset } from './provider-schema';
-import { insuranceStatus, supportsService, type InsuranceStatus } from './provider-evidence';
+import {
+  insuranceStatus,
+  supportsService,
+  type InsuranceStatus,
+  selfPayStatus,
+  providerCategories,
+} from './provider-evidence';
 export const providers = parseProviderDataset(records);
 export interface Filters {
   location: string;
   service: string;
   insurance: string;
   affordability: string;
+  carrier?: string;
+  county?: string;
+  category?: string;
+  payment?: string;
 }
 export function normalizeLocation(value: string) {
   const zip = /^\s*(\d{5})(?:-\d{4})?\s*$/.exec(value);
@@ -61,6 +71,7 @@ export function searchCareProviders(
   radiusLimit = 50,
 ): CareSearchResult {
   const q = normalizeLocation(filters.location);
+  const insuranceQuery = insuranceQueryFor(filters);
   const knownAreas = areas as Record<string, { coordinates: number[]; basis: string }>;
   const area = Object.entries(knownAreas).find(([name]) => normalizeLocation(name) === q)?.[1];
   const directLocations = q ? data.filter((p) => locationMatch(p, q)) : [];
@@ -73,14 +84,17 @@ export function searchCareProviders(
     : nameMatch?.coordinates;
   const eligible = data.filter(
     (p) =>
+      (!filters.county || p.county === filters.county) &&
+      (!filters.category || providerCategories(p).includes(filters.category)) &&
+      (!filters.payment || selfPayStatus(p) !== 'declined') &&
       supportsService(p, filters.service) &&
       (!filters.affordability ||
         (p.affordability === filters.affordability &&
           p.sources.some((s) => s.fields.includes('affordability')))),
   );
-  const declined = eligible.filter((p) => insuranceStatus(p, filters.insurance) === 'declined');
+  const declined = eligible.filter((p) => insuranceStatus(p, insuranceQuery) === 'declined');
   const acceptedOrUnknown = eligible.filter(
-    (p) => insuranceStatus(p, filters.insurance) !== 'declined',
+    (p) => insuranceStatus(p, insuranceQuery) !== 'declined',
   );
   const exact = acceptedOrUnknown.filter((p) => locationMatch(p, q));
   const exactIds = new Set(exact.map((p) => p.id));
@@ -101,14 +115,20 @@ export function searchCareProviders(
     provider: p,
     nearby: !exactIds.has(p.id),
     distanceMiles: origin ? milesBetween(origin, p.coordinates) : undefined,
-    insurance: insuranceStatus(p, filters.insurance),
+    insurance: insuranceStatus(p, insuranceQuery),
   }));
   const rank = (s: InsuranceStatus) => (s === 'unknown' ? 1 : 0);
   items.sort(
     (a, b) =>
-      rank(a.insurance) - rank(b.insurance) ||
       Number(a.nearby) - Number(b.nearby) ||
-      (origin ? (a.distanceMiles ?? 0) - (b.distanceMiles ?? 0) : 0),
+      (origin ? (a.distanceMiles ?? 0) - (b.distanceMiles ?? 0) : 0) ||
+      rank(a.insurance) - rank(b.insurance) ||
+      (filters.payment
+        ? Number(selfPayStatus(a.provider) !== 'confirmed') -
+          Number(selfPayStatus(b.provider) !== 'confirmed')
+        : 0) ||
+      b.provider.sources.filter((s) => s.origin !== 'uploaded-hrsa').length -
+        a.provider.sources.filter((s) => s.origin !== 'uploaded-hrsa').length,
   );
   return {
     exact,
@@ -131,4 +151,12 @@ export function searchCareProviders(
 }
 export function filterProviders(data: Provider[], filters: Filters) {
   return searchCareProviders(data, filters).items.map((i) => i.provider);
+}
+
+export function insuranceQueryFor(filters: Filters) {
+  const carrier = filters.carrier?.trim() || '';
+  const plan = filters.insurance.trim();
+  return !carrier || plan.toLowerCase().startsWith(carrier.toLowerCase())
+    ? plan
+    : [carrier, plan].filter(Boolean).join(' ');
 }

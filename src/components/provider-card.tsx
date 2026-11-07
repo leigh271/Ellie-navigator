@@ -5,6 +5,7 @@ import { kinds } from '@/lib/types';
 import { directionsURL } from '@/lib/map';
 import {
   hasEvidence,
+  selfPayStatus,
   insuranceStatus,
   phoneURL,
   safeWebsite,
@@ -38,7 +39,9 @@ export default function ProviderCard({
   const offered = verifiedServices(p);
   const coverage = insuranceStatus(p, insuranceQuery);
   const booking = verifiedBookingURL(p);
-  const phone = phoneURL(p.phone);
+  const phone = phoneURL(
+    p.schedulingPhone && hasEvidence(p, 'schedulingPhone') ? p.schedulingPhone : p.phone,
+  );
   const website = safeWebsite(p.website);
   return (
     <article
@@ -90,16 +93,27 @@ export default function ProviderCard({
       )}
       <p className={`insurance-status ${coverage === 'confirmed' ? 'confirmed' : ''}`}>
         {coverage === 'confirmed'
-          ? `Documented plan match: ${verifiedPlans(p)
-              .filter((plan) => plan.toLowerCase().includes(insuranceQuery.trim().toLowerCase()))
-              .join(', ')}. Confirm your exact coverage.`
+          ? `Documented plan match: ${
+              verifiedPlans(p)
+                .filter((plan) => plan.toLowerCase() === insuranceQuery.trim().toLowerCase())
+                .join(', ') || insuranceQuery
+            }. Confirm your exact coverage.`
           : coverage === 'declined'
             ? `Source documents nonacceptance for ${insuranceQuery}.`
             : coverage === 'not-requested' && verifiedPlans(p).length
-              ? `Documented plans: ${verifiedPlans(p).join(', ')}. Confirm your exact coverage.`
+              ? `Documented plans: ${verifiedPlans(p).join(', ') || insuranceQuery}. Confirm your exact coverage.`
               : insuranceQuery
                 ? `Insurance unknown for “${insuranceQuery}”. Call to confirm.`
                 : 'Insurance acceptance unknown. Call to confirm your plan.'}
+      </p>
+      <p className="small-muted">
+        Self-pay:{' '}
+        {selfPayStatus(p) === 'confirmed'
+          ? 'documented; confirm fees'
+          : selfPayStatus(p) === 'declined'
+            ? 'documented as unavailable'
+            : 'unknown; call to ask'}
+        .
       </p>
       <p className="small-muted">
         {p.affordability === 'sliding-scale' && hasEvidence(p, 'affordability')
