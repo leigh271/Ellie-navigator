@@ -104,3 +104,25 @@ test('production map retries a failed style without duplicate canvases', async (
   await expect(page.locator('.maplibregl-canvas')).toHaveCount(1);
   await expect(page.locator('.regional-map')).toBeHidden();
 });
+
+test('an independent OpenStreetMap raster alternative retains attribution when the primary style fails', async ({
+  page,
+  isMobile,
+}) => {
+  await page.route('https://tiles.openfreemap.org/styles/positron', (r) =>
+    r.fulfill({ status: 503, body: 'Test style failure' }),
+  );
+  let tiles = 0;
+  await page.route('https://tile.openstreetmap.org/**', (r) => {
+    tiles++;
+    return r.fulfill({ contentType: 'image/png', body: pixel });
+  });
+  await showMap(page, isMobile);
+  await expect(page.locator('.map-shell')).toHaveAttribute('data-map-state', 'unavailable');
+  await page.getByRole('button', { name: 'Use OpenStreetMap tiles', exact: true }).click();
+  await expect(page.locator('.map-shell')).toHaveAttribute('data-map-state', 'ready');
+  await expect.poll(() => tiles).toBeGreaterThan(0);
+  await expect(page.locator('.maplibregl-ctrl-attrib')).toContainText('OpenStreetMap contributors');
+  await expect(page.locator('.maplibregl-canvas')).toHaveCount(1);
+  await expect(page.locator('.heart-marker')).toHaveCount(14);
+});

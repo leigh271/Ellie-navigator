@@ -1,31 +1,22 @@
 'use client';
-import { useCallback, useMemo, useState } from 'react';
+import { useState } from 'react';
 import {
   ArrowRight,
-  ArrowUpRight,
   BookOpen,
   CalendarDays,
   Check,
-  ChevronDown,
   Heart,
-  List,
-  Map,
   MapPin,
   Search,
-  SlidersHorizontal,
   MessageCircle,
-  X,
   ShieldCheck,
-  Flower2,
 } from 'lucide-react';
 import type { Appointment } from '@/lib/types';
-import { services } from '@/lib/types';
-import { searchCareProviders, providers } from '@/lib/providers';
-import directorySources from '@/data/directory-sources.json';
+import { providers } from '@/lib/providers';
 import { useLocalData } from '@/lib/use-local-data';
 import { useBrowserReminders } from '@/lib/use-browser-reminders';
-import CareMap from './care-map';
-import ProviderCard from './provider-card';
+import FindCare from './find-care';
+import ProviderDetails from './provider-details';
 import MyCare from './my-care';
 import AskEllie from './ask-ellie';
 import Resources from './resources';
@@ -39,38 +30,13 @@ const tabs = [
 ];
 export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
   const [tab, setTab] = useState<Tab>('find');
-  const [location, setLocation] = useState('');
-  const [service, setService] = useState('');
-  const [insurance, setInsurance] = useState('');
-  const [affordability, setAffordability] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
-  const [mobileMap, setMobileMap] = useState(false);
-  const [moreFilters, setMoreFilters] = useState(false);
-  const [savedOnly, setSavedOnly] = useState(false);
+  const [detailId, setDetailId] = useState<string | null>(null);
   const [appointment, setAppointment] = useState<Partial<Appointment> | null>(null);
   const [toast, setToast] = useState('');
   const local = useLocalData();
   const reminders = useBrowserReminders(local.appointments, () => navigate('care'));
-  const searchResults = useMemo(
-    () => searchCareProviders(providers, { location, service, insurance, affordability }),
-    [location, service, insurance, affordability],
-  );
-  const matches = useMemo(
-    () => [...searchResults.exact, ...searchResults.nearby].filter(
-      (p) => !savedOnly || local.favorites.includes(p.id),
-    ),
-    [searchResults, savedOnly, local.favorites],
-  );
-  const exactIds = useMemo(() => new Set(searchResults.exact.map((p) => p.id)), [searchResults]);
-  const onSelect = useCallback((id: string) => {
-    setSelected(id);
-    setMobileMap(false);
-    requestAnimationFrame(() =>
-      document
-        .getElementById(`provider-${id}`)
-        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }),
-    );
-  }, []);
+  const detailProvider = providers.find((p) => p.id === detailId);
   function navigate(next: Tab) {
     setTab(next);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -79,14 +45,6 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
     setToast(message);
     setTimeout(() => setToast(''), 5000);
   }
-  function reset() {
-    setLocation('');
-    setService('');
-    setInsurance('');
-    setAffordability('');
-    setSavedOnly(false);
-  }
-  const hasFilters = Boolean(location || service || insurance || affordability || savedOnly);
   return (
     <div className="app">
       <a href="#main" className="skip-link">
@@ -172,286 +130,20 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
             appointments before leaving.
           </p>
         )}
-        {tab === 'find' && (
-          <>
-            <section className="search-section" aria-label="Filter care providers">
-              <div className="search-bar">
-                <label className="location-field">
-                  <MapPin size={18} />
-                  <span>
-                    <span className="field-label">LOCATION</span>
-                    <input
-                      aria-label="Location"
-                      placeholder="e.g. Fort Lauderdale, FL"
-                      value={location}
-                      onChange={(e) => setLocation(e.target.value)}
-                    />
-                  </span>
-                </label>
-                <label className="service-field">
-                  <Heart size={18} />
-                  <span>
-                    <span className="field-label">WHAT BRINGS YOU HERE?</span>
-                    <select
-                      aria-label="Healthcare service"
-                      value={service}
-                      onChange={(e) => setService(e.target.value)}
-                    >
-                      <option value="">Explore all services</option>
-                      {services.map((s) => (
-                        <option key={s}>{s}</option>
-                      ))}
-                    </select>
-                  </span>
-                  <ChevronDown size={14} />
-                </label>
-                <label className="insurance-field">
-                  <ShieldCheck size={18} />
-                  <span>
-                    <span className="field-label">INSURANCE PLAN NAME</span>
-                    <input
-                      aria-label="Insurance plan"
-                      placeholder="Optional — all plans"
-                      aria-describedby="insurance-help"
-                      value={insurance}
-                      onChange={(e) => setInsurance(e.target.value)}
-                    />
-                  </span>
-                </label>
-                <button
-                  className="primary-button search-button"
-                  onClick={() => {
-                    setSelected(matches[0]?.id ?? null);
-                    document
-                      .getElementById('care-results')
-                      ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                  }}
-                >
-                  <Search size={17} />
-                  <span>Find care</span>
-                </button>
-              </div>
-              <p id="insurance-help" className="insurance-help">
-                Insurance is optional. Leave blank to see all matching clinics. Never enter your member ID or policy number.
-                Confirm coverage with the clinic.
-              </p>
-              <div className="filter-row">
-                <div className="service-chips">
-                  <button
-                    className={`filter-chip ${!service ? 'selected' : ''}`}
-                    onClick={() => setService('')}
-                  >
-                    All care
-                  </button>
-                  {services.slice(0, 4).map((s) => (
-                    <button
-                      className={`filter-chip ${service === s ? 'selected' : ''}`}
-                      key={s}
-                      onClick={() => setService(service === s ? '' : s)}
-                    >
-                      {s === 'Annual gynecology'
-                        ? 'Annual wellness'
-                        : s === 'Pap / HPV screening'
-                          ? 'Pap & HPV screening'
-                          : s}
-                    </button>
-                  ))}
-                </div>
-                <button
-                  className={`filter-chip more-filters ${moreFilters ? 'selected' : ''}`}
-                  aria-expanded={moreFilters}
-                  onClick={() => setMoreFilters(!moreFilters)}
-                >
-                  <SlidersHorizontal size={14} />
-                  Filters{affordability && <span className="filter-dot" />}
-                </button>
-              </div>
-              {moreFilters && (
-                <div className="expanded-filters">
-                  <label className="mobile-insurance">
-                    Insurance plan name
-                    <input
-                      aria-label="Insurance plan on mobile"
-                      value={insurance}
-                      onChange={(e) => setInsurance(e.target.value)}
-                      placeholder="Optional — all plans"
-                      aria-describedby="insurance-help"
-                    />
-                  </label>
-                  <label>
-                    Affordability
-                    <select
-                      aria-label="Affordability"
-                      value={affordability}
-                      onChange={(e) => setAffordability(e.target.value)}
-                    >
-                      <option value="">All cost options</option>
-                      <option value="sliding-scale">Source-listed sliding fee scale</option>
-                    </select>
-                  </label>
-                  <label className="checkbox-label">
-                    <input
-                      type="checkbox"
-                      checked={savedOnly}
-                      onChange={(e) => setSavedOnly(e.target.checked)}
-                    />
-                    Saved providers only
-                  </label>
-                  <p>
-                    Insurance filters match documented plans only. No match doesn’t mean a clinic
-                    won’t accept your plan.
-                  </p>
-                </div>
-              )}
-            </section>
-            <div className="discovery-layout">
-              <section
-                className={`results-panel ${mobileMap ? 'mobile-hidden' : ''}`}
-                id="care-results"
-                aria-label="Care results"
-              >
-                <div className="results-heading">
-                  <div>
-                    <h2>{providers.length ? 'Care near you' : 'Start with trusted sources'}</h2>
-                    <p aria-live="polite">
-                      {providers.length
-                        ? `${matches.length} source-reviewed ${matches.length === 1 ? 'provider' : 'providers'}`
-                        : 'Official directories · Broward & Miami-Dade'}
-                    </p>
-                  </div>
-                  <span className="results-count">
-                    {providers.length ? matches.length : <ShieldCheck size={17} />}
-                  </span>
-                </div>
-                {hasFilters && (
-                  <div className="active-filter-row">
-                    <span>{matches.length} reviewed matches</span>
-                    <button className="text-button" onClick={reset}>
-                      Clear filters
-                      <X size={12} />
-                    </button>
-                  </div>
-                )}
-                <div className="provider-scroll">
-                  {matches.map((p) => (
-                    <div key={p.id}>
-                      {!exactIds.has(p.id) && (
-                        <p className="small-muted" style={{ margin: '8px 0' }}>
-                          Nearby alternative · outside your exact location
-                        </p>
-                      )}
-                    <ProviderCard
-                      provider={p}
-                      selected={selected === p.id}
-                      saved={local.favorites.includes(p.id)}
-                      onSelect={() => onSelect(p.id)}
-                      onSave={() => local.toggleFavorite(p.id)}
-                      onAppointment={() => setAppointment({ provider: p.name })}
-                    />
-                    </div>
-                  ))}
-                  {!matches.length && providers.length > 0 && (
-                    <div className="empty-care">
-                      <Search size={25} />
-                      <h3>No reviewed matches yet.</h3>
-                      <p>
-                        No verified clinics match these filters in the selected area or nearby.
-                        Try a broader location or fewer filters, or use the official directories.
-                        Insurance acceptance and services must be confirmed with the clinic.
-                      </p>
-                      <button className="text-button" onClick={reset}>
-                        Reset filters
-                      </button>
-                    </div>
-                  )}
-                  {providers.length > 0 && !matches.length && directorySources.map((s) => (
-                    <a key={s.id} href={s.url} target="_blank" rel="noreferrer" className="text-button">
-                      {s.name} — official directory <ArrowUpRight size={14} />
-                    </a>
-                  ))}
-                  {providers.length === 0 && (
-                    <>
-                      <div className="directory-notice">
-                        <span className="notice-dot" />
-                        <p>
-                          Our provider directory is being prepared. These links open official
-                          directories; they are not verified clinic listings or filtered matches.
-                        </p>
-                      </div>
-                      {directorySources.map((s, i) => (
-                        <article className="directory-card" key={s.id}>
-                          <div className="directory-card-head">
-                            <span className={`directory-icon tone-${i}`}>
-                              <i>{i === 2 ? <Heart size={20} /> : <Flower2 size={22} />}</i>
-                            </span>
-                            <span className="source-tag">OFFICIAL SOURCE</span>
-                            <ArrowUpRight size={16} />
-                          </div>
-                          <span className="directory-region">{s.region}</span>
-                          <h3>{s.name}</h3>
-                          <p>{s.description}</p>
-                          <a href={s.url} target="_blank" rel="noreferrer">
-                            Open official directory
-                            <ArrowUpRight size={14} />
-                          </a>
-                        </article>
-                      ))}
-                    </>
-                  )}
-                </div>
-                <div className="results-footer">
-                  <ShieldCheck size={14} />
-                  <p>
-                    No invented ratings, prices, or availability.
-                    <br />
-                    Always confirm details with your clinic.
-                  </p>
-                </div>
-              </section>
-              <section
-                className={`map-panel ${!mobileMap ? 'mobile-hidden' : ''}`}
-                aria-label="Care map"
-              >
-                <CareMap providers={matches} selected={selected} onSelect={onSelect} />
-              </section>
-            </div>
-            <button className="mobile-view-toggle" onClick={() => setMobileMap(!mobileMap)}>
-              {mobileMap ? <List size={16} /> : <Map size={16} />}Show {mobileMap ? 'list' : 'map'}
-            </button>
-            <section className="below-discovery">
-              <div className="support-card">
-                <span className="support-flower">
-                  <Flower2 size={29} />
-                </span>
-                <div>
-                  <span className="eyebrow">YOUR NEXT STEP STARTS HERE</span>
-                  <h2>Not sure where to begin?</h2>
-                  <p>Let Ellie help you find a little clarity.</p>
-                </div>
-                <button className="secondary-button" onClick={() => navigate('ask')}>
-                  Ask Ellie
-                  <MessageCircle size={15} />
-                </button>
-              </div>
-              <div className="trust-strip">
-                <span>
-                  <Check size={14} />
-                  Original-source information
-                </span>
-                <span>
-                  <Heart size={14} />
-                  Built around you
-                </span>
-                <span>
-                  <ShieldCheck size={14} />
-                  Your pace. Your choices.
-                </span>
-              </div>
-            </section>
-          </>
-        )}
+        <div hidden={tab !== 'find'}>
+          <FindCare
+            selected={selected}
+            onSelect={setSelected}
+            favorites={local.favorites}
+            onFavorite={local.toggleFavorite}
+            onAppointment={(p) => setAppointment({ provider: p.name })}
+            onDetails={setDetailId}
+            onAsk={() => navigate('ask')}
+          />
+        </div>
         {tab === 'care' && (
           <MyCare
+            onProviderDetails={setDetailId}
             reminders={reminders}
             appointments={local.appointments}
             favorites={local.favorites}
@@ -534,12 +226,25 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
           </button>
         ))}
       </nav>
+      {detailProvider && (
+        <ProviderDetails
+          provider={detailProvider}
+          saved={local.favorites.includes(detailProvider.id)}
+          onSave={() => local.toggleFavorite(detailProvider.id)}
+          onClose={() => setDetailId(null)}
+          onAppointment={() => {
+            setDetailId(null);
+            setAppointment({ provider: detailProvider.name });
+          }}
+        />
+      )}
       {appointment && (
         <AppointmentDialog
           initial={appointment}
           onClose={() => setAppointment(null)}
           onSave={(a) => {
             local.saveAppointment(a);
+            navigate('care');
             notify('Personal appointment saved. Confirm your booking directly with the clinic.');
           }}
         />

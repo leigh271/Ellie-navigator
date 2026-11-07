@@ -2968,3 +2968,355 @@ main {
   inset: 0;
   margin: auto;
 }
+/* Source-backed care discovery. Keep verification labels visible and readable. */
+.live-directory-notice {
+  padding: 13px 17px;
+  border-bottom: 1px solid #eee8f2;
+  background: #faf7fc;
+  color: #8c749c;
+}
+.live-directory-notice p {
+  font-size: 10px;
+  line-height: 1.8;
+}
+.pending-search {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #80678f;
+  margin: 12px 4px 0;
+}
+.provider-name {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 9px 0;
+  overflow-wrap: anywhere;
+}
+.provider-card .address {
+  font-size: 11px;
+}
+.location-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #607d72;
+  font-size: 10px;
+  margin-top: 11px;
+}
+.service-unknown {
+  font-size: 11px;
+  color: #7c6c85;
+  line-height: 1.7;
+  margin-top: 11px;
+  background: #f8f4fb;
+  border-radius: 7px;
+  padding: 9px;
+}
+.insurance-status {
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 10px 0;
+  color: #7e7088;
+  overflow-wrap: anywhere;
+}
+.insurance-status.confirmed {
+  color: #466f5c;
+}
+.source-details {
+  font-size: 10px;
+  line-height: 1.8;
+}
+.source-details summary {
+  font-size: 10px;
+  color: #816a91;
+}
+.nearby-badge {
+  display: inline-flex;
+  margin-top: 9px;
+  font-size: 10px;
+  background: #edf4f9;
+  color: #607e98;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+.search-explanation {
+  font-size: 10px;
+  color: #7c6d88;
+  line-height: 1.8;
+  padding: 7px 3px 14px;
+}
+.insurance-section-heading {
+  font-size: 11px;
+  font-weight: 500;
+  color: #826c93;
+  margin: 9px 3px 14px;
+}
+.official-directory-links {
+  padding: 18px;
+  border: 1px solid #eae2ef;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.official-directory-links h3 {
+  font-size: 13px;
+}
+.official-directory-links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #7f668e;
+}
+.search-empty {
+  padding: 25px 7px;
+}
+.search-empty h3 {
+  font-size: 16px;
+}
+.search-empty p {
+  font-size: 11px;
+}
+.search-empty .secondary-button {
+  white-space: normal;
+  line-height: 1.7;
+}
+.active-filter-row > span {
+  overflow-wrap: anywhere;
+  max-width: 68%;
+  line-height: 1.7;
+}
+.provider-dialog {
+  max-width: 640px;
+}
+.provider-dialog h2 {
+  font-size: 23px;
+  line-height: 1.4;
+  margin: 20px 25px 10px 0;
+  letter-spacing: -0.5px;
+}
+.provider-organization {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #887692;
+}
+.detail-address {
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 15px;
+  color: #7b6a85;
+}
+.detail-address svg {
+  margin-right: 6px;
+}
+.verification-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+.verification-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid #eae2ef;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: #82718d;
+}
+.verification-grid strong {
+  font-weight: 500;
+  color: #5d5067;
+}
+.verification-grid span {
+  font-size: 10px;
+  line-height: 1.7;
+}
+.provider-dialog section {
+  border-top: 1px solid #eee8f2;
+  padding: 18px 0;
+}
+.provider-dialog section h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.provider-dialog section p,
+.provider-dialog section li {
+  font-size: 12px;
+  color: #7c6b85;
+  line-height: 1.9;
+  margin-top: 7px;
+  overflow-wrap: anywhere;
+}
+.provider-dialog section a {
+  color: #765987;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.provider-dialog section ul {
+  padding-left: 20px;
+}
+.detail-directions,
+.detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+.detail-directions a {
+  font-size: 11px;
+  color: #7b608d;
+}
+.detail-actions .primary-button,
+.detail-actions .secondary-button {
+  font-size: 11px;
+  white-space: normal;
+  line-height: 1.7;
+}
+.mobile-discovery-toolbar {
+  display: none;
+}
+.map-selection {
+  position: absolute;
+  left: 18px;
+  bottom: 88px;
+  max-width: calc(100% - 90px);
+  background: #fffffff0;
+  backdrop-filter: blur(12px);
+  padding: 15px;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px #46565118;
+  z-index: 2;
+}
+.map-selection strong {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.map-selection p {
+  font-size: 10px;
+  color: #7e7387;
+  margin: 4px 0 10px;
+}
+.map-selection > div {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: #7e6590;
+}
+.map-selection button {
+  padding: 0;
+  font-size: 10px;
+  text-decoration: underline;
+}
+.map-status {
+  flex-wrap: wrap;
+}
+.map-location {
+  max-width: calc(100% - 85px);
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+.map-status button {
+  min-height: 22px;
+}
+.provider-scroll .provider-actions .clinic-contact {
+  background: #f1ebf7;
+  border-radius: 7px;
+  padding: 9px 10px;
+  font-size: 11px;
+  color: #7c6090;
+}
+.provider-scroll .provider-actions .clinic-contact:hover {
+  background: #e9e0f1;
+}
+.provider-card .small-muted {
+  font-size: 10px;
+}
+@media (max-width: 620px) {
+  .mobile-discovery-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #fcfcfdf2;
+    backdrop-filter: blur(15px);
+    padding: 10px 0;
+    font-size: 11px;
+    color: #887195;
+    margin: -9px 0 5px;
+  }
+  .mobile-discovery-toolbar .mobile-view-toggle {
+    margin: 0;
+    padding: 10px 14px;
+  }
+  .provider-card {
+    padding: 18px;
+  }
+  .provider-name {
+    font-size: 15px;
+  }
+  .provider-card .address,
+  .service-unknown,
+  .insurance-status {
+    font-size: 12px;
+  }
+  .live-directory-notice p {
+    font-size: 11px;
+  }
+  .location-badge,
+  .source-details summary,
+  .source-details {
+    font-size: 11px;
+  }
+  .search-explanation {
+    font-size: 11px;
+  }
+  .provider-dialog .dialog-content {
+    padding: 27px 23px;
+  }
+  .provider-dialog h2 {
+    font-size: 20px;
+  }
+  .verification-grid {
+    gap: 8px;
+  }
+  .verification-grid > div {
+    padding: 10px;
+  }
+  .verification-grid span {
+    font-size: 10px;
+  }
+  .map-selection {
+    max-width: calc(100% - 36px);
+    left: 18px;
+    bottom: 98px;
+  }
+  .map-selection strong {
+    font-size: 11px;
+  }
+  .map-selection p {
+    font-size: 10px;
+  }
+  .map-selection > div {
+    font-size: 10px;
+  }
+  .expanded-filters {
+    align-items: flex-start;
+  }
+  .map-status button {
+    min-height: 28px;
+  }
+  .provider-scroll {
+    overflow-x: hidden;
+  }
+}

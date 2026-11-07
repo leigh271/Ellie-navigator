@@ -15,6 +15,8 @@ export function ruleBasedReply(input: string): string {
   if (/pap|hpv|vaccine|screen/.test(q))
     return 'A clinic can confirm whether it offers Pap/HPV screening or HPV vaccination and discuss eligibility with you. I cannot recommend a personal screening schedule. Read CDC’s original guidance in Resources, and confirm services and fees with the clinic.';
   if (/pcos|fibroid|birth control|gynec|provider|clinic|broward|miami|find/.test(q)) {
+    if (/pcos|fibroid|birth control|gynec/.test(q))
+      return 'I can show HRSA-listed clinic locations, but their specific women’s healthcare services are not confirmed yet. I cannot present one as a verified match for that service. Use Find Care’s general directory and contact a clinic to ask about the exact care, eligibility, coverage and costs.';
     const county = /broward/.test(q) ? 'Broward' : /miami/.test(q) ? 'Miami-Dade' : '';
     const matches = filterProviders(providers, {
       location: county,
@@ -23,13 +25,13 @@ export function ruleBasedReply(input: string): string {
       affordability: '',
     });
     if (matches.length)
-      return `These source-reviewed directory entries may help you start: ${matches
+      return `These HRSA location-sourced clinics may help you start (women’s services and insurance are unconfirmed): ${matches
         .slice(0, 3)
-        .map((p) => `${p.name} (${p.city}) — ${p.website}`)
+        .map((p) => `${p.name} (${p.city}) — ${p.phone || p.website || 'see directory details'}`)
         .join(
           '; ',
         )}. Confirm the specific service, insurance, cost and appointments directly with each clinic.`;
-    return 'Ellie focuses on Broward and Miami-Dade. Our source-reviewed provider directory is not populated yet, so I cannot make a verified provider match. Start with the Florida Department of Health county directories in Find Care or HRSA’s Find a Health Center: https://findahealthcenter.hrsa.gov/. Ask the clinic about your specific service, insurance and cost.';
+    return 'Ellie focuses on Broward and Miami-Dade. No source-reviewed clinic location matches that search, so I cannot make a verified provider recommendation. Start with the Florida Department of Health county directories in Find Care or HRSA’s Find a Health Center: https://findahealthcenter.hrsa.gov/. Ask the clinic about your specific service, insurance and cost.';
   }
   return 'I’m Ellie, your rule-based care navigator. I can help you prepare questions about costs or insurance, explain how to organize appointments, and point you to official care directories. Try “How do I find affordable care?” or “How do I save an appointment?” Please leave out names, symptoms, and other private health details.';
 }

@@ -2,25 +2,39 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Map as LibreMap, Marker } from 'maplibre-gl';
 import { kinds, type Provider } from './types';
-import { fitProviderBounds, MAP_STYLE, REGION_CENTER } from './map';
+import { fitProviderBounds, MAP_STYLE, OSM_STYLE, REGION_CENTER } from './map';
 type Engine = { map: LibreMap; lib: typeof import('maplibre-gl'); attempt: number };
-type Session = { attempt: number; phase: 'loading' | 'ready' | 'unavailable'; notice: string };
+type Session = {
+  attempt: number;
+  tiles: 'openfreemap' | 'osm';
+  phase: 'loading' | 'ready' | 'unavailable';
+  notice: string;
+};
 export function useCareMap(
   providers: Provider[],
   selected: string | null,
   onSelect: (id: string) => void,
+  searchOrigin?: [number, number],
 ) {
   const container = useRef<HTMLDivElement>(null);
   const markers = useRef(new Map<string, Marker>());
   const selectRef = useRef(onSelect);
   const providersRef = useRef(providers);
+  const originRef = useRef(searchOrigin);
   const [engine, setEngine] = useState<Engine | null>(null);
-  const [session, setSession] = useState<Session>({ attempt: 0, phase: 'loading', notice: '' });
+  const [session, setSession] = useState<Session>({
+    attempt: 0,
+    tiles: 'openfreemap',
+    phase: 'loading',
+    notice: '',
+  });
   const attempt = session.attempt;
+  const tiles = session.tiles;
   useEffect(() => {
     selectRef.current = onSelect;
     providersRef.current = providers;
-  }, [onSelect, providers]);
+    originRef.current = searchOrigin;
+  }, [onSelect, providers, searchOrigin]);
   useEffect(() => {
     let disposed = false;
     let instance: LibreMap | undefined;
@@ -41,7 +55,7 @@ export function useCareMap(
         try {
           instance = new lib.Map({
             container: container.current,
-            style: MAP_STYLE,
+            style: tiles === 'osm' ? OSM_STYLE : MAP_STYLE,
             center: REGION_CENTER,
             zoom: 8.6,
             attributionControl: { compact: true },
@@ -50,7 +64,8 @@ export function useCareMap(
           const map = instance;
           observer = new ResizeObserver(() => {
             map.resize();
-            if (styleReady && !fitted) fitted = fitProviderBounds(map, providersRef.current, false);
+            if (styleReady && !fitted)
+              fitted = fitProviderBounds(map, providersRef.current, false, originRef.current);
           });
           observer.observe(container.current);
           map.on('style.load', () => {
@@ -69,7 +84,7 @@ export function useCareMap(
             }, 15000);
             setEngine({ map, lib, attempt });
             map.resize();
-            fitted = fitProviderBounds(map, providersRef.current, false);
+            fitted = fitProviderBounds(map, providersRef.current, false, originRef.current);
           });
           map.on('load', () => {
             clearTimeout(tileTimer);
@@ -120,7 +135,7 @@ export function useCareMap(
       collection.clear();
       instance?.remove();
     };
-  }, [attempt]);
+  }, [attempt, tiles]);
   useEffect(() => {
     if (!engine || engine.attempt !== attempt) return;
     const { lib, map } = engine;
@@ -149,8 +164,8 @@ export function useCareMap(
       marker.getElement().style.setProperty('--marker-color', kinds[p.kind].color);
       marker.getElement().setAttribute('aria-label', `Select ${p.name}`);
     }
-    fitProviderBounds(map, providers, false);
-  }, [engine, attempt, providers]);
+    fitProviderBounds(map, providers, false, searchOrigin);
+  }, [engine, attempt, providers, searchOrigin]);
   useEffect(() => {
     if (!engine || engine.attempt !== attempt) return;
     markers.current.forEach((marker, id) => {
@@ -173,10 +188,20 @@ export function useCareMap(
     notice: session.notice,
     zoomIn: () => activeMap?.zoomIn(),
     zoomOut: () => activeMap?.zoomOut(),
-    reset: () => activeMap?.easeTo({ center: REGION_CENTER, zoom: 8.6 }),
+    reset: () =>
+      activeMap?.easeTo({ center: searchOrigin ?? REGION_CENTER, zoom: searchOrigin ? 10 : 8.6 }),
     fit: () => {
-      if (activeMap) fitProviderBounds(activeMap, providers);
+      if (activeMap) fitProviderBounds(activeMap, providers, true, searchOrigin);
     },
-    retry: () => setSession((s) => ({ attempt: s.attempt + 1, phase: 'loading', notice: '' })),
+    tiles,
+    alternate: () =>
+      setSession((s) => ({
+        attempt: s.attempt + 1,
+        tiles: s.tiles === 'osm' ? 'openfreemap' : 'osm',
+        phase: 'loading',
+        notice: '',
+      })),
+    retry: () =>
+      setSession((s) => ({ attempt: s.attempt + 1, tiles: s.tiles, phase: 'loading', notice: '' })),
   };
 }

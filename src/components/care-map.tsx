@@ -3,20 +3,36 @@ import { Heart, LocateFixed, Minus, Plus, Layers, ExternalLink, Scan } from 'luc
 import type { Provider } from '@/lib/types';
 import { kinds } from '@/lib/types';
 import { useCareMap } from '@/lib/use-care-map';
+import { directionsURL, appleDirectionsURL } from '@/lib/map';
 export default function CareMap({
   providers,
   selected,
   onSelect,
+  searchOrigin,
+  searchLabel,
+  onDetails,
 }: {
   providers: Provider[];
   selected: string | null;
   onSelect: (id: string) => void;
+  searchOrigin?: [number, number];
+  searchLabel?: string;
+  onDetails?: (id: string) => void;
 }) {
-  const { container, ready, unavailable, notice, zoomIn, zoomOut, reset, fit, retry } = useCareMap(
-    providers,
-    selected,
-    onSelect,
-  );
+  const {
+    container,
+    ready,
+    unavailable,
+    notice,
+    zoomIn,
+    zoomOut,
+    reset,
+    fit,
+    retry,
+    tiles,
+    alternate,
+  } = useCareMap(providers, selected, onSelect, searchOrigin);
+  const active = providers.find((p) => p.id === selected);
   return (
     <div
       className="map-shell"
@@ -102,8 +118,8 @@ export default function CareMap({
       </div>
       <div ref={container} className={`live-map ${ready ? 'visible' : ''}`} />
       <div className="map-location">
-        <span className="live-dot" /> South Florida <span className="map-location-divider" />{' '}
-        Broward & Miami-Dade
+        <span className="live-dot" /> {searchLabel || 'South Florida'}{' '}
+        <span className="map-location-divider" /> Broward & Miami-Dade
       </div>
       <div className="map-controls">
         <button aria-label="Zoom in" disabled={!ready} onClick={zoomIn}>
@@ -112,7 +128,11 @@ export default function CareMap({
         <button aria-label="Zoom out" disabled={!ready} onClick={zoomOut}>
           <Minus size={18} />
         </button>
-        <button aria-label="Reset South Florida map" disabled={!ready} onClick={reset}>
+        <button
+          aria-label={searchOrigin ? 'Recenter on search location' : 'Reset South Florida map'}
+          disabled={!ready}
+          onClick={reset}
+        >
           <LocateFixed size={18} />
         </button>
         <button aria-label="Fit map to matching providers" disabled={!ready} onClick={fit}>
@@ -127,7 +147,14 @@ export default function CareMap({
               ? `${notice} Regional illustration, not to scale.`
               : notice || 'Regional illustration · loading interactive map…'}
           </span>
-          {(unavailable || notice) && <button onClick={retry}>Reload map</button>}
+          {(unavailable || notice) && (
+            <>
+              <button onClick={retry}>Reload map</button>
+              <button onClick={alternate}>
+                Use {tiles === 'osm' ? 'OpenFreeMap' : 'OpenStreetMap'} tiles
+              </button>
+            </>
+          )}
         </div>
       )}
       {providers.length === 0 && (
@@ -138,9 +165,26 @@ export default function CareMap({
           <div>
             <strong>A little closer to the care you need.</strong>
             <p>
-              Explore South Florida’s official care directories while we prepare source-reviewed map
-              listings.
+              No matching clinics are pinned. Broaden your search or browse general care; unknown
+              services are not presented as confirmed matches.
             </p>
+          </div>
+        </div>
+      )}
+      {active && (
+        <div className="map-selection">
+          <strong>{active.name}</strong>
+          <p>
+            {active.address}, {active.city}
+          </p>
+          <div>
+            <a href={directionsURL(active)} target="_blank" rel="noreferrer">
+              Google directions ↗
+            </a>
+            <a href={appleDirectionsURL(active)} target="_blank" rel="noreferrer">
+              Apple directions ↗
+            </a>
+            {onDetails && <button onClick={() => onDetails(active.id)}>View clinic details</button>}
           </div>
         </div>
       )}
@@ -153,8 +197,15 @@ export default function CareMap({
         ))}
       </div>
       {ready && (
-        <a className="map-credit" href="https://openfreemap.org/" target="_blank" rel="noreferrer">
-          OpenFreeMap <ExternalLink size={10} />
+        <a
+          className="map-credit"
+          href={
+            tiles === 'osm' ? 'https://www.openstreetmap.org/copyright' : 'https://openfreemap.org/'
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          {tiles === 'osm' ? 'OpenStreetMap' : 'OpenFreeMap'} <ExternalLink size={10} />
         </a>
       )}
     </div>

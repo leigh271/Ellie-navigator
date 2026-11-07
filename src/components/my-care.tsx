@@ -38,6 +38,7 @@ export default function MyCare({
   onFavorite,
   onFind,
   onClear,
+  onProviderDetails,
 }: {
   appointments: Appointment[];
   reminders: BrowserReminders;
@@ -47,6 +48,7 @@ export default function MyCare({
   onFavorite: (id: string) => void;
   onFind: () => void;
   onClear: () => void;
+  onProviderDetails: (id: string) => void;
 }) {
   const today = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'America/New_York',
@@ -306,7 +308,8 @@ export default function MyCare({
                 provider={p}
                 selected={false}
                 saved
-                onSelect={onFind}
+                onSelect={() => onProviderDetails(p.id)}
+                onDetails={() => onProviderDetails(p.id)}
                 onSave={() => onFavorite(p.id)}
                 onAppointment={() => onEdit({ provider: p.name })}
               />

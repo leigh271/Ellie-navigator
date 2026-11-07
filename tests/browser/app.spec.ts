@@ -17,15 +17,24 @@ test('care discovery, filters, navigation and resources are honest and responsiv
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Women’s health, closer to you.' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Start with trusted sources' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'HRSA clinic directory' })).toBeVisible();
   await expect(page.locator('.wordmark')).toHaveCSS('font-family', /DM Sans/);
   await expect(page.locator('[class*="sparkle"], .lucide-sparkles')).toHaveCount(0);
-  await expect(page.getByRole('link', { name: 'Open official directory' })).toHaveCount(3);
+  await expect(page.locator('.provider-card')).toHaveCount(14);
+  await expect(page.locator('.service-unknown')).toHaveCount(14);
   await expect(page.locator('#insurance-help')).toContainText(
     'not your member ID or policy number',
   );
-  await page.getByLabel('Healthcare service').selectOption('PCOS');
-  await expect(page.getByText('0 reviewed matches')).toBeVisible();
+  await page.getByLabel('Healthcare service').selectOption('PCOS care');
+  await page
+    .getByRole('region', { name: 'Filter care providers' })
+    .getByRole('button', { name: 'Find Care', exact: true })
+    .click();
+  await expect(
+    page.getByRole('heading', { name: 'No service-verified matches yet.' }),
+  ).toBeVisible();
+  await expect(page.locator('.provider-card')).toHaveCount(0);
+  await expect(page.locator('.official-directory-links a')).toHaveCount(3);
   await page.getByRole('button', { name: 'Filters', exact: true }).click();
   await page.getByLabel('Affordability', { exact: true }).selectOption('sliding-scale');
   await page.getByRole('button', { name: 'Clear filters' }).click();
