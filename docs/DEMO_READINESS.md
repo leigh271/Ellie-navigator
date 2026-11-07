@@ -1,62 +1,41 @@
-# Ellie customer-demo readiness
+# Customer demo: real locations, honest service status
 
-**The complete provider demo is not ready yet.** The reviewed dataset still has zero providers because official source sites are blocked by this cloud environment. Calendar improvements do not establish that provider research, live tiles, live AI, or voice are complete.
+## Current readiness
 
-The user chose **add-to-calendar links and files for the MVP**, rather than ongoing account synchronization. This document explains what can be demonstrated honestly and what must be completed first.
+**The general-directory journey is implemented with 14 real HRSA location records. The verified cervical-screening journey is not yet supported by clinical service evidence.**
 
-## Directory gate: ten real locations
+There are 119 retained candidates, 14 published clinic locations, zero service-verified providers, zero verified insurance-plan acceptances and zero verified online booking links. No candidate is promoted to a women's healthcare provider based on its name or HRSA inclusion alone. The missing 235-row reference-only file was not re-downloaded.
 
-Two in each of four categories is eight locations. The target is **ten distinct verified physical locations**: at least two per category, plus two additional verified locations in any category. Include Broward and Miami-Dade; never duplicate a clinic to fill multiple categories.
+The selected source categories are nine community clinics and five health-system clinics. Private gynecology and vaccination-only categories are not invented. If a later demo needs two per category, obtain separate private-practice and preventive-service evidence; this HRSA-only selection does not establish that balanced quota.
 
-| Category                      | Minimum | Current reviewed records |
-| ----------------------------- | ------: | -----------------------: |
-| Community / low-cost          |       2 |                        0 |
-| Private gynecology            |       2 |                        0 |
-| Hospitals / health systems    |       2 |                        0 |
-| Vaccination / preventive care |       2 |                        0 |
-| Additional locations          |       2 |                        0 |
+## Fort Lauderdale persona
 
-The initial ten named research candidates are leads, not the final balanced set: that pool still requires private-practice and preventive-service research. For each selected location, require:
+1. Enter **Fort Lauderdale, FL**, select **Cervical cancer screening**, leave insurance blank, and click **Find Care**. The fields are drafts until submitted.
+2. Ellie shows **No service-verified matches yet**, explains that HRSA locations do not establish the requested service, and offers general discovery, broader area, related-service choice and official directories. It never silently substitutes vaccination or general primary care for Pap/HPV screening.
+3. Select **Browse general clinics · services unconfirmed**. This explicitly removes the service filter while retaining the location and plan preference. Five selected locations match the supplied Fort Lauderdale postal-city data. The map/sidebar use the same records.
+4. Click a heart marker. The card highlights and scrolls into view; mobile returns to the list. Open **View details** to review the original address, source-provided phone and website, source dates and unknown service/plan/cost/booking status.
+5. Use **Call Clinic** or a source-provided official website. Inspect the action destination, but do not pretend a visit is confirmed. No Book with Clinic button is shown without a reviewed official booking URL.
+6. Save the clinic to My Care. After the user obtains a real clinic confirmation—or while explicitly demonstrating a personal record—select **Save appointment**, enter date/time/duration and reminder, then save. Ellie opens My Care. This action does not contact the clinic.
+7. Use the month picker to locate the saved date. Edit/delete records and check persistence after reload in the same browser.
+8. **Google:** Add to Google opens an event template. The user reviews it, sets notifications and clicks Save in Google. No Google account connection or automatic sync is claimed.
+9. **Apple:** export ICS, import it into the chosen calendar, and verify its date/time/reminder in the actual app. Exported reminder syntax is tested; the OS/app decides display behavior. Changing/deleting a record in Ellie does not update the external calendar.
+10. Optionally enable browser reminders, explicitly grant permission and use **Send test reminder**. Check actual device display. Ellie must remain open; there is no closed-browser guarantee, SMS or email.
 
-- Current location name and address on an official clinic, DOH, or HRSA source.
-- Precise clinic coordinates from an authoritative map/location source, not a city center.
-- Current contact phone and official website; location-specific evidence for every listed service.
-- Real source review date and per-field evidence in `sources`.
-- Booking URL, exact insurance plans and affordability only if documented. Unknown is acceptable; invented claims are not.
-- At least one documented plan match if insurance filtering will be demonstrated. A carrier name alone does not prove acceptance of every plan sold by that carrier.
+## Other demonstrated searches
 
-`docs/provider-research.json` tracks the candidates and quota. None is imported into the public provider directory until reviewed. The running network policy still reports no applied custom domains, so the saved source-domain draft has not unblocked research.
+- `Ft Lauderdale`, `Ft. Lauderdale`, `Fort Lauderdale, FL` and `Fort Lauderdale,FL` normalize consistently.
+- A source ZIP such as `33313` has an exact clinic match; nearby alternatives can be included and are labeled separately.
+- County and clinic-name queries work without external geocoding. City/ZIP search origins are means of unique source coordinates, and a single matching clinic can provide an exact reference point. Distances are approximate straight-line values from that reference, not GPS or driving distances.
+- Limited results expand progressively through 10, 25 and 50 miles, within the two counties only. Requested service evidence is still required.
+- Insurance is optional. Enter a plan/company name, never a member or policy number. Unknown acceptance stays in a labeled section; documented matching plans rank first. Nonacceptance is excluded only with explicit corresponding source evidence. The current records are all unknown, so a positive acceptance demo cannot be claimed yet.
+- Reset filters restores the 14 general-directory entries; an unknown place does not silently become an unrelated city search.
 
-## Customer journey rehearsal
+## Manual checks still needed
 
-1. **Find Care.** Enter a city/county and service. For insurance, enter the company and plan name (for example, Florida Blue PPO), never a member ID, policy number, or other personal insurance identifier. Confirm a documented filter match; clear the plan filter to see other options with unknown acceptance.
-2. **Compare a provider.** Select the heart marker and confirm its card highlights. On mobile, marker selection returns to the corresponding list card. Read service and source details. Open directions to the actual clinic. Never present unverified costs, appointment slots or insurance acceptance.
-3. **Save a favorite.** Use the heart on a provider card and confirm it appears in My Care, including after a reload in the same browser.
-4. **Arrange the actual visit with the clinic.** Open its official website or call its published number. Ellie does not book the visit or verify a booking. Do not simulate a confirmed appointment.
-5. **Save the personal appointment.** After a real clinic confirmation—or while clearly demonstrating a personal calendar record—choose “Save appointment” on the card or “Add appointment” in My Care. Enter provider, date, time, duration and desired reminder. No symptoms or medical notes are requested. Times are Eastern, with DST handling.
-6. **Show My Care.** Use the month picker to jump to the visit’s month; click the date and confirm the saved record is listed. Edit the record and verify persistence after reload. A source link or favorite alone is not an appointment and contains no visit date/time to add to a calendar.
-7. **Google Calendar.** Click “Add to Google.” The user signs in to Google if needed, reviews the prefilled event, chooses notifications on Google’s own event page, and clicks Save. Then verify the event in their Google Calendar. Ellie does not receive a Google sign-in, token, event ID, or confirmation through this link. The reminder preference cannot be transferred reliably by a template URL, so it is not falsely encoded as an unsupported URL parameter.
-8. **Apple Calendar.** Export the `.ics` file, open it in Apple Calendar on the demonstration device, choose a destination calendar and import it. Verify the date, time and chosen alert in Apple Calendar. The file contains a standard DISPLAY VALARM for the selected reminder. The calendar application and OS determine whether alerts are honored and displayed. Importing is not an Apple account connection.
-9. **Browser reminders, optionally.** Click “Enable browser reminders,” explicitly allow notifications, and click “Send test reminder.” Check the device’s actual notifications. Ellie must stay open; closed/suspended tabs, mobile limitations, browser throttling and Do Not Disturb can prevent or delay delivery. Notifications intentionally omit clinic/provider names. Disabling stops future tab reminders; clearing local data removes opt-in and deduplication records. Calendar events already imported elsewhere are unaffected.
-10. **Ask Ellie and Resources.** Demonstrate the labeled rule-based navigator and original-source educational links. Do not describe it as live OpenAI unless credentials and a real response have been tested. Provider matching is not available while the reviewed dataset is empty. Voice is not implemented.
+- Obtain the location-specific exports in [SERVICE_VERIFICATION_NEEDED.md](SERVICE_VERIFICATION_NEEDED.md), review their claims and source dates, and only then run a real service-verified cervical-screening demo.
+- Check live geographic tiles, attribution and browser errors on the actual Vercel deployment. Local browser QA uses controlled map responses because this environment blocks the live sources. “Use OpenStreetMap tiles” is a licensed independent alternative, not proof of connectivity here.
+- Actually save a Google event and import an Apple event on the demonstration devices; verify reminder settings and permissions. These are not account synchronization features.
+- Verify a browser test notification is visibly displayed on the actual device, or use the calendar fallback instead. Headless native-API requests do not establish OS-level display.
+- Do not present a rule-based assistant as live OpenAI. Live credentials and a real AI response are not verified here; voice is not implemented.
 
-## Acceptance checks before presenting the full demo
-
-- Ten published records satisfy the category quota and source-evidence review.
-- The real deployed basemap loads tiles with attribution and has no blocking runtime errors.
-- Real provider marker/card selection, directions, filtering and favorites work on desktop and mobile.
-- A Google event has actually been saved to the chosen test calendar; no account sync is claimed.
-- An ICS file has actually been imported into Apple Calendar, and its alert settings have been inspected.
-- A browser test notification has actually appeared on the demonstration device, or the feature is presented as unavailable there and calendar alerts are used instead.
-- Calendar edits/deletes in Ellie are explained as local changes, not automatic changes in Google, Apple or the clinic’s booking system. Re-exporting or clicking Google again may create duplicates; review the destination calendar.
-- No real patient names, symptoms, insurance member numbers, credentials, or medical details appear in the demo.
-
-## What automated QA can establish
-
-Unit tests validate calendar times, reminder alarm syntax, reminder scheduling windows, deduplication, and strict input handling. Browser tests exercise appointment CRUD/persistence, month selection, reminder export, map behaviors, insurance help text, the actual Chromium Notification constructor, and denied/unsupported browser fallbacks. The notification constructor is wrapped to record the request while still calling the native browser API.
-
-Those tests do **not** establish OS-level display, real Google/Apple imports, real clinic services, real insurance contracts, or the deployed site's live tile availability. They are separate manual/source checks, not unfinished features disguised as working integrations.
-
-## Source access needed
-
-Source pages, live tiles and the deployed site still receive proxy HTTP 403 in this cloud environment. The listed domain changes are saved in the environment draft but not confirmed applied. Apply the source access settings, or provide official location-page exports with authoritative location/map links for review. Do not fill the directory with synthetic test fixtures to make the demo look complete.
+No patient names, symptoms, medical details, insurance identifiers or credentials should appear in a demo. Use clear test labels for any personal appointment created solely to rehearse the calendar flow; never fabricate a clinic identity or confirmed booking.

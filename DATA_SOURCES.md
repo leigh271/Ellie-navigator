@@ -1,29 +1,29 @@
-# Provider evidence and publication policy
+# Clinic evidence and publication policy
 
-`src/data/providers.json` intentionally contains **zero records**. Outbound access to Figma and official healthcare domains returned proxy HTTP 403 during implementation. No individual provider location, service, insurance plan, fee policy, phone number, or coordinate was source-verified. No records are described as verified, and no fabricated sample providers are visible to users.
+The supplied official HRSA candidate CSV/JSON now provide the clinic identity/location foundation. **119 candidate records are retained; 14 selected location-sourced records are published** in `src/data/providers.json`. They are not asserted to be 14 service-verified women's healthcare providers.
 
-The app instead links to official directories in `src/data/directory-sources.json`. These are reference links, not provider records or verified filtered matches. Their destination availability still needs checking with network access:
+See [the source package](data/hrsa/README.md), [exact audit results](docs/HRSA_IMPORT_AUDIT.json) and [service-verification requests](docs/SERVICE_VERIFICATION_NEEDED.md). No national dataset was downloaded again. All public directory records are in Broward or Miami-Dade.
 
-- Florida DOH Broward: https://broward.floridahealth.gov/locations/
-- Florida DOH Miami-Dade: https://miamidade.floridahealth.gov/locations/
-- HRSA health-center finder: https://findahealthcenter.hrsa.gov/
+## Verification levels
 
-Educational reference links are defined in `src/components/resources.tsx` and point to original CDC/NICHD sources. They are not a substitute for individual care.
+- **Location sourced:** the supplied HRSA record supports name, address, city, county, ZIP, phone, coordinates and any provided website. `verification: location` explicitly distinguishes this from independent clinic-site review. The source record date and extract review date are separate.
+- **Service verified:** a location-specific official source explicitly supports the service. Add its exact service name to `services` and to the supporting source's `fields`. A clinic name, hospital ownership or HRSA inclusion is not service evidence.
+- **Insurance verified:** explicit plan names require location-specific source evidence. Add the named plans and `insurance:<plan>` fields. Confirmed nonacceptance requires a corresponding `insuranceDeclined:<plan>` field. Unlisted plans remain unknown, never automatically rejected or accepted.
+- **Booking verified:** add `bookingUrl` only after the official scheduling destination is source-reviewed, with a corresponding source field. Until then, display Call Clinic or the supplied website, not a pretend booking button.
+- **Unknown:** keep missing websites null, services/plans empty, costs unknown and booking links absent. The UI labels these states explicitly.
 
-## Complete the directory
+Cervical screening, Pap tests and HPV testing are distinct. Broad cervical-screening searches may include a specifically confirmed Pap or HPV test, but a general cervical-screening claim does not establish either specific test. Vaccination cannot substitute for screening.
 
-1. Read an official clinic location page or HRSA/DOH entry. Record the exact organization/location name, address, phone, county, and public URL. NPI registration alone does not prove a practice is active or a service is available.
-2. Verify each advertised service against the specific location’s official page. Organization-wide service offerings do not prove every branch offers them. Leave unsupported services out.
-3. Include only explicitly documented insurance plans. A blank array means unknown, not uninsured-only care. Never infer acceptance from insurance logos elsewhere on a network website.
-4. Set `affordability: "sliding-scale"` only if an official source documents the location’s policy. This is not a price quote or guarantee of eligibility. Otherwise use `"unknown"`.
-5. Verify WGS84 coordinates in **[longitude, latitude]** order using an authoritative location/map source. Do not guess from a city center. Preserve source attribution and applicable data licenses. Use exact provider locations only when reviewed.
-6. Include per-source `url`, `title`, `checkedAt` (the real review date, `YYYY-MM-DD`), and `fields` documenting supported facts. Fields should include `address`, `coordinates`, and the exact service names when relevant. Use real evidence rather than a date entered merely to satisfy the test.
-7. Run `npm test`, review the page, click every marker/card, and confirm filters and favorites against the actual data. Recheck at least quarterly and remove stale entries. Availability, pricing and insurance should always be confirmed directly by the user.
+## Review a clinic service
 
-## Record shape
+Read its official location page or an authoritative DOH/HRSA supplement that ties the named service to the exact location. Save the source URL, actual review date, and fields supported. Do not infer branch-level services from a network-wide homepage. Keep record dates unchanged. The uploaded HRSA coordinates must remain precise `[longitude, latitude]` values; no city centers or guessed geocoding are used for clinic markers.
 
-See `Provider` in `src/lib/types.ts`. Required fields: `id`, `name`, `kind`, `county`, `address`, `city`, `coordinates`, `services`, `website`, `insurance`, `affordability`, `sources`, `verification: "reviewed"`. `phone` is optional.
+The publication contract in `src/lib/provider-schema.ts` rejects malformed coordinates, duplicate IDs and unsupported service/insurance/affordability claims. Data tests reconcile both uploads and check original source values. Passing structural tests is not independent factual verification; manual evidence review is still required.
 
-Marker kinds are `community` (pink), `private` (lavender), `hospital` (ice blue), and `preventive` (mint). Classification should reflect the source, not imply free care or guaranteed service.
+## Basemap sources and attribution
 
-No reviews, star ratings, travel distances, prices, booking slots, availability, or “accepting new patients” status are modeled in this MVP. All clinic bookings happen outside Ellie. A dataset passing structural tests is not evidence that its factual claims were reviewed.
+Default: OpenFreeMap Positron vector style, rendered by MapLibre GL JS. Preserve the attribution embedded in that style. If it fails, the UI offers an independent OpenStreetMap raster mode at `https://tile.openstreetmap.org/{z}/{x}/{y}.png`, with visible OpenStreetMap attribution and a copyright link. This alternative is for ordinary interactive viewing, not offline downloads, bulk prefetching or unrestricted high-volume use.
+
+Follow the [OSM tile usage policy](https://operations.osmfoundation.org/policies/tiles/) and [OSM attribution/license requirements](https://www.openstreetmap.org/copyright). The browser uses normal requests and caching; do not suppress the Referer or add cache-bypassing/bulk-download code. Choose a suitably hosted/contracted tile service before scaling beyond an appropriate public-service usage level. OpenFreeMap and OSM are independent endpoints; a cloud egress restriction can block both, which code cannot bypass.
+
+Browser tests exercise primary and alternative rendering, attribution, retries and real imported clinic positions using controlled map responses. Live third-party tile availability remains unverified from this environment because outbound requests are denied. If neither source is reachable or WebGL is unavailable, a labeled regional illustration appears and the real clinic list remains usable; clinics are never placed on that non-geographic illustration as fake markers.

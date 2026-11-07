@@ -1,6 +1,6 @@
 {
-  "publicationStatus": "not-published",
-  "provenance": "Candidate names and starting URLs supplied by the user; not independently verified.",
+  "publicationStatus": "historical-initial-candidate-research; superseded by HRSA import audit",
+  "provenance": "Historical research checklist from before the supplied HRSA import. Its remainingEvidence lists describe that earlier stage; current location evidence and publication counts are documented in currentDirectory.",
   "sourceAccess": {
     "broward-doh": {
       "url": "https://broward.floridahealth.gov/programs-and-services/clinical-and-nutrition-services/family-planning/",
@@ -21,7 +21,7 @@
   },
   "candidates": [
     {
-      "candidateNameFromRequest": "Broward Community & Family Health Center — Lauderhill",
+      "candidateNameFromRequest": "Broward Community & Family Health Center \u2014 Lauderhill",
       "startingSource": "broward-doh",
       "status": "blocked-source-access",
       "remainingEvidence": [
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "candidateNameFromRequest": "Broward Community & Family Health Center — Pompano Beach",
+      "candidateNameFromRequest": "Broward Community & Family Health Center \u2014 Pompano Beach",
       "startingSource": "broward-doh",
       "status": "blocked-source-access",
       "remainingEvidence": [
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "candidateNameFromRequest": "Broward Community & Family Health Center — Hollywood",
+      "candidateNameFromRequest": "Broward Community & Family Health Center \u2014 Hollywood",
       "startingSource": "broward-doh",
       "status": "blocked-source-access",
       "remainingEvidence": [
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "candidateNameFromRequest": "Broward Community & Family Health Center — West Park",
+      "candidateNameFromRequest": "Broward Community & Family Health Center \u2014 West Park",
       "startingSource": "broward-doh",
       "status": "blocked-source-access",
       "remainingEvidence": [
@@ -226,6 +226,13 @@
     "additionalLocationPolicy": "Two extra distinct verified locations, in any category; do not duplicate a location to meet category totals.",
     "geographicScope": ["Broward", "Miami-Dade"],
     "insuranceDemo": "Demonstrate an exact plan filter only when location-specific acceptance is documented. Plan names, never member IDs or policy numbers.",
-    "readiness": "Blocked: zero reviewed provider records are published."
+    "readiness": "Superseded by final MVP request: 14 location-only general-directory records published; service-specific demo remains unconfirmed. Do not manufacture missing categories."
+  },
+  "currentDirectory": {
+    "publishedLocationCount": 14,
+    "verifiedServiceCount": 0,
+    "source": "User-supplied HRSA candidate CSV/JSON",
+    "audit": "docs/HRSA_IMPORT_AUDIT.json",
+    "remainingEvidence": "docs/SERVICE_VERIFICATION_NEEDED.md"
   }
 }
