@@ -1,0 +1,26 @@
+[
+  {
+    "id": "broward-doh",
+    "name": "Florida Department of Health",
+    "region": "Broward County",
+    "description": "Explore county health department locations and contact the office to confirm services, eligibility, and fees.",
+    "url": "https://broward.floridahealth.gov/locations/",
+    "kind": "community"
+  },
+  {
+    "id": "miami-doh",
+    "name": "Florida Department of Health",
+    "region": "Miami-Dade County",
+    "description": "Use the official county directory to find a health department location and ask about your care options.",
+    "url": "https://miamidade.floridahealth.gov/locations/",
+    "kind": "preventive"
+  },
+  {
+    "id": "hrsa",
+    "name": "HRSA Find a Health Center",
+    "region": "South Florida",
+    "description": "Search the federal directory of health centers. Ask a center directly about available services and payment options.",
+    "url": "https://findahealthcenter.hrsa.gov/",
+    "kind": "community"
+  }
+]
