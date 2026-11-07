@@ -80,7 +80,14 @@ export default function AppointmentDialog({
           <div className="form-row">
             <label>
               Date
-              <input type="date" name="date" required defaultValue={initial.date || ''} />
+              <input
+                type="date"
+                name="date"
+                required
+                min="1900-01-01"
+                max="9999-12-31"
+                defaultValue={initial.date || ''}
+              />
             </label>
             <label>
               Time

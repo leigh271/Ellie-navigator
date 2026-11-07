@@ -1,6 +1,6 @@
 # Phase 2 delivery status
 
-This is a partial Phase 2 delivery. The existing app was improved in place. No unverified clinic records were published. The deployed site has not been updated by this branch.
+This is a partial Phase 2 delivery. The existing app was improved in place. No unverified clinic records were published. Deployment of these changes has not been independently verified.
 
 | Requested work                              | Status                                    | Evidence and remaining work                                                                                                                                                                                                                                                                                                                                                                         |
 | ------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ This is a partial Phase 2 delivery. The existing app was improved in place. No u
 
 ## Network evidence and how to resume
 
-The observed running network policy has no applied custom allowed hosts. The editable draft now preserves the existing domains and adds the supplied Broward Health, CHI and exact deployed-site hosts. A saved draft is not proof of an applied policy or a published snapshot. This branch does not publish an environment or promote a Vercel deployment.
+The observed running network policy has no applied custom allowed hosts. The editable draft now preserves the existing domains and adds the supplied Broward Health, CHI and exact deployed-site hosts. A saved draft is not proof of an applied policy or a published snapshot. No cloud environment publication is performed. Git pushes may trigger configured Vercel deployments; their outcomes must be checked separately.
 
 Required public destinations for this stage:
 
@@ -35,6 +35,6 @@ If this environment cannot access the public sources, official page exports plus
 
 ## Review and deployment
 
-Changes are on `phase-2-map-and-provider-review` in separate commits. Review this branch before merging into `main`. If Vercel Git integration is configured, a branch preview may be created by Vercel; its existence and live behavior must be checked separately. No Vercel production promotion was performed.
+Changes were developed on `phase-2-map-and-provider-review` in separate commits. Publication to `main` uses a normal Git push without force. If Vercel Git integration is configured, that push can trigger the production build; its status and live behavior must be checked separately. A successful Git push alone does not prove a successful Vercel deployment.
 
 The test runner now uses an isolated production server on port 3100 and refuses to reuse an existing server. An initial test attempt accidentally reached the old development server after build output changed; that run was stopped, the stale server was terminated, and checks were rerun against the isolated production build.

@@ -5,10 +5,16 @@ export function isValidAppointment(value: unknown): value is Appointment {
   const a = value as Appointment;
   if (
     typeof a.id !== 'string' ||
+    !a.id.trim() ||
+    a.id.length > 100 ||
     typeof a.provider !== 'string' ||
     a.provider.trim().length < 1 ||
     a.provider.length > 100 ||
+    typeof a.date !== 'string' ||
     !/^\d{4}-\d{2}-\d{2}$/.test(a.date) ||
+    a.date < '1900-01-01' ||
+    a.date > '9999-12-31' ||
+    typeof a.time !== 'string' ||
     !/^([01]\d|2[0-3]):[0-5]\d$/.test(a.time) ||
     ![15, 30, 45, 60, 90, 120].includes(a.duration)
   )
@@ -49,6 +55,7 @@ export function appointmentUTC(a: Appointment) {
   return result;
 }
 export function hasValidLocalTime(a: Appointment) {
+  if (!isValidAppointment(a)) return false;
   const d = appointmentUTC(a);
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: APPOINTMENT_ZONE,

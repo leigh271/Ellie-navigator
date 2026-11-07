@@ -143,3 +143,20 @@ test('directions preserve exact clinic coordinates in latitude/longitude order',
   assert.equal(url.origin, 'https://www.google.com');
   assert.equal(url.searchParams.get('destination'), '26.123456,-80.234567');
 });
+
+test('malformed stored appointments and unsupported years cannot crash time validation', () => {
+  for (const change of [
+    { date: '0001-01-01' },
+    { date: '0099-01-01' },
+    { date: '1899-12-31' },
+    { date: ['2030-01-15'] },
+    { time: ['09:30'] },
+    { id: '' },
+  ]) {
+    const invalid = { ...base, ...change };
+    assert.equal(isValidAppointment(invalid), false);
+    assert.doesNotThrow(() => hasValidLocalTime(invalid as Appointment));
+    assert.equal(hasValidLocalTime(invalid as Appointment), false);
+  }
+  assert.equal(hasValidLocalTime({ ...base, date: '1900-01-01' }), true);
+});
