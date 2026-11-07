@@ -1,0 +1,217 @@
+{
+  "publicationStatus": "not-published",
+  "provenance": "Candidate names and starting URLs supplied by the user; not independently verified.",
+  "sourceAccess": {
+    "broward-doh": {
+      "url": "https://broward.floridahealth.gov/programs-and-services/clinical-and-nutrition-services/family-planning/",
+      "result": "Proxy HTTP 403 before site content was received."
+    },
+    "miami-doh": {
+      "url": "https://miamidade.floridahealth.gov/programs-and-services/clinical-and-nutrition-services/preventive-services/family-planning/",
+      "result": "Proxy HTTP 403 before site content was received."
+    },
+    "broward-health": {
+      "url": "https://www.browardhealth.org/locations",
+      "result": "Proxy HTTP 403 before site content was received."
+    },
+    "chi": {
+      "url": "https://chisouthfl.org/locations/",
+      "result": "Proxy HTTP 403 before site content was received."
+    }
+  },
+  "candidates": [
+    {
+      "candidateNameFromRequest": "Broward Community & Family Health Center — Lauderhill",
+      "startingSource": "broward-doh",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Broward Community & Family Health Center — Pompano Beach",
+      "startingSource": "broward-doh",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Broward Community & Family Health Center — Hollywood",
+      "startingSource": "broward-doh",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Broward Community & Family Health Center — West Park",
+      "startingSource": "broward-doh",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Broward HealthPoint Lauderdale Lakes Care Center",
+      "startingSource": "broward-health",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Broward HealthPoint Maternity Care Center",
+      "startingSource": "broward-health",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Miami-Dade Health District Center",
+      "startingSource": "miami-doh",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "Florida City Family Planning Clinic",
+      "startingSource": "miami-doh",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "CHI Doris Ison Health Center",
+      "startingSource": "chi",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    },
+    {
+      "candidateNameFromRequest": "CHI South Miami Health Center",
+      "startingSource": "chi",
+      "status": "blocked-source-access",
+      "remainingEvidence": [
+        "active location and exact name",
+        "street address",
+        "precise location coordinates and coordinate source",
+        "phone",
+        "location-specific services",
+        "official clinic URL",
+        "actual source review date"
+      ],
+      "conditionalEvidence": [
+        "booking URL, if documented",
+        "exact insurance plans, if documented",
+        "affordability policy, if documented"
+      ]
+    }
+  ],
+  "subsequentResearch": [
+    "Identify and source-review private gynecology practices in Broward and Miami-Dade after the first ten locations are verified. Do not classify unverified private practices or invent entries to fill a marker category."
+  ]
+}

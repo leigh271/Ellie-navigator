@@ -26,15 +26,17 @@ npm start
 ## What works
 
 - **Find Care:** service, location, documented-insurance and sliding-fee filters; synchronized MapLibre heart markers and selectable provider cards; favorites; original source details. **The provider dataset is currently empty** because source websites could not be accessed for verification in this environment. The live screen shows clearly labeled official-directory links, never sample clinics. All six services are available in the dropdown. Mobile insurance entry is in Filters.
-- **Map:** OpenFreeMap Positron vector style with MapLibre. Attribution is preserved. When WebGL or tiles are unavailable, a clearly labeled, approximate regional illustration replaces the basemap; it is not a navigational map and does not place invented providers.
+- **Map:** OpenFreeMap Positron vector style with MapLibre. Attribution is preserved. Controls include zoom, reset and fit-to-providers; provider cards link to directions using their exact stored coordinates. The live map becomes visible once its style is ready, while tiles continue loading. Slow or failed individual tiles show a status message without hiding the map. If the style or WebGL cannot initialize, a clearly labeled, approximate regional illustration replaces the basemap; it is not a navigational map and does not place invented providers.
 - **My Care:** browser-local favorites and personal appointment CRUD; month calendar and upcoming list; Google Calendar links; Apple-compatible `.ics` downloads. Uses Eastern Time, including DST. Clinic booking is external and never implied by saving a record. No email, SMS, or push reminders.
 - **Ask Ellie:** labeled, deterministic navigation guide. Default messages stay entirely in the browser. Optional server-side OpenAI integration requires a key and explicit user opt-in for each session. No diagnosis or treatment advice.
 - **Resources:** original CDC and NIH educational links. Links are references, not reviewed clinical recommendations. External link destinations could not be checked in this restricted environment.
 
+Phase 2 status, source-access evidence and deferred work are documented in [docs/PHASE2_STATUS.md](docs/PHASE2_STATUS.md). All ten requested research candidates are tracked in [docs/provider-research.json](docs/provider-research.json); none is published as verified.
+
 ## Known gaps before a public launch
 
 1. **Provider data:** no individual providers are published yet. Follow [DATA_SOURCES.md](DATA_SOURCES.md) to verify and curate records. Do not call the empty directory a live provider search. Map/card/favorite interaction passes an isolated browser test with synthetic fixtures and a local test basemap; it is not yet validated against a populated real-world dataset.
-2. **Figma:** the provided file could not be accessed under the environment’s network policy. The current design follows the written brief: locally hosted typography, gradient handwritten Ellie wordmark, white cards, pastel heart markers, and an iridescent assistant. Direct comparison with Figma is pending.
+2. **Figma:** the provided file could not be accessed under the environment’s network policy. The current design follows the written brief: locally hosted typography, gradient sans-serif Ellie wordmark, white cards, pastel heart markers, and an iridescent assistant. Direct comparison with Figma is pending.
 3. **Live tiles:** `tiles.openfreemap.org` needs to be allowed in the cloud environment. Runtime fallback was exercised; live external tile access was not established here. Production visitors need Internet/WebGL access.
 4. **AI:** no API key was present. The rule-based flow and fallback route are tested; the live OpenAI integration is untested. Add platform rate limits and monitoring before enabling a paid API on a public deployment. The default no-key version does not incur API costs.
 5. **Privacy:** localStorage is accessible to other users of the same browser profile, is not encrypted by this app, and is not backed up or synced. Store only a generic provider name, date, time, and duration. No medical notes, accounts, or tracking. Users can clear local data in My Care. Calendar export shares the provider and time with the chosen calendar service.
@@ -57,9 +59,9 @@ npm run test:e2e
 npm run format:check
 ```
 
-The isolated map harness runs only on the desktop profile; mobile application flows run separately. No synthetic fixture is shipped as provider data.
+The isolated map harness and production map regression tests run on both desktop and mobile profiles. Map tests use deterministic test-only style/tile fixtures; they do not prove live OpenFreeMap access. No synthetic fixture is shipped as provider data.
 
-Browser tests use system Chromium at `/usr/bin/chromium` in this cloud environment. On other machines, install Chromium with Playwright and set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable, or update the launch path to your installed browser. Tests exercise a production server on port 3000. Playwright uses one worker and desktop plus mobile profiles. Domain-test fixtures are synthetic and are never shipped as provider data.
+Browser tests use system Chromium at `/usr/bin/chromium` in this cloud environment. On other machines, install Chromium with Playwright and set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable, or update the launch path to your installed browser. Tests start an isolated production server on port 3100 and never reuse a development server. Playwright uses one worker and desktop plus mobile profiles. Domain-test fixtures are synthetic and are never shipped as provider data.
 
 ## Deploy to Vercel
 
