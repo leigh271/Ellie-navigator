@@ -75,6 +75,31 @@ test('actual map markers select actual provider cards, and hearts toggle saved s
     page.getByRole('link', { name: 'Directions to Synthetic test fixture A' }),
   ).toHaveAttribute('href', /destination=26.1%2C-80.2/);
   await page.getByRole('button', { name: 'Fit map to matching providers' }).click();
+  await expect
+    .poll(() =>
+      page.locator('.heart-marker').evaluateAll((elements) =>
+        elements.every((el) => {
+          const bounds = el.closest('.map-shell')!.getBoundingClientRect();
+          const marker = el.getBoundingClientRect();
+          return (
+            marker.left >= bounds.left &&
+            marker.right <= bounds.right &&
+            marker.top >= bounds.top &&
+            marker.bottom <= bounds.bottom
+          );
+        }),
+      ),
+    )
+    .toBe(true);
+  const separation = () =>
+    page.locator('.heart-marker').evaluateAll((elements) => {
+      const a = elements[0].getBoundingClientRect();
+      const b = elements[1].getBoundingClientRect();
+      return Math.hypot(a.x - b.x, a.y - b.y);
+    });
+  const beforeZoom = await separation();
+  await page.getByRole('button', { name: 'Zoom in', exact: true }).click();
+  await expect.poll(separation).toBeGreaterThan(beforeZoom * 1.4);
   await page.getByRole('button', { name: 'Toggle test provider filter' }).click();
   await expect(page.locator('.heart-marker')).toHaveCount(1);
   await page.getByRole('button', { name: 'Hide test map' }).click();
