@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import type { Appointment } from '@/lib/types';
 import { services } from '@/lib/types';
-import { filterProviders, providers } from '@/lib/providers';
+import { searchCareProviders, providers } from '@/lib/providers';
 import directorySources from '@/data/directory-sources.json';
 import { useLocalData } from '@/lib/use-local-data';
 import { useBrowserReminders } from '@/lib/use-browser-reminders';
@@ -51,13 +51,17 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
   const [toast, setToast] = useState('');
   const local = useLocalData();
   const reminders = useBrowserReminders(local.appointments, () => navigate('care'));
-  const matches = useMemo(
-    () =>
-      filterProviders(providers, { location, service, insurance, affordability }).filter(
-        (p) => !savedOnly || local.favorites.includes(p.id),
-      ),
-    [location, service, insurance, affordability, savedOnly, local.favorites],
+  const searchResults = useMemo(
+    () => searchCareProviders(providers, { location, service, insurance, affordability }),
+    [location, service, insurance, affordability],
   );
+  const matches = useMemo(
+    () => [...searchResults.exact, ...searchResults.nearby].filter(
+      (p) => !savedOnly || local.favorites.includes(p.id),
+    ),
+    [searchResults, savedOnly, local.favorites],
+  );
+  const exactIds = useMemo(() => new Set(searchResults.exact.map((p) => p.id)), [searchResults]);
   const onSelect = useCallback((id: string) => {
     setSelected(id);
     setMobileMap(false);
@@ -178,7 +182,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                     <span className="field-label">LOCATION</span>
                     <input
                       aria-label="Location"
-                      placeholder="City, county, or provider"
+                      placeholder="e.g. Fort Lauderdale, FL"
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
                     />
@@ -207,7 +211,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                     <span className="field-label">INSURANCE PLAN NAME</span>
                     <input
                       aria-label="Insurance plan"
-                      placeholder="e.g. Florida Blue PPO"
+                      placeholder="Optional — all plans"
                       aria-describedby="insurance-help"
                       value={insurance}
                       onChange={(e) => setInsurance(e.target.value)}
@@ -228,7 +232,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                 </button>
               </div>
               <p id="insurance-help" className="insurance-help">
-                Use your insurance company and plan name—not your member ID or policy number.
+                Insurance is optional. Leave blank to see all matching clinics. Never enter your member ID or policy number.
                 Confirm coverage with the clinic.
               </p>
               <div className="filter-row">
@@ -270,7 +274,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                       aria-label="Insurance plan on mobile"
                       value={insurance}
                       onChange={(e) => setInsurance(e.target.value)}
-                      placeholder="e.g. Florida Blue PPO"
+                      placeholder="Optional — all plans"
                       aria-describedby="insurance-help"
                     />
                   </label>
@@ -330,8 +334,13 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                 )}
                 <div className="provider-scroll">
                   {matches.map((p) => (
+                    <div key={p.id}>
+                      {!exactIds.has(p.id) && (
+                        <p className="small-muted" style={{ margin: '8px 0' }}>
+                          Nearby alternative · outside your exact location
+                        </p>
+                      )}
                     <ProviderCard
-                      key={p.id}
                       provider={p}
                       selected={selected === p.id}
                       saved={local.favorites.includes(p.id)}
@@ -339,20 +348,27 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                       onSave={() => local.toggleFavorite(p.id)}
                       onAppointment={() => setAppointment({ provider: p.name })}
                     />
+                    </div>
                   ))}
                   {!matches.length && providers.length > 0 && (
                     <div className="empty-care">
                       <Search size={25} />
                       <h3>No reviewed matches yet.</h3>
                       <p>
-                        Try a broader location or fewer filters. You can also contact a clinic
-                        directly to ask about services and coverage.
+                        No verified clinics match these filters in the selected area or nearby.
+                        Try a broader location or fewer filters, or use the official directories.
+                        Insurance acceptance and services must be confirmed with the clinic.
                       </p>
                       <button className="text-button" onClick={reset}>
                         Reset filters
                       </button>
                     </div>
                   )}
+                  {providers.length > 0 && !matches.length && directorySources.map((s) => (
+                    <a key={s.id} href={s.url} target="_blank" rel="noreferrer" className="text-button">
+                      {s.name} — official directory <ArrowUpRight size={14} />
+                    </a>
+                  ))}
                   {providers.length === 0 && (
                     <>
                       <div className="directory-notice">
