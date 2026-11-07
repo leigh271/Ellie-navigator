@@ -136,3 +136,10 @@ test('navigation guide sets emergency, diagnosis, booking, and directory boundar
   if (!providers.length)
     assert.match(ruleBasedReply('find a clinic in Broward'), /not populated yet/);
 });
+
+test('directions preserve exact clinic coordinates in latitude/longitude order', async () => {
+  const { directionsURL } = await import('../src/lib/map');
+  const url = new URL(directionsURL({ coordinates: [-80.234567, 26.123456] }));
+  assert.equal(url.origin, 'https://www.google.com');
+  assert.equal(url.searchParams.get('destination'), '26.123456,-80.234567');
+});

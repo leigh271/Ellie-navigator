@@ -2,6 +2,7 @@
 import { Heart, MapPin, ArrowUpRight, Check, Phone, CalendarPlus } from 'lucide-react';
 import type { Provider } from '@/lib/types';
 import { kinds } from '@/lib/types';
+import { directionsURL } from '@/lib/map';
 export default function ProviderCard({
   provider: p,
   selected,
@@ -54,6 +55,14 @@ export default function ProviderCard({
       <div className="provider-actions">
         <a href={p.website} target="_blank" rel="noreferrer">
           Clinic website <ArrowUpRight size={14} />
+        </a>
+        <a
+          href={directionsURL(p)}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Directions to ${p.name}`}
+        >
+          Directions <MapPin size={13} />
         </a>
         {p.phone && (
           <a href={`tel:${p.phone.replace(/[^+\d]/g, '')}`} aria-label={`Call ${p.name}`}>

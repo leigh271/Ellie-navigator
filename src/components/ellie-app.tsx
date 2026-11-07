@@ -58,9 +58,12 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
   );
   const onSelect = useCallback((id: string) => {
     setSelected(id);
-    document
-      .getElementById(`provider-${id}`)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    setMobileMap(false);
+    requestAnimationFrame(() =>
+      document
+        .getElementById(`provider-${id}`)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }),
+    );
   }, []);
   function navigate(next: Tab) {
     setTab(next);

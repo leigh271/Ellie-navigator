@@ -1,5 +1,5 @@
 // Isolated synthetic fixtures for browser component tests. Never imported by the app.
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import CareMap from '../../src/components/care-map';
 import ProviderCard from '../../src/components/provider-card';
@@ -41,6 +41,9 @@ const fixtures: Provider[] = [
   },
 ];
 function Harness() {
+  const [visible, setVisible] = useState(false);
+  const [firstOnly, setFirstOnly] = useState(false);
+  const shown = useMemo(() => (firstOnly ? fixtures.slice(0, 1) : fixtures), [firstOnly]);
   const [selected, setSelected] = useState<string | null>(null);
   const [saved, setSaved] = useState<string[]>([]);
   const select = useCallback((id: string) => setSelected(id), []);
@@ -48,9 +51,13 @@ function Harness() {
     <div>
       <h1>Isolated map component test — synthetic fixtures</h1>
       <p role="status">{saved.length} saved test fixtures</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '350px 1fr', gap: 20 }}>
+      <button onClick={() => setVisible((v) => !v)}>
+        {visible ? 'Hide test map' : 'Show test map'}
+      </button>
+      <button onClick={() => setFirstOnly((v) => !v)}>Toggle test provider filter</button>
+      <div className="test-grid">
         <div>
-          {fixtures.map((p) => (
+          {shown.map((p) => (
             <ProviderCard
               key={p.id}
               provider={p}
@@ -66,8 +73,8 @@ function Harness() {
             />
           ))}
         </div>
-        <div style={{ height: 600 }}>
-          <CareMap providers={fixtures} selected={selected} onSelect={select} />
+        <div style={{ height: 600, display: visible ? 'block' : 'none' }}>
+          <CareMap providers={shown} selected={selected} onSelect={select} />
         </div>
       </div>
     </div>

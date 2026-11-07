@@ -1,9 +1,8 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import { Heart, LocateFixed, Minus, Plus, Layers, ExternalLink } from 'lucide-react';
-import type { Map as LibreMap, Marker } from 'maplibre-gl';
+import { Heart, LocateFixed, Minus, Plus, Layers, ExternalLink, Scan } from 'lucide-react';
 import type { Provider } from '@/lib/types';
 import { kinds } from '@/lib/types';
+import { useCareMap } from '@/lib/use-care-map';
 export default function CareMap({
   providers,
   selected,
@@ -13,92 +12,18 @@ export default function CareMap({
   selected: string | null;
   onSelect: (id: string) => void;
 }) {
-  const container = useRef<HTMLDivElement>(null);
-  const map = useRef<LibreMap | null>(null);
-  const markers = useRef<Marker[]>([]);
-  const [ready, setReady] = useState(false);
-  const [unavailable, setUnavailable] = useState(false);
-  const [retry, setRetry] = useState(0);
-  useEffect(() => {
-    let disposed = false;
-    let timer: ReturnType<typeof setTimeout>;
-    let resizeObserver: ResizeObserver | undefined;
-    setTimeout(() => {
-      if (!disposed) {
-        setReady(false);
-        setUnavailable(false);
-      }
-    }, 0);
-    import('maplibre-gl')
-      .then(({ default: maplibregl }) => {
-        if (disposed || !container.current) return;
-        try {
-          const instance = new maplibregl.Map({
-            container: container.current,
-            style: 'https://tiles.openfreemap.org/styles/positron',
-            center: [-80.3, 25.94],
-            zoom: 8.6,
-            attributionControl: { compact: true },
-          });
-          map.current = instance;
-          resizeObserver = new ResizeObserver(() => instance.resize());
-          resizeObserver.observe(container.current);
-          instance.on('load', () => {
-            if (!disposed) {
-              setReady(true);
-              setUnavailable(false);
-              clearTimeout(timer);
-            }
-          });
-          instance.on('error', () => {
-            if (!disposed && !instance.isStyleLoaded()) setUnavailable(true);
-          });
-          timer = setTimeout(() => {
-            if (!disposed && !instance.isStyleLoaded()) setUnavailable(true);
-          }, 12000);
-        } catch {
-          setUnavailable(true);
-        }
-      })
-      .catch(() => {
-        if (!disposed) setUnavailable(true);
-      });
-    return () => {
-      disposed = true;
-      clearTimeout(timer);
-      resizeObserver?.disconnect();
-      markers.current.forEach((m) => m.remove());
-      map.current?.remove();
-      map.current = null;
-    };
-  }, [retry]);
-  useEffect(() => {
-    if (!ready || !map.current) return;
-    let disposed = false;
-    import('maplibre-gl').then(({ default: lib }) => {
-      if (disposed || !map.current) return;
-      markers.current.forEach((m) => m.remove());
-      markers.current = providers.map((p) => {
-        const button = document.createElement('button');
-        button.className = `heart-marker ${selected === p.id ? 'selected' : ''}`;
-        button.style.setProperty('--marker-color', kinds[p.kind].color);
-        button.setAttribute('aria-label', `Select ${p.name}`);
-        button.setAttribute('aria-pressed', String(selected === p.id));
-        button.innerHTML =
-          '<svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path fill="currentColor" d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>';
-        button.onclick = () => onSelect(p.id);
-        return new lib.Marker({ element: button }).setLngLat(p.coordinates).addTo(map.current!);
-      });
-      const active = providers.find((p) => p.id === selected);
-      if (active) map.current.flyTo({ center: active.coordinates, zoom: 11, essential: false });
-    });
-    return () => {
-      disposed = true;
-    };
-  }, [providers, selected, onSelect, ready]);
+  const { container, ready, unavailable, notice, zoomIn, zoomOut, reset, fit, retry } = useCareMap(
+    providers,
+    selected,
+    onSelect,
+  );
   return (
-    <div className="map-shell" aria-label="South Florida provider map">
-      <div className="regional-map" aria-hidden="true">
+    <div
+      className="map-shell"
+      aria-label="South Florida provider map"
+      data-map-state={ready ? 'ready' : unavailable ? 'unavailable' : 'loading'}
+    >
+      <div className="regional-map" aria-hidden="true" hidden={ready}>
         <svg viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice">
           <defs>
             <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -181,29 +106,28 @@ export default function CareMap({
         Broward & Miami-Dade
       </div>
       <div className="map-controls">
-        <button aria-label="Zoom in" disabled={!ready} onClick={() => map.current?.zoomIn()}>
+        <button aria-label="Zoom in" disabled={!ready} onClick={zoomIn}>
           <Plus size={18} />
         </button>
-        <button aria-label="Zoom out" disabled={!ready} onClick={() => map.current?.zoomOut()}>
+        <button aria-label="Zoom out" disabled={!ready} onClick={zoomOut}>
           <Minus size={18} />
         </button>
-        <button
-          aria-label="Reset South Florida map"
-          disabled={!ready}
-          onClick={() => map.current?.flyTo({ center: [-80.3, 25.94], zoom: 8.6 })}
-        >
+        <button aria-label="Reset South Florida map" disabled={!ready} onClick={reset}>
           <LocateFixed size={18} />
         </button>
+        <button aria-label="Fit map to matching providers" disabled={!ready} onClick={fit}>
+          <Scan size={18} />
+        </button>
       </div>
-      {!ready && (
-        <div className="map-status">
+      {(!ready || notice) && (
+        <div className="map-status" role="status">
           <Layers size={15} />
           <span>
             {unavailable
-              ? 'Interactive map unavailable · regional illustration, not to scale'
-              : 'Regional illustration · loading interactive map…'}
+              ? `${notice} Regional illustration, not to scale.`
+              : notice || 'Regional illustration · loading interactive map…'}
           </span>
-          {unavailable && <button onClick={() => setRetry((x) => x + 1)}>Retry map</button>}
+          {(unavailable || notice) && <button onClick={retry}>Reload map</button>}
         </div>
       )}
       {providers.length === 0 && (

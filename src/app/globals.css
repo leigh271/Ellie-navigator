@@ -2804,3 +2804,42 @@ main {
     font-size: 10px;
   }
 }
+/* MapLibre needs explicit dimensions even when its containing mobile panel was hidden. */
+.live-map.maplibregl-map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  inset: 0;
+}
+.regional-map[hidden] {
+  display: none;
+}
+.map-shell {
+  min-height: 350px;
+}
+.map-status {
+  z-index: 2;
+  line-height: 1.6;
+  max-width: calc(100% - 95px);
+}
+.heart-marker:focus-visible {
+  outline: 3px solid #80678f;
+  outline-offset: 4px;
+}
+.provider-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.provider-actions > a:first-child {
+  margin-right: 0;
+}
+@media (max-width: 620px) {
+  .map-controls button {
+    min-width: 42px;
+    min-height: 42px;
+  }
+  .map-status {
+    max-width: calc(100% - 85px);
+  }
+}
