@@ -5,11 +5,14 @@ Validated locally on the production Next.js bundle with system Chromium. These r
 - `npm run lint`: passed.
 - `npm run typecheck`: passed.
 - `npm run build`: passed.
-- `npm test`: **18 passed**. Covers source-file reconciliation and checksums, publication evidence requirements, search normalization, progressive distances, optional insurance, service distinctions, calendar dates and exports, and assistant boundaries.
-- `npm run test:e2e`: **28 passed** across desktop and mobile. Covers search submission, real imported directory records, marker/card synchronization, details and contact links, favorites, personal appointment CRUD, Google Calendar URLs, ICS reminders, notification permissions, map failure/retry, and the attributed alternative map style.
+- `npm test`: **21 passed**. Covers source-file reconciliation and checksums, publication evidence requirements, search normalization, progressive distances, optional insurance, service distinctions, calendar dates and exports, and assistant boundaries.
+- `npm run test:e2e`: **34 passed** across desktop and mobile. Covers search submission, real imported directory records, marker/card synchronization, details and contact links, favorites, personal appointment CRUD, Google Calendar URLs, ICS reminders, notification permissions, map failure/retry, and the attributed alternative map style.
+- `npm run test:data`: **6 passed**, validating official enrichment provenance/scopes and a mocked Google request without live credentials.
+- Browser tests include insured and self-pay journeys in both counties, all view modes, invalid ZIP handling, synthetic scheduling and the partner preview. Positive Pap/coverage matches remain data-blocked; those tests assert the truthful empty state and explicit general-directory fallback.
 - Production browser tests use a dedicated port and controlled tile responses. They establish MapLibre rendering and interaction, not external tile-host availability.
 - Importing twice produced identical provider, search-origin and audit outputs. Original uploaded CSV/JSON bytes are preserved and checked by tests.
-- Desktop and mobile screenshots were captured; the mobile directory layout was visually inspected. Browser checks also cover horizontal overflow and accessible control labels.
+- The full 34-test browser suite passed; the 10 affected discovery/partner checks were rerun successfully after the final UI refinements.
+- Desktop and mobile manual-search screenshots and the mobile partner preview were visually inspected. Browser checks also cover horizontal overflow and accessible control labels.
 
 ## Data evidence
 

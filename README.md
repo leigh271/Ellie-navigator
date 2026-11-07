@@ -2,12 +2,14 @@
 
 A responsive South Florida healthcare navigation MVP, an initiative of **Flowers for Women**. **Women’s health, closer to you.**
 
+See the [manual discovery update and remaining gaps](docs/MANUAL_DISCOVERY_UPDATE.md) for the latest work.
+
 ## Current scope
 
 - **119 uploaded HRSA candidates retained**, reconciled between CSV and JSON (25 Broward, 94 Miami-Dade).
 - **14 real location-sourced clinics published**: 11 Broward and 3 Miami-Dade. Original names, addresses, ZIPs, phones, websites/nulls and precise HRSA coordinates are preserved.
 - **Zero service-verified, insurance-verified or booking-verified locations at present.** HRSA inclusion is not evidence of women's healthcare services. General directory records are clearly labeled; they cannot satisfy a service-specific filter without location-specific evidence.
-- Search supports city/state variations, ZIP, county and clinic names. Find Care applies draft filters. Nearby expansion uses 10/25/50-mile straight-line distances with an explicitly described search origin. Insurance is optional; unknown acceptance remains visible and separate from documented plan matches.
+- Search supports city/state variations, ZIP, county and clinic names, separate county/carrier/plan controls, self-pay preferences, supported categories, and map/list/combined views. Find Care applies draft filters. Nearby expansion uses 10/25/50-mile straight-line distances with an explicitly described search origin. Insurance is optional; unknown acceptance remains visible and separate from documented plan matches.
 - MapLibre heart markers synchronize with cards and details. Colors distinguish community and health-system locations where supported; no private or vaccination classification is invented to fill the legend. Zoom, fit, recenter, mobile map/list, Google and Apple directions are included.
 - Contact uses a verified booking link only when evidence exists; otherwise Call Clinic or a source-provided website. Currently the clinics have phone actions, not pretend booking buttons.
 - My Care favorites, appointment CRUD, month picker, Google Calendar templates, Apple-compatible ICS reminders and opt-in tab reminders remain. These do not connect calendar accounts or book clinic appointments.
@@ -35,6 +37,8 @@ npm start
 
 ```bash
 npm run data:import
+npm run data:enrich
+npm run test:data
 npm test
 npm run build
 ```
@@ -68,6 +72,12 @@ Google opens a prefilled event that the user must save. Choose Google notificati
 
 Optional browser reminders explicitly request notification permission, use generic wording without clinic names and require Ellie to remain open. Closed or suspended tabs, mobile/browser/OS limits and Do Not Disturb can prevent delivery. A test button requests a notification; verify actual display on the demonstration device. No email, SMS, service-worker push or account synchronization is implemented.
 
+## Clinic administration and enrichment
+
+`/partners` is a labeled local prototype for clinic claims, listing staging, fictional slots/requests and demo activity counts. It creates no accounts, verifies no affiliation, persists no clinic changes and receives no patient requests. Profile scheduling previews are synthetic and separate from My Care. Live partner authorization and integrations are future work.
+
+Optional administrator-only Google Places review reads `GOOGLE_MAPS_API_KEY`; [setup, policy boundaries and official-source import steps](docs/GOOGLE_PLACES_SETUP.md) are documented. No key is configured and live Google calls are untested. The patient app does not call Places.
+
 ## Optional OpenAI
 
 The default labeled rule-based navigator works in-browser without sending chat to a server. It distinguishes HRSA location records from unconfirmed services and does not diagnose or recommend treatment.
@@ -76,7 +86,7 @@ For optional AI, put `OPENAI_API_KEY` in secure server-side Vercel environment v
 
 ## GitHub and Vercel
 
-This work extends the two commits from PR **#2**, fetched and reviewed via Git on `origin/pr-2`. The current review branch is `feature/hrsa-directory-final-mvp`; original PR history and unrelated main-branch work are preserved. GitHub API access is blocked here, so live PR comments/state are not independently read. Merge the reviewed branch normally when ready; do not force-push over unrelated work.
+This work extends the two commits from PR **#2**, fetched and reviewed via Git on `origin/pr-2`. The current review branch is `feature/hrsa-directory-final-mvp`; original PR history and unrelated main-branch work are preserved. GitHub API access is blocked here, so live PR comments/state are not independently read. Do not merge or deploy without approval. After approval, merge the reviewed branch normally; do not force-push over unrelated work.
 
 In Vercel, import `leigh271/Ellie-navigator`, select Next.js, the repository root, Node 24, `npm ci`, and `npm run build`; leave the output override unset. No API keys are required for the general directory and rule-based MVP. Verify the selected deployment branch and deployment status before presenting. A source push is not proof of a successful Vercel build or a new preview URL.
 

@@ -1,5 +1,7 @@
 # Current implementation status
 
+The [manual discovery update](MANUAL_DISCOVERY_UPDATE.md) records the latest county/carrier/category controls, exact-network evidence model, synthetic scheduling and partner preview. It also identifies the two service-specific acceptance journeys as data-blocked.
+
 This document supersedes the earlier empty-directory status. The user supplied HRSA candidate JSON/CSV and explicitly allowed location-only records in general discovery.
 
 | Area                     | Current result                                                                                                                                                                                                                                                        |
