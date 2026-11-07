@@ -12,7 +12,10 @@
     "test:e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "data:import": "python3 scripts/import_hrsa.py"
+    "data:import": "python3 scripts/import_hrsa.py",
+    "data:enrich": "python3 scripts/enrich_clinics.py",
+    "data:places": "node --env-file-if-exists=.env.local scripts/google-places-review.mjs",
+    "test:data": "python3 -m unittest discover -s scripts -p \"test_*.py\""
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

@@ -75,8 +75,12 @@ def main():
              'affordability':old.get('affordability','unknown'), 'verification':old.get('verification','location'),
              'sources':[source]+[s for s in old.get('sources',[]) if s.get('origin')!='uploaded-hrsa'],
              'hrsa':{'sourceId':r['id'], 'sourceRecordDate':r['source']['recordDate'], 'sourceName':r['source']['name'], 'sourceURL':r['source']['url'], 'locationType':r['locationType'], 'setting':r['setting'], 'status':'Active', 'serviceVerification':r['serviceVerification'], 'insuranceVerification':r['insuranceVerification']}}
-        for optional in ['bookingUrl','insuranceDeclined']:
+        for optional in ['bookingUrl','insuranceDeclined','insuranceParticipation','selfPay','schedulingPhone']:
             if optional in old: p[optional] = old[optional]
+        # Higher-confidence official evidence survives repeated HRSA refreshes.
+        for field in ['name','organization','address','city','county','state','zip','phone','website','coordinates']:
+            if field in old and any(field in s.get('fields',[]) and s.get('origin') != 'uploaded-hrsa' for s in old.get('sources',[])):
+                p[field]=old[field]
         published.append(p)
     # Preserve unrelated reviewed records rather than overwriting work from another branch.
     selected_ids = {p['id'] for p in published}
