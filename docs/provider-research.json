@@ -213,5 +213,19 @@
   ],
   "subsequentResearch": [
     "Identify and source-review private gynecology practices in Broward and Miami-Dade after the first ten locations are verified. Do not classify unverified private practices or invent entries to fill a marker category."
-  ]
+  ],
+  "demoRequirements": {
+    "totalDistinctLocations": 10,
+    "minimumPerCategory": {
+      "community": 2,
+      "private": 2,
+      "hospital": 2,
+      "preventive": 2
+    },
+    "additionalLocations": 2,
+    "additionalLocationPolicy": "Two extra distinct verified locations, in any category; do not duplicate a location to meet category totals.",
+    "geographicScope": ["Broward", "Miami-Dade"],
+    "insuranceDemo": "Demonstrate an exact plan filter only when location-specific acceptance is documented. Plan names, never member IDs or policy numbers.",
+    "readiness": "Blocked: zero reviewed provider records are published."
+  }
 }
