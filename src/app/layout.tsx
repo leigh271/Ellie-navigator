@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@fontsource-variable/dm-sans';
-import '@fontsource/allura';
 import './globals.css';
 export const metadata: Metadata = {
   title: 'Ellie Navigator — Women’s health, closer to you.',

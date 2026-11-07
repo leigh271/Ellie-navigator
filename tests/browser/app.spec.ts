@@ -18,6 +18,8 @@ test('care discovery, filters, navigation and resources are honest and responsiv
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Women’s health, closer to you.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Start with trusted sources' })).toBeVisible();
+  await expect(page.locator('.wordmark')).toHaveCSS('font-family', /DM Sans/);
+  await expect(page.locator('[class*="sparkle"], .lucide-sparkles')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Open official directory' })).toHaveCount(3);
   await page.getByLabel('Healthcare service').selectOption('PCOS');
   await expect(page.getByText('0 reviewed matches')).toBeVisible();

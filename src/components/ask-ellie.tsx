@@ -1,6 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
-import { ArrowUp, ArrowUpRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowUp, ArrowUpRight, ShieldCheck, MessageCircle } from 'lucide-react';
 import { ruleBasedReply } from '@/lib/assistant';
 type Message = { role: 'user' | 'ellie'; text: string; mode?: string };
 const starters = [
@@ -77,7 +77,7 @@ export default function AskEllie({
     <section className={`ask-panel ${compact ? 'compact' : ''}`}>
       <div className="ask-panel-head">
         <span className="ellie-orb">
-          <Sparkles size={24} />
+          <MessageCircle size={24} />
         </span>
         <span className="eyebrow">A LITTLE GUIDANCE, A LOT OF CARE</span>
         <span className="guide-badge">{useAI ? 'AI assisted' : 'Rule-based guide'}</span>

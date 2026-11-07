@@ -125,10 +125,14 @@ button:disabled:hover {
   padding: 0;
 }
 .wordmark {
-  font-family: 'Allura', cursive;
-  font-size: 66px;
-  font-weight: 400;
-  letter-spacing: -3px;
+  font-family:
+    'DM Sans Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 50px;
+  font-weight: 550;
+  letter-spacing: -2.4px;
   line-height: 1.2;
   background: linear-gradient(100deg, #c897ad 5%, #a997d0 35%, #8db7cf 65%, #93b9a0 95%);
   background-clip: text;
@@ -136,12 +140,7 @@ button:disabled:hover {
   display: inline-block;
   padding: 3px 7px 0 0;
 }
-.brand-sparkle {
-  position: absolute;
-  left: 83px;
-  top: 10px;
-  color: #b7a5cc;
-}
+
 .brand-divider {
   width: 1px;
   height: 31px;
@@ -185,11 +184,7 @@ button:disabled:hover {
   background: #b5a2cc;
   left: calc(50% - 11px);
 }
-.tiny-sparkle {
-  font-size: 15px;
-  color: #b89dd0;
-  margin-left: -2px;
-}
+
 .header-saved {
   display: flex;
   gap: 9px;
@@ -910,20 +905,24 @@ main {
   gap: 12px;
 }
 .footer-wordmark {
-  font-family: 'Allura', cursive;
-  font-size: 31px;
-  color: #b4a6c1;
+  font-family:
+    'DM Sans Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 24px;
+  font-weight: 550;
+  letter-spacing: -1px;
+  background: linear-gradient(100deg, #c897ad 5%, #a997d0 35%, #8db7cf 65%, #93b9a0 95%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
 }
 .site-footer strong {
   font-weight: 500;
   color: #91849e;
 }
-.footer-sparkle {
-  color: #b6a3c8;
-  margin-left: 8px;
-  font-size: 14px;
-}
+
 .footer-region {
   color: #b2adb7;
 }
@@ -1931,13 +1930,9 @@ main {
     height: 78px;
   }
   .wordmark {
-    font-size: 58px;
+    font-size: 44px;
   }
-  .brand-sparkle {
-    left: 72px;
-    top: 9px;
-    width: 13px;
-  }
+
   .page-intro {
     padding: 30px 0 23px;
   }
@@ -2376,7 +2371,7 @@ main {
     gap: 7px;
   }
   .footer-wordmark {
-    font-size: 30px;
+    font-size: 24px;
   }
   .mobile-nav {
     display: flex;

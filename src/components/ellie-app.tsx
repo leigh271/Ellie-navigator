@@ -13,7 +13,7 @@ import {
   MapPin,
   Search,
   SlidersHorizontal,
-  Sparkles,
+  MessageCircle,
   X,
   ShieldCheck,
   Flower2,
@@ -33,7 +33,7 @@ type Tab = 'find' | 'care' | 'ask' | 'resources';
 const tabs = [
   { id: 'find' as const, label: 'Find Care', icon: Search },
   { id: 'care' as const, label: 'My Care', icon: CalendarDays },
-  { id: 'ask' as const, label: 'Ask Ellie', icon: Sparkles },
+  { id: 'ask' as const, label: 'Ask Ellie', icon: MessageCircle },
   { id: 'resources' as const, label: 'Resources', icon: BookOpen },
 ];
 export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
@@ -89,7 +89,6 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
       <header className="site-header">
         <button className="brand" onClick={() => navigate('find')} aria-label="Ellie home">
           <span className="wordmark">Ellie</span>
-          <Sparkles size={17} className="brand-sparkle" />
           <span className="brand-divider" />
           <span className="brand-caption">
             A LITTLE CLOSER
@@ -107,7 +106,6 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
             >
               <t.icon size={16} />
               {t.label}
-              {t.id === 'ask' && <span className="tiny-sparkle">✧</span>}
             </button>
           ))}
         </nav>
@@ -408,7 +406,7 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
                 </div>
                 <button className="secondary-button" onClick={() => navigate('ask')}>
                   Ask Ellie
-                  <Sparkles size={15} />
+                  <MessageCircle size={15} />
                 </button>
               </div>
               <div className="trust-strip">
@@ -494,7 +492,6 @@ export default function EllieApp({ aiAvailable }: { aiAvailable: boolean }) {
         </div>
         <p>
           An initiative of <strong>Flowers for Women</strong>
-          <span className="footer-sparkle">✧</span>
         </p>
         <span className="footer-region">Broward & Miami-Dade, Florida</span>
       </footer>
